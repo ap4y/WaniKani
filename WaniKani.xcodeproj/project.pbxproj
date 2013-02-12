@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		14A800BB9533455A80D95681 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F9859464DB4E18A76EFB6E /* libPods.a */; };
 		71ED921377D540EAA73A7659 /* libPods-WaniKaniTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C66C383D4C4418A956E88D /* libPods-WaniKaniTests.a */; };
+		9514E7EC16CADF1B00DCF51D /* critical-items_95.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E416CADF1B00DCF51D /* critical-items_95.json */; };
+		9514E7ED16CADF1B00DCF51D /* kanji.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E516CADF1B00DCF51D /* kanji.json */; };
+		9514E7EE16CADF1B00DCF51D /* level_progression.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E616CADF1B00DCF51D /* level_progression.json */; };
+		9514E7EF16CADF1B00DCF51D /* radicals.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E716CADF1B00DCF51D /* radicals.json */; };
+		9514E7F016CADF1B00DCF51D /* recent_unlocks.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E816CADF1B00DCF51D /* recent_unlocks.json */; };
+		9514E7F116CADF1B00DCF51D /* srs_distribution.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E916CADF1B00DCF51D /* srs_distribution.json */; };
+		9514E7F216CADF1B00DCF51D /* study_queue.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7EA16CADF1B00DCF51D /* study_queue.json */; };
+		9514E7F316CADF1B00DCF51D /* vocabulary.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7EB16CADF1B00DCF51D /* vocabulary.json */; };
 		95168B3116C88BF7003BE60A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3016C88BF7003BE60A /* UIKit.framework */; };
 		95168B3316C88BF7003BE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3216C88BF7003BE60A /* Foundation.framework */; };
 		95168B3516C88BF7003BE60A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3416C88BF7003BE60A /* CoreGraphics.framework */; };
@@ -38,6 +46,14 @@
 /* Begin PBXFileReference section */
 		1A0FC0DE456F40D58C5F1149 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		273B254815EB4786BD603497 /* Pods-WaniKaniTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaniKaniTests.xcconfig"; path = "Pods/Pods-WaniKaniTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		9514E7E416CADF1B00DCF51D /* critical-items_95.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "critical-items_95.json"; sourceTree = "<group>"; };
+		9514E7E516CADF1B00DCF51D /* kanji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kanji.json; sourceTree = "<group>"; };
+		9514E7E616CADF1B00DCF51D /* level_progression.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_progression.json; sourceTree = "<group>"; };
+		9514E7E716CADF1B00DCF51D /* radicals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = radicals.json; sourceTree = "<group>"; };
+		9514E7E816CADF1B00DCF51D /* recent_unlocks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recent_unlocks.json; sourceTree = "<group>"; };
+		9514E7E916CADF1B00DCF51D /* srs_distribution.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = srs_distribution.json; sourceTree = "<group>"; };
+		9514E7EA16CADF1B00DCF51D /* study_queue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = study_queue.json; sourceTree = "<group>"; };
+		9514E7EB16CADF1B00DCF51D /* vocabulary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vocabulary.json; sourceTree = "<group>"; };
 		95168B2D16C88BF7003BE60A /* WaniKani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaniKani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95168B3016C88BF7003BE60A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95168B3216C88BF7003BE60A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +103,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9514E7E316CADF1B00DCF51D /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				9514E7E416CADF1B00DCF51D /* critical-items_95.json */,
+				9514E7E516CADF1B00DCF51D /* kanji.json */,
+				9514E7E616CADF1B00DCF51D /* level_progression.json */,
+				9514E7E716CADF1B00DCF51D /* radicals.json */,
+				9514E7E816CADF1B00DCF51D /* recent_unlocks.json */,
+				9514E7E916CADF1B00DCF51D /* srs_distribution.json */,
+				9514E7EA16CADF1B00DCF51D /* study_queue.json */,
+				9514E7EB16CADF1B00DCF51D /* vocabulary.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 		95168B2416C88BF6003BE60A = {
 			isa = PBXGroup;
 			children = (
@@ -148,9 +179,10 @@
 		95168B5416C88BF7003BE60A /* WaniKaniTests */ = {
 			isa = PBXGroup;
 			children = (
+				9514E7E316CADF1B00DCF51D /* Fixtures */,
+				95168B5516C88BF7003BE60A /* Supporting Files */,
 				95168B5A16C88BF7003BE60A /* WaniKaniTests.h */,
 				95168B5B16C88BF7003BE60A /* WaniKaniTests.m */,
-				95168B5516C88BF7003BE60A /* Supporting Files */,
 			);
 			path = WaniKaniTests;
 			sourceTree = "<group>";
@@ -249,6 +281,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				95168B5916C88BF7003BE60A /* InfoPlist.strings in Resources */,
+				9514E7EC16CADF1B00DCF51D /* critical-items_95.json in Resources */,
+				9514E7ED16CADF1B00DCF51D /* kanji.json in Resources */,
+				9514E7EE16CADF1B00DCF51D /* level_progression.json in Resources */,
+				9514E7EF16CADF1B00DCF51D /* radicals.json in Resources */,
+				9514E7F016CADF1B00DCF51D /* recent_unlocks.json in Resources */,
+				9514E7F116CADF1B00DCF51D /* srs_distribution.json in Resources */,
+				9514E7F216CADF1B00DCF51D /* study_queue.json in Resources */,
+				9514E7F316CADF1B00DCF51D /* vocabulary.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

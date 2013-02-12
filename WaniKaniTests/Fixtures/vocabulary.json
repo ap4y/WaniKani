@@ -1,0 +1,305 @@
+{
+    "user_information": {
+        "username": "ap4y",
+        "gravatar": "f9e852694ab8a659d1edbf438c2bb4ea",
+        "level": 1,
+        "title": "Guppies",
+        "about": "",
+        "website": null,
+        "twitter": null,
+        "topics_count": 0,
+        "posts_count": 0,
+        "creation_date": 1360463301
+    },
+    "requested_information": {
+        "general": [
+            {
+                "character": "一",
+                "kana": "いち",
+                "meaning": "one",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "七つ",
+                "kana": "ななつ",
+                "meaning": "seven things",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "二",
+                "kana": "に",
+                "meaning": "two",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "八",
+                "kana": "はち",
+                "meaning": "eight",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "力",
+                "kana": "ちから",
+                "meaning": "power",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "入る",
+                "kana": "はいる",
+                "meaning": "to enter",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "入れる",
+                "kana": "いれる",
+                "meaning": "to insert",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "七",
+                "kana": "なな, しち",
+                "meaning": "seven",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "二人",
+                "kana": "ふたり",
+                "meaning": "two people, pair",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "十",
+                "kana": "じゅう",
+                "meaning": "ten",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "三",
+                "kana": "さん",
+                "meaning": "three",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "三人",
+                "kana": "さんにん",
+                "meaning": "three people",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "上る",
+                "kana": "のぼる",
+                "meaning": "to climb",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "上がる",
+                "kana": "あがる",
+                "meaning": "to rise",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "上",
+                "kana": "うえ",
+                "meaning": "up, above",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "フランス人",
+                "kana": "ふらんすじん, フランスじん",
+                "meaning": "frenchman, french person",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "入り口",
+                "kana": "いりぐち",
+                "meaning": "entrance",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "下さい",
+                "kana": "ください",
+                "meaning": "please",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "口",
+                "kana": "くち",
+                "meaning": "mouth",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "山",
+                "kana": "やま",
+                "meaning": "mountain",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "人口",
+                "kana": "じんこう",
+                "meaning": "population",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "一人",
+                "kana": "ひとり",
+                "meaning": "alone, one person",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "大きい",
+                "kana": "おおきい",
+                "meaning": "big, large",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "八つ",
+                "kana": "やっつ",
+                "meaning": "eight things",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "九",
+                "kana": "きゅう, く",
+                "meaning": "nine",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "九つ",
+                "kana": "ここのつ",
+                "meaning": "nine things",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "一つ",
+                "kana": "ひとつ",
+                "meaning": "one thing",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "三つ",
+                "kana": "みっつ",
+                "meaning": "three things",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "上げる",
+                "kana": "あげる",
+                "meaning": "to raise",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "アメリカ人",
+                "kana": "あめりかじん, アメリカじん",
+                "meaning": "american, american person",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "二つ",
+                "kana": "ふたつ",
+                "meaning": "two things",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "大人",
+                "kana": "おとな",
+                "meaning": "adult",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "下",
+                "kana": "した",
+                "meaning": "down, below",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "下がる",
+                "kana": "さがる",
+                "meaning": "to hang down",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "大きさ",
+                "kana": "おおきさ",
+                "meaning": "size",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "川",
+                "kana": "かわ",
+                "meaning": "river",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "下げる",
+                "kana": "さげる",
+                "meaning": "to hang, to lower",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "女",
+                "kana": "おんな",
+                "meaning": "woman, female",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "大した",
+                "kana": "たいした",
+                "meaning": "considerable, great, important, big deal",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "人",
+                "kana": "ひと",
+                "meaning": "person",
+                "level": 1,
+                "stats": null
+            },
+            {
+                "character": "ふじ山",
+                "kana": "ふじさん",
+                "meaning": "mt fuji, mount fuji",
+                "level": 1,
+                "stats": null
+            }
+        ]
+    }
+}

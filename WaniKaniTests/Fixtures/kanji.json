@@ -1,0 +1,178 @@
+{
+    "user_information": {
+        "username": "ap4y",
+        "gravatar": "f9e852694ab8a659d1edbf438c2bb4ea",
+        "level": 1,
+        "title": "Guppies",
+        "about": "",
+        "website": null,
+        "twitter": null,
+        "topics_count": 0,
+        "posts_count": 0,
+        "creation_date": 1360463301
+    },
+    "requested_information": [
+        {
+            "character": "七",
+            "meaning": "seven",
+            "onyomi": "しち",
+            "kunyomi": "なな.*",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "入",
+            "meaning": "enter",
+            "onyomi": "にゅう",
+            "kunyomi": "はい.る, い.れる",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "二",
+            "meaning": "two",
+            "onyomi": "に",
+            "kunyomi": "ふた.*",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "力",
+            "meaning": "power",
+            "onyomi": "りょく, りき",
+            "kunyomi": "ちから",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "三",
+            "meaning": "three",
+            "onyomi": "さん",
+            "kunyomi": "み.*",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "大",
+            "meaning": "big",
+            "onyomi": "たい, だい",
+            "kunyomi": "おお",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "山",
+            "meaning": "mountain",
+            "onyomi": "さん",
+            "kunyomi": "やま",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "女",
+            "meaning": "woman",
+            "onyomi": "じょ",
+            "kunyomi": "おんな",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "九",
+            "meaning": "nine",
+            "onyomi": "く, きゅう",
+            "kunyomi": "ここの.*",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "川",
+            "meaning": "river",
+            "onyomi": "せん",
+            "kunyomi": "かわ",
+            "important_reading": "kunyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "人",
+            "meaning": "person",
+            "onyomi": "にん, じん",
+            "kunyomi": "ひと",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "八",
+            "meaning": "eight",
+            "onyomi": "はち",
+            "kunyomi": "や.*",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "十",
+            "meaning": "ten",
+            "onyomi": "じゅう",
+            "kunyomi": "とお.*",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "上",
+            "meaning": "above, up",
+            "onyomi": "じょう",
+            "kunyomi": "うえ, あが, のぼ",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "一",
+            "meaning": "one",
+            "onyomi": "いち",
+            "kunyomi": "ひと.*",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "下",
+            "meaning": "below, down, under",
+            "onyomi": "か, げ",
+            "kunyomi": "した, さが, くだ",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "口",
+            "meaning": "mouth",
+            "onyomi": "こう",
+            "kunyomi": "くち",
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        },
+        {
+            "character": "工",
+            "meaning": "industry",
+            "onyomi": "こう",
+            "kunyomi": null,
+            "important_reading": "onyomi",
+            "level": 1,
+            "stats": null
+        }
+    ]
+}

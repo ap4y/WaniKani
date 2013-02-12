@@ -1,0 +1,583 @@
+{
+    "user_information": {
+        "username": "ap4y",
+        "gravatar": "f9e852694ab8a659d1edbf438c2bb4ea",
+        "level": 1,
+        "title": "Guppies",
+        "about": "",
+        "website": null,
+        "twitter": null,
+        "topics_count": 0,
+        "posts_count": 0,
+        "creation_date": 1360463301
+    },
+    "requested_information": [
+        {
+            "character": "一",
+            "meaning": "ground",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464722,
+                "available_date": 1360784054,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 3,
+                "meaning_incorrect": 1,
+                "meaning_max_streak": 3,
+                "meaning_current_streak": 3,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "ハ",
+            "meaning": "fins",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464620,
+                "available_date": 1360734797,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "丶",
+            "meaning": "drop",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464767,
+                "available_date": 1360734778,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "七",
+            "meaning": "seven",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464667,
+                "available_date": 1360734786,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "丿",
+            "meaning": "slide",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464478,
+                "available_date": 1360734863,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "亅",
+            "meaning": "barb",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464717,
+                "available_date": 1360734840,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "二",
+            "meaning": "two",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464537,
+                "available_date": 1360734890,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "亠",
+            "meaning": "lid",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464702,
+                "available_date": 1360734820,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "人",
+            "meaning": "person",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464682,
+                "available_date": 1360734791,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "入",
+            "meaning": "enter",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464749,
+                "available_date": 1360734900,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": null,
+            "meaning": "leaf",
+            "image": "http://s3.wanikani.com/images/radicals/ca386aec7915ab74e52ec506ed2e532d4631bb06.png",
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464727,
+                "available_date": 1360734859,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "十",
+            "meaning": "cross",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464550,
+                "available_date": 1360734802,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "力",
+            "meaning": "power",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464771,
+                "available_date": 1360734774,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "勹",
+            "meaning": "enclosure",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464662,
+                "available_date": 1360734845,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "口",
+            "meaning": "mouth",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464762,
+                "available_date": 1360784065,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 3,
+                "meaning_incorrect": 1,
+                "meaning_max_streak": 3,
+                "meaning_current_streak": 3,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": null,
+            "meaning": "gun",
+            "image": "http://s3.wanikani.com/images/radicals/80fff71b321c8cee57db7224f5fe1daa331128b5.png",
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464656,
+                "available_date": 1360734830,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "大",
+            "meaning": "big",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464559,
+                "available_date": 1360734907,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "女",
+            "meaning": "woman",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464544,
+                "available_date": 1360734872,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "山",
+            "meaning": "mountain",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464650,
+                "available_date": 1360734768,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "川",
+            "meaning": "river",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464597,
+                "available_date": 1360734824,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "木",
+            "meaning": "tree",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464611,
+                "available_date": 1360784059,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 3,
+                "meaning_incorrect": 1,
+                "meaning_max_streak": 3,
+                "meaning_current_streak": 3,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "工",
+            "meaning": "construction",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464711,
+                "available_date": 1360734853,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "九",
+            "meaning": "nine",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464757,
+                "available_date": 1360734816,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": null,
+            "meaning": "stick",
+            "image": "http://s3.wanikani.com/images/radicals/802e9542627291d4282601ded41ad16ce915f60f.png",
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464565,
+                "available_date": 1360734885,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "八",
+            "meaning": "volcano",
+            "image": "http://s3.wanikani.com/images/radicals/040cbe763aa3526b2905c96062137dd3db55a38a.png",
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464554,
+                "available_date": 1360734895,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "日",
+            "meaning": "sun",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464642,
+                "available_date": 1360734868,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        },
+        {
+            "character": "ト",
+            "meaning": "toe",
+            "image": null,
+            "level": 1,
+            "stats": {
+                "srs": "apprentice",
+                "unlocked_date": 1360464733,
+                "available_date": 1360734811,
+                "burned": false,
+                "burned_date": 0,
+                "meaning_correct": 2,
+                "meaning_incorrect": 0,
+                "meaning_max_streak": 2,
+                "meaning_current_streak": 2,
+                "reading_correct": null,
+                "reading_incorrect": null,
+                "reading_max_streak": null,
+                "reading_current_streak": null
+            }
+        }
+    ]
+}

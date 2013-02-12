@@ -1,0 +1,96 @@
+{
+    "user_information": {
+        "username": "ap4y",
+        "gravatar": "f9e852694ab8a659d1edbf438c2bb4ea",
+        "level": 1,
+        "title": "Guppies",
+        "about": "",
+        "website": null,
+        "twitter": null,
+        "topics_count": 0,
+        "posts_count": 0,
+        "creation_date": 1360463301
+    },
+    "requested_information": [
+        {
+            "type": "radical",
+            "character": "力",
+            "meaning": "power",
+            "image": null,
+            "level": 1,
+            "unlocked_date": 1360464771
+        },
+        {
+            "type": "radical",
+            "character": "丶",
+            "meaning": "drop",
+            "image": null,
+            "level": 1,
+            "unlocked_date": 1360464767
+        },
+        {
+            "type": "radical",
+            "character": "口",
+            "meaning": "mouth",
+            "image": null,
+            "level": 1,
+            "unlocked_date": 1360464762
+        },
+        {
+            "type": "radical",
+            "character": "九",
+            "meaning": "nine",
+            "image": null,
+            "level": 1,
+            "unlocked_date": 1360464757
+        },
+        {
+            "type": "radical",
+            "character": "入",
+            "meaning": "enter",
+            "image": null,
+            "level": 1,
+            "unlocked_date": 1360464749
+        },
+        {
+            "type": "radical",
+            "character": "ト",
+            "meaning": "toe",
+            "image": null,
+            "level": 1,
+            "unlocked_date": 1360464733
+        },
+        {
+            "type": "radical",
+            "character": null,
+            "meaning": "leaf",
+            "image": "http://s3.wanikani.com/images/radicals/88d0c38028e2f4d19e39b9d0ad5f52c379de0180.png",
+            "level": 1,
+            "unlocked_date": 1360464727
+        },
+        {
+            "type": "radical",
+            "character": "一",
+            "meaning": "ground",
+            "image": null,
+            "level": 1,
+            "unlocked_date": 1360464722
+        },
+        {
+            "type": "radical",
+            "character": "亅",
+            "meaning": "barb",
+            "image": null,
+            "level": 1,
+            "unlocked_date": 1360464717
+        },
+        {
+            "type": "radical",
+            "character": "工",
+            "meaning": "construction",
+            "image": null,
+            "level": 1,
+            "unlocked_date": 1360464711
+        }
+    ]
+}
