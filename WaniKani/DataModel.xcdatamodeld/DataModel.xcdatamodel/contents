@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C3104" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="WKItem" isAbstract="YES" syncable="YES">
+    <entity name="WKItem" representedClassName="WKItem" isAbstract="YES" syncable="YES">
         <attribute name="character" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="stats" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="WKItemStats" inverseName="item" inverseEntity="WKItemStats" syncable="YES"/>
     </entity>
-    <entity name="WKItemStats" syncable="YES">
+    <entity name="WKItemStats" representedClassName="WKItemStats" syncable="YES">
         <attribute name="availableDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="burned" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="burnedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -22,22 +22,22 @@
         <attribute name="unlockedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="WKItem" inverseName="stats" inverseEntity="WKItem" syncable="YES"/>
     </entity>
-    <entity name="WKKanji" parentEntity="WKItem" syncable="YES">
+    <entity name="WKKanji" representedClassName="WKKanji" parentEntity="WKItem" syncable="YES">
         <attribute name="importantReading" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="kunyomi" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="onyomi" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="WKRadical" parentEntity="WKItem" syncable="YES">
+    <entity name="WKRadical" representedClassName="WKRadical" parentEntity="WKItem" syncable="YES">
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="WKVocab" parentEntity="WKItem" syncable="YES">
+    <entity name="WKVocab" representedClassName="WKVocab" parentEntity="WKItem" syncable="YES">
         <attribute name="kana" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="WKRadical" positionX="153" positionY="192" width="128" height="60"/>
-        <element name="WKKanji" positionX="385" positionY="189" width="128" height="90"/>
+        <element name="WKRadical" positionX="153" positionY="192" width="128" height="58"/>
+        <element name="WKKanji" positionX="385" positionY="189" width="128" height="88"/>
         <element name="WKItem" positionX="153" positionY="18" width="128" height="103"/>
-        <element name="WKVocab" positionX="385" positionY="45" width="128" height="60"/>
+        <element name="WKVocab" positionX="385" positionY="45" width="128" height="58"/>
         <element name="WKItemStats" positionX="-45" positionY="18" width="128" height="253"/>
     </elements>
 </model>
