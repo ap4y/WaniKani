@@ -26,6 +26,9 @@
 		9514E81716CAE52D00DCF51D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9514E81616CAE52D00DCF51D /* CoreData.framework */; };
 		9514E81916CAE5F400DCF51D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9514E81816CAE5F400DCF51D /* SystemConfiguration.framework */; };
 		9514E81B16CAE5FD00DCF51D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9514E81A16CAE5FD00DCF51D /* MobileCoreServices.framework */; };
+		9514E81F16CAE80300DCF51D /* WKRadicalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E81E16CAE80300DCF51D /* WKRadicalTests.m */; };
+		9514E82216CAE81300DCF51D /* WKKanjiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E82116CAE81300DCF51D /* WKKanjiTests.m */; };
+		9514E82516CAE82300DCF51D /* WKVocabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E82416CAE82300DCF51D /* WKVocabTests.m */; };
 		95168B3116C88BF7003BE60A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3016C88BF7003BE60A /* UIKit.framework */; };
 		95168B3316C88BF7003BE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3216C88BF7003BE60A /* Foundation.framework */; };
 		95168B3516C88BF7003BE60A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3416C88BF7003BE60A /* CoreGraphics.framework */; };
@@ -39,7 +42,6 @@
 		95168B5016C88BF7003BE60A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3016C88BF7003BE60A /* UIKit.framework */; };
 		95168B5116C88BF7003BE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3216C88BF7003BE60A /* Foundation.framework */; };
 		95168B5916C88BF7003BE60A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95168B5716C88BF7003BE60A /* InfoPlist.strings */; };
-		95168B5C16C88BF7003BE60A /* WaniKaniTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95168B5B16C88BF7003BE60A /* WaniKaniTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,12 @@
 		9514E81616CAE52D00DCF51D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9514E81816CAE5F400DCF51D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9514E81A16CAE5FD00DCF51D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9514E81D16CAE80300DCF51D /* WKRadicalTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKRadicalTests.h; path = Models/WKRadicalTests.h; sourceTree = "<group>"; };
+		9514E81E16CAE80300DCF51D /* WKRadicalTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKRadicalTests.m; path = Models/WKRadicalTests.m; sourceTree = "<group>"; };
+		9514E82016CAE81300DCF51D /* WKKanjiTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKKanjiTests.h; path = Models/WKKanjiTests.h; sourceTree = "<group>"; };
+		9514E82116CAE81300DCF51D /* WKKanjiTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKKanjiTests.m; path = Models/WKKanjiTests.m; sourceTree = "<group>"; };
+		9514E82316CAE82300DCF51D /* WKVocabTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKVocabTests.h; path = Models/WKVocabTests.h; sourceTree = "<group>"; };
+		9514E82416CAE82300DCF51D /* WKVocabTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKVocabTests.m; path = Models/WKVocabTests.m; sourceTree = "<group>"; };
 		95168B2D16C88BF7003BE60A /* WaniKani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaniKani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95168B3016C88BF7003BE60A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95168B3216C88BF7003BE60A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,8 +102,6 @@
 		95168B4E16C88BF7003BE60A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		95168B5616C88BF7003BE60A /* WaniKaniTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WaniKaniTests-Info.plist"; sourceTree = "<group>"; };
 		95168B5816C88BF7003BE60A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		95168B5A16C88BF7003BE60A /* WaniKaniTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaniKaniTests.h; sourceTree = "<group>"; };
-		95168B5B16C88BF7003BE60A /* WaniKaniTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaniKaniTests.m; sourceTree = "<group>"; };
 		C1C66C383D4C4418A956E88D /* libPods-WaniKaniTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WaniKaniTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F9859464DB4E18A76EFB6E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -157,6 +163,19 @@
 				9514E80E16CAE4AB00DCF51D /* WKKanji.m */,
 				9514E81316CAE4AB00DCF51D /* WKVocab.h */,
 				9514E81416CAE4AB00DCF51D /* WKVocab.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9514E81C16CAE7E900DCF51D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9514E81D16CAE80300DCF51D /* WKRadicalTests.h */,
+				9514E81E16CAE80300DCF51D /* WKRadicalTests.m */,
+				9514E82016CAE81300DCF51D /* WKKanjiTests.h */,
+				9514E82116CAE81300DCF51D /* WKKanjiTests.m */,
+				9514E82316CAE82300DCF51D /* WKVocabTests.h */,
+				9514E82416CAE82300DCF51D /* WKVocabTests.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -227,10 +246,9 @@
 		95168B5416C88BF7003BE60A /* WaniKaniTests */ = {
 			isa = PBXGroup;
 			children = (
+				9514E81C16CAE7E900DCF51D /* Models */,
 				9514E7E316CADF1B00DCF51D /* Fixtures */,
 				95168B5516C88BF7003BE60A /* Supporting Files */,
-				95168B5A16C88BF7003BE60A /* WaniKaniTests.h */,
-				95168B5B16C88BF7003BE60A /* WaniKaniTests.m */,
 			);
 			path = WaniKaniTests;
 			sourceTree = "<group>";
@@ -406,7 +424,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95168B5C16C88BF7003BE60A /* WaniKaniTests.m in Sources */,
+				9514E81F16CAE80300DCF51D /* WKRadicalTests.m in Sources */,
+				9514E82216CAE81300DCF51D /* WKKanjiTests.m in Sources */,
+				9514E82516CAE82300DCF51D /* WKVocabTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
