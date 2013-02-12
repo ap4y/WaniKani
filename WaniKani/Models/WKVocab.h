@@ -10,4 +10,7 @@
 
 @interface WKVocab : WKItem
 @property (strong, nonatomic) NSString *kana;
+
++ (void)fetchVocabWithSuccess:(void (^)(NSArray *vocab))success
+                      failure:(void (^)(NSError *error))failure;
 @end
