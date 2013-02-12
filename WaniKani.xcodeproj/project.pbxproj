@@ -18,6 +18,7 @@
 		9514E7F216CADF1B00DCF51D /* study_queue.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7EA16CADF1B00DCF51D /* study_queue.json */; };
 		9514E7F316CADF1B00DCF51D /* vocabulary.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7EB16CADF1B00DCF51D /* vocabulary.json */; };
 		9514E7F716CAE09E00DCF51D /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9514E7F516CAE09E00DCF51D /* DataModel.xcdatamodeld */; };
+		9514E81716CAE52D00DCF51D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9514E81616CAE52D00DCF51D /* CoreData.framework */; };
 		95168B3116C88BF7003BE60A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3016C88BF7003BE60A /* UIKit.framework */; };
 		95168B3316C88BF7003BE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3216C88BF7003BE60A /* Foundation.framework */; };
 		95168B3516C88BF7003BE60A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3416C88BF7003BE60A /* CoreGraphics.framework */; };
@@ -56,6 +57,7 @@
 		9514E7EA16CADF1B00DCF51D /* study_queue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = study_queue.json; sourceTree = "<group>"; };
 		9514E7EB16CADF1B00DCF51D /* vocabulary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vocabulary.json; sourceTree = "<group>"; };
 		9514E7F616CAE09E00DCF51D /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		9514E81616CAE52D00DCF51D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		95168B2D16C88BF7003BE60A /* WaniKani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaniKani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95168B3016C88BF7003BE60A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95168B3216C88BF7003BE60A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9514E81716CAE52D00DCF51D /* CoreData.framework in Frameworks */,
 				95168B3116C88BF7003BE60A /* UIKit.framework in Frameworks */,
 				95168B3316C88BF7003BE60A /* Foundation.framework in Frameworks */,
 				95168B3516C88BF7003BE60A /* CoreGraphics.framework in Frameworks */,
@@ -144,6 +147,7 @@
 		95168B2F16C88BF7003BE60A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9514E81616CAE52D00DCF51D /* CoreData.framework */,
 				95168B3016C88BF7003BE60A /* UIKit.framework */,
 				95168B3216C88BF7003BE60A /* Foundation.framework */,
 				95168B3416C88BF7003BE60A /* CoreGraphics.framework */,
