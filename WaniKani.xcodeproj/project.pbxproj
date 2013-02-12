@@ -17,6 +17,7 @@
 		9514E7F116CADF1B00DCF51D /* srs_distribution.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E916CADF1B00DCF51D /* srs_distribution.json */; };
 		9514E7F216CADF1B00DCF51D /* study_queue.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7EA16CADF1B00DCF51D /* study_queue.json */; };
 		9514E7F316CADF1B00DCF51D /* vocabulary.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7EB16CADF1B00DCF51D /* vocabulary.json */; };
+		9514E7F716CAE09E00DCF51D /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9514E7F516CAE09E00DCF51D /* DataModel.xcdatamodeld */; };
 		95168B3116C88BF7003BE60A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3016C88BF7003BE60A /* UIKit.framework */; };
 		95168B3316C88BF7003BE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3216C88BF7003BE60A /* Foundation.framework */; };
 		95168B3516C88BF7003BE60A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3416C88BF7003BE60A /* CoreGraphics.framework */; };
@@ -54,6 +55,7 @@
 		9514E7E916CADF1B00DCF51D /* srs_distribution.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = srs_distribution.json; sourceTree = "<group>"; };
 		9514E7EA16CADF1B00DCF51D /* study_queue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = study_queue.json; sourceTree = "<group>"; };
 		9514E7EB16CADF1B00DCF51D /* vocabulary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vocabulary.json; sourceTree = "<group>"; };
+		9514E7F616CAE09E00DCF51D /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		95168B2D16C88BF7003BE60A /* WaniKani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaniKani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95168B3016C88BF7003BE60A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95168B3216C88BF7003BE60A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -155,9 +157,10 @@
 		95168B3616C88BF7003BE60A /* WaniKani */ = {
 			isa = PBXGroup;
 			children = (
+				95168B3716C88BF7003BE60A /* Supporting Files */,
 				95168B3F16C88BF7003BE60A /* AppDelegate.h */,
 				95168B4016C88BF7003BE60A /* AppDelegate.m */,
-				95168B3716C88BF7003BE60A /* Supporting Files */,
+				9514E7F516CAE09E00DCF51D /* DataModel.xcdatamodeld */,
 			);
 			path = WaniKani;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			files = (
 				95168B3D16C88BF7003BE60A /* main.m in Sources */,
 				95168B4116C88BF7003BE60A /* AppDelegate.m in Sources */,
+				9514E7F716CAE09E00DCF51D /* DataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +537,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9514E7F516CAE09E00DCF51D /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9514E7F616CAE09E00DCF51D /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 9514E7F616CAE09E00DCF51D /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 95168B2516C88BF6003BE60A /* Project object */;
 }
