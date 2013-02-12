@@ -24,6 +24,8 @@
 		9514E81216CAE4AB00DCF51D /* WKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E81116CAE4AB00DCF51D /* WKItem.m */; };
 		9514E81516CAE4AB00DCF51D /* WKVocab.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E81416CAE4AB00DCF51D /* WKVocab.m */; };
 		9514E81716CAE52D00DCF51D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9514E81616CAE52D00DCF51D /* CoreData.framework */; };
+		9514E81916CAE5F400DCF51D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9514E81816CAE5F400DCF51D /* SystemConfiguration.framework */; };
+		9514E81B16CAE5FD00DCF51D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9514E81A16CAE5FD00DCF51D /* MobileCoreServices.framework */; };
 		95168B3116C88BF7003BE60A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3016C88BF7003BE60A /* UIKit.framework */; };
 		95168B3316C88BF7003BE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3216C88BF7003BE60A /* Foundation.framework */; };
 		95168B3516C88BF7003BE60A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3416C88BF7003BE60A /* CoreGraphics.framework */; };
@@ -73,6 +75,8 @@
 		9514E81316CAE4AB00DCF51D /* WKVocab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKVocab.h; path = Models/WKVocab.h; sourceTree = "<group>"; };
 		9514E81416CAE4AB00DCF51D /* WKVocab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKVocab.m; path = Models/WKVocab.m; sourceTree = "<group>"; };
 		9514E81616CAE52D00DCF51D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9514E81816CAE5F400DCF51D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9514E81A16CAE5FD00DCF51D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		95168B2D16C88BF7003BE60A /* WaniKani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaniKani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95168B3016C88BF7003BE60A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95168B3216C88BF7003BE60A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,6 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9514E81B16CAE5FD00DCF51D /* MobileCoreServices.framework in Frameworks */,
+				9514E81916CAE5F400DCF51D /* SystemConfiguration.framework in Frameworks */,
 				9514E81716CAE52D00DCF51D /* CoreData.framework in Frameworks */,
 				95168B3116C88BF7003BE60A /* UIKit.framework in Frameworks */,
 				95168B3316C88BF7003BE60A /* Foundation.framework in Frameworks */,
@@ -179,6 +185,8 @@
 		95168B2F16C88BF7003BE60A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9514E81A16CAE5FD00DCF51D /* MobileCoreServices.framework */,
+				9514E81816CAE5F400DCF51D /* SystemConfiguration.framework */,
 				9514E81616CAE52D00DCF51D /* CoreData.framework */,
 				95168B3016C88BF7003BE60A /* UIKit.framework */,
 				95168B3216C88BF7003BE60A /* Foundation.framework */,
