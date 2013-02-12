@@ -13,4 +13,10 @@
 @dynamic kunyomi;
 @dynamic importantReading;
 
+#pragma mark - entity settings
+
++ (NSDictionary *)propertyMappings {
+    return @{ @"importantReading": @"important_reading" };
+}
+
 @end

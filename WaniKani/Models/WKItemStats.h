@@ -7,7 +7,7 @@
 //
 
 @class WKItem;
-@interface WKItemStats : NSManagedObject
+@interface WKItemStats : AEManagedObject
 @property (strong, nonatomic) NSString *srs;
 @property (strong, nonatomic) NSNumber *unlockedDate;
 @property (strong, nonatomic) NSNumber *availableDate;

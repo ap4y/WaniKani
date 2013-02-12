@@ -15,4 +15,10 @@
 @dynamic meaning;
 @dynamic stats;
 
+#pragma mark - entity settings
+
++ (NSString *)jsonRoot {
+    return @"requested_information";
+}
+
 @end
