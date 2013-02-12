@@ -10,4 +10,15 @@
 
 @implementation WKRadical
 @dynamic image;
+
++ (void)fetchRadicalsWithSuccess:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
+    
+    [WKRadical fetchWithClient:[WKHTTPClient sharedClient]
+                          path:@"/radicals"
+                    parameters:nil
+                       success:success
+                       failure:failure];
+    
+}
+
 @end

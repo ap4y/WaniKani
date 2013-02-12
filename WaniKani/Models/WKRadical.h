@@ -10,4 +10,7 @@
 
 @interface WKRadical : WKItem
 @property (strong, nonatomic) NSString *image;
+
++ (void)fetchRadicalsWithSuccess:(void (^)(NSArray *radicals))success
+                         failure:(void (^)(NSError *error))failure;
 @end
