@@ -13,4 +13,6 @@
 @property (strong, nonatomic) NSString *kunyomi;
 @property (strong, nonatomic) NSString *importantReading;
 
++ (void)fetchKanjiWithSuccess:(void (^)(NSArray *kanji))success
+                      failure:(void (^)(NSError *error))failure;
 @end
