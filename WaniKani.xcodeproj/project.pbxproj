@@ -29,6 +29,7 @@
 		9514E81F16CAE80300DCF51D /* WKRadicalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E81E16CAE80300DCF51D /* WKRadicalTests.m */; };
 		9514E82216CAE81300DCF51D /* WKKanjiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E82116CAE81300DCF51D /* WKKanjiTests.m */; };
 		9514E82516CAE82300DCF51D /* WKVocabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E82416CAE82300DCF51D /* WKVocabTests.m */; };
+		9514E82D16CAEB7200DCF51D /* WKHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E82C16CAEB7200DCF51D /* WKHTTPClient.m */; };
 		95168B3116C88BF7003BE60A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3016C88BF7003BE60A /* UIKit.framework */; };
 		95168B3316C88BF7003BE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3216C88BF7003BE60A /* Foundation.framework */; };
 		95168B3516C88BF7003BE60A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3416C88BF7003BE60A /* CoreGraphics.framework */; };
@@ -85,6 +86,8 @@
 		9514E82116CAE81300DCF51D /* WKKanjiTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKKanjiTests.m; path = Models/WKKanjiTests.m; sourceTree = "<group>"; };
 		9514E82316CAE82300DCF51D /* WKVocabTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKVocabTests.h; path = Models/WKVocabTests.h; sourceTree = "<group>"; };
 		9514E82416CAE82300DCF51D /* WKVocabTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKVocabTests.m; path = Models/WKVocabTests.m; sourceTree = "<group>"; };
+		9514E82B16CAEB7200DCF51D /* WKHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKHTTPClient.h; path = Common/WKHTTPClient.h; sourceTree = "<group>"; };
+		9514E82C16CAEB7200DCF51D /* WKHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKHTTPClient.m; path = Common/WKHTTPClient.m; sourceTree = "<group>"; };
 		95168B2D16C88BF7003BE60A /* WaniKani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaniKani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95168B3016C88BF7003BE60A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95168B3216C88BF7003BE60A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -180,6 +183,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		9514E82A16CAEB5900DCF51D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9514E82B16CAEB7200DCF51D /* WKHTTPClient.h */,
+				9514E82C16CAEB7200DCF51D /* WKHTTPClient.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		95168B2416C88BF6003BE60A = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +232,7 @@
 		95168B3616C88BF7003BE60A /* WaniKani */ = {
 			isa = PBXGroup;
 			children = (
+				9514E82A16CAEB5900DCF51D /* Common */,
 				9514E7F416CAE08400DCF51D /* Models */,
 				95168B3716C88BF7003BE60A /* Supporting Files */,
 				95168B3F16C88BF7003BE60A /* AppDelegate.h */,
@@ -417,6 +430,7 @@
 				9514E80F16CAE4AB00DCF51D /* WKKanji.m in Sources */,
 				9514E81216CAE4AB00DCF51D /* WKItem.m in Sources */,
 				9514E81516CAE4AB00DCF51D /* WKVocab.m in Sources */,
+				9514E82D16CAEB7200DCF51D /* WKHTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,4 +19,6 @@
     #import "AEManagedObject.h"
     #import "AEManagedObject+AEJSONSerialization.h"
     #import "AEManagedObject+AERemoteFetch.h"
+
+    #import "WKHTTPClient.h"
 #endif
