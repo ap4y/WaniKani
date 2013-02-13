@@ -70,4 +70,9 @@
     STAssertEquals(27U, [[WKRadical unlockedItems] count], nil);
 }
 
+- (void)testRadicalsWithCriticalPercentage {
+    
+    STAssertEquals(3U, [[WKRadical criticalItemsWithPercentage:95.0] count], nil);
+}
+
 @end

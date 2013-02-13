@@ -44,6 +44,32 @@
           managedObjectContext:mainThreadContext()];
 }
 
++ (NSArray *)criticalItemsWithPercentage:(CGFloat)percentage {
+
+    NSString *predicateString   = @"stats.meaningIncorrect > 0 OR stats.readingIncorrect > 0";
+    NSPredicate *predicate      = [NSPredicate predicateWithFormat:predicateString];
+    NSArray *criticalItems      = [self requestResult:[self where:predicate]
+                                 managedObjectContext:mainThreadContext()];
+    
+    NSPredicate *percentagePredicate = [NSPredicate predicateWithBlock:^BOOL(WKItem *item, NSDictionary *bindings) {
+        
+        CGFloat meaningCorrect, meaningIncorrect, meaningPercentage,
+                readingCorrect, readingIncorrect, readingPercentage;
+        
+        meaningCorrect      = item.stats.meaningCorrect.floatValue;
+        meaningIncorrect    = item.stats.meaningIncorrect.floatValue;
+        readingCorrect      = item.stats.readingCorrect.floatValue;
+        readingIncorrect    = item.stats.readingIncorrect.floatValue;
+        
+        meaningPercentage   = meaningCorrect/(meaningCorrect + meaningIncorrect);
+        readingPercentage   = readingCorrect/(readingCorrect + readingIncorrect);
+        
+        return ( meaningPercentage <= percentage/100.0 ) || ( readingPercentage <= percentage/100.0 );
+    }];
+    
+    return [criticalItems filteredArrayUsingPredicate:percentagePredicate];
+}
+
 #pragma mark - entity settings
 
 - (void)updateFromJSONObject:(id)jsonObject withRelations:(BOOL)withRelations {

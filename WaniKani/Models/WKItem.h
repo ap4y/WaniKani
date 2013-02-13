@@ -20,5 +20,6 @@
 + (NSArray *)itemsWithSRSType:(WKItemSRSType)srsType;
 + (NSArray *)completedItems;
 + (NSArray *)unlockedItems;
++ (NSArray *)criticalItemsWithPercentage:(CGFloat)percentage;
 
 @end
