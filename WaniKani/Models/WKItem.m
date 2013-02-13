@@ -36,6 +36,14 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stats.srs IN %@", completedSRSTypes];
     return [self requestResult:[self where:predicate] managedObjectContext:mainThreadContext()];
 }
+
++ (NSArray *)unlockedItems {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stats.unlockedDate != nil"];
+    return [self requestResult:[[self where:predicate] orderBy:@"stats.unlockedDate", nil]
+          managedObjectContext:mainThreadContext()];
+}
+
 #pragma mark - entity settings
 
 - (void)updateFromJSONObject:(id)jsonObject withRelations:(BOOL)withRelations {

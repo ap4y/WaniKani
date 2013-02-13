@@ -19,5 +19,6 @@
 
 + (NSArray *)itemsWithSRSType:(WKItemSRSType)srsType;
 + (NSArray *)completedItems;
++ (NSArray *)unlockedItems;
 
 @end

@@ -65,4 +65,9 @@
     STAssertEquals(3U, [[WKRadical completedItems] count], nil);
 }
 
+- (void)testUnlockedRadicals {
+    
+    STAssertEquals(27U, [[WKRadical unlockedItems] count], nil);
+}
+
 @end
