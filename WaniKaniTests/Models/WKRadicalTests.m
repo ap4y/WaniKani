@@ -75,6 +75,11 @@
     STAssertEquals(3U, [[WKRadical criticalItemsWithPercentage:95.0] count], nil);
 }
 
+- (void)testRadicalsAvailableForReview {
+    
+    STAssertEquals(27U, [[WKRadical availableReviews] count], nil);
+}
+
 - (void)testNextReviewDate {
     
     STAssertEqualObjects([NSDate dateWithTimeIntervalSince1970:1360734768], [WKRadical nextReviewDate], nil);

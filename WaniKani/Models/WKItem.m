@@ -70,6 +70,13 @@
     return [criticalItems filteredArrayUsingPredicate:percentagePredicate];
 }
 
++ (NSArray *)availableReviews {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stats.availableDate >= %d",
+                              [[NSDate date] timeIntervalSince1970]];
+    return [self requestResult:[self where:predicate] managedObjectContext:mainThreadContext()];
+}
+
 + (NSDate *)nextReviewDate {
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stats.availableDate != nil"];

@@ -21,6 +21,7 @@
 + (NSArray *)completedItems;
 + (NSArray *)unlockedItems;
 + (NSArray *)criticalItemsWithPercentage:(CGFloat)percentage;
++ (NSArray *)availableReviews;
 + (NSDate *)nextReviewDate;
 
 @end
