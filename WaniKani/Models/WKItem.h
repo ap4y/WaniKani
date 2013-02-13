@@ -18,5 +18,6 @@
 - (NSString *)meaning;
 
 + (NSArray *)itemsWithSRSType:(WKItemSRSType)srsType;
++ (NSArray *)completedItems;
 
 @end

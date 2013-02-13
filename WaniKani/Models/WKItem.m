@@ -25,7 +25,17 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stats.srs == %@", WKItemSRSTypeStrings[srsType]];
     return [self requestResult:[self where:predicate] managedObjectContext:mainThreadContext()];
 }
+
++ (NSArray *)completedItems {
     
+    NSArray *completedSRSTypes = @[
+        WKItemSRSTypeStrings[WKItemSRSGuru],
+        WKItemSRSTypeStrings[WKItemSRSMaster],
+        WKItemSRSTypeStrings[WKItemSRSEnlighten]
+    ];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stats.srs IN %@", completedSRSTypes];
+    return [self requestResult:[self where:predicate] managedObjectContext:mainThreadContext()];
+}
 #pragma mark - entity settings
 
 - (void)updateFromJSONObject:(id)jsonObject withRelations:(BOOL)withRelations {

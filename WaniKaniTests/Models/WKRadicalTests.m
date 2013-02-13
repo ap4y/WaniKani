@@ -60,4 +60,9 @@
     STAssertEquals(1U,  [[WKRadical itemsWithSRSType:WKItemSRSBurned] count],       nil);
 }
 
+- (void)testRadicalsWithCompletedProgress {
+    
+    STAssertEquals(3U, [[WKRadical completedItems] count], nil);
+}
+
 @end
