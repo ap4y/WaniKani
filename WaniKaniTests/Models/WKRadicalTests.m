@@ -51,4 +51,13 @@
     STAssertTrue(isFinished, nil);
 }
 
+- (void)testRadicalsWithSRSType {
+    
+    STAssertEquals(23U, [[WKRadical itemsWithSRSType:WKItemSRSApprentice] count],   nil);
+    STAssertEquals(1U,  [[WKRadical itemsWithSRSType:WKItemSRSEnlighten] count],    nil);
+    STAssertEquals(1U,  [[WKRadical itemsWithSRSType:WKItemSRSGuru] count],         nil);
+    STAssertEquals(1U,  [[WKRadical itemsWithSRSType:WKItemSRSMaster] count],       nil);
+    STAssertEquals(1U,  [[WKRadical itemsWithSRSType:WKItemSRSBurned] count],       nil);
+}
+
 @end

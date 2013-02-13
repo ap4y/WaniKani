@@ -20,6 +20,12 @@
     return self.id;
 }
 
++ (NSArray *)itemsWithSRSType:(WKItemSRSType)srsType {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stats.srs == %@", WKItemSRSTypeStrings[srsType]];
+    return [self requestResult:[self where:predicate] managedObjectContext:mainThreadContext()];
+}
+    
 #pragma mark - entity settings
 
 - (void)updateFromJSONObject:(id)jsonObject withRelations:(BOOL)withRelations {

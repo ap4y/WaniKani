@@ -39,7 +39,7 @@
             "image": null,
             "level": 1,
             "stats": {
-                "srs": "apprentice",
+                "srs": "master",
                 "unlocked_date": 1360464620,
                 "available_date": 1360734797,
                 "burned": false,
@@ -60,7 +60,7 @@
             "image": null,
             "level": 1,
             "stats": {
-                "srs": "apprentice",
+                "srs": "guru",
                 "unlocked_date": 1360464767,
                 "available_date": 1360734778,
                 "burned": false,
@@ -81,7 +81,7 @@
             "image": null,
             "level": 1,
             "stats": {
-                "srs": "apprentice",
+                "srs": "enlighten",
                 "unlocked_date": 1360464667,
                 "available_date": 1360734786,
                 "burned": false,
@@ -102,7 +102,7 @@
             "image": null,
             "level": 1,
             "stats": {
-                "srs": "apprentice",
+                "srs": "burned",
                 "unlocked_date": 1360464478,
                 "available_date": 1360734863,
                 "burned": false,

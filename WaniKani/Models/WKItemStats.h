@@ -6,6 +6,22 @@
 //
 //
 
+typedef enum : NSUInteger {
+    WKItemSRSApprentice = 0,
+    WKItemSRSGuru,
+    WKItemSRSMaster,
+    WKItemSRSEnlighten,
+    WKItemSRSBurned
+} WKItemSRSType;
+
+static NSString * const WKItemSRSTypeStrings[] = {
+    @"apprentice",
+    @"guru",
+    @"master",
+    @"enlighten",
+    @"burned"    
+};
+
 @class WKItem;
 @interface WKItemStats : AEManagedObject
 @property (strong, nonatomic) NSString *srs;

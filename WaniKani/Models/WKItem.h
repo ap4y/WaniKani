@@ -6,7 +6,8 @@
 //
 //
 
-@class WKItemStats;
+#import "WKItemStats.h"
+
 @interface WKItem : AEManagedObject
 @property (strong, nonatomic) NSString *id;
 @property (strong, nonatomic) NSString *character;
@@ -15,5 +16,7 @@
 @property (strong, nonatomic) WKItemStats *stats;
 
 - (NSString *)meaning;
+
++ (NSArray *)itemsWithSRSType:(WKItemSRSType)srsType;
 
 @end
