@@ -21,6 +21,9 @@ static NSString * const kKanjiCellIdentifier = @"WKKanjiCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.kanji = [WKKanji requestResult:[[WKKanji all] orderBy:@"synchronizedAt", nil]
+                   managedObjectContext:mainThreadContext()];
+    
     [WKKanji fetchKanjiWithSuccess:^(NSArray *kanji) {
         
         self.kanji = kanji;

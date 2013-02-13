@@ -4,6 +4,7 @@
         <attribute name="character" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="synchronizedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="stats" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="WKItemStats" inverseName="item" inverseEntity="WKItemStats" syncable="YES"/>
     </entity>
     <entity name="WKItemStats" representedClassName="WKItemStats" syncable="YES">
@@ -34,10 +35,10 @@
         <attribute name="kana" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="WKRadical" positionX="153" positionY="192" width="128" height="58"/>
-        <element name="WKKanji" positionX="385" positionY="189" width="128" height="88"/>
-        <element name="WKItem" positionX="153" positionY="18" width="128" height="103"/>
-        <element name="WKVocab" positionX="385" positionY="45" width="128" height="58"/>
+        <element name="WKItem" positionX="153" positionY="18" width="128" height="120"/>
         <element name="WKItemStats" positionX="-45" positionY="18" width="128" height="253"/>
+        <element name="WKKanji" positionX="385" positionY="189" width="128" height="88"/>
+        <element name="WKRadical" positionX="153" positionY="192" width="128" height="58"/>
+        <element name="WKVocab" positionX="385" positionY="45" width="128" height="58"/>
     </elements>
 </model>

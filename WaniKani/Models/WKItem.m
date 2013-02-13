@@ -13,6 +13,7 @@
 @dynamic id;
 @dynamic character;
 @dynamic level;
+@dynamic synchronizedAt;
 @dynamic stats;
 
 - (NSString *)meaning {
@@ -20,6 +21,12 @@
 }
 
 #pragma mark - entity settings
+
+- (void)updateFromJSONObject:(id)jsonObject withRelations:(BOOL)withRelations {
+    [super updateFromJSONObject:jsonObject withRelations:withRelations];
+    
+    self.synchronizedAt = [NSDate date];
+}
 
 + (NSString *)jsonRoot {
     return @"requested_information";

@@ -21,6 +21,9 @@ static NSString * const kVocabCellIdentifier = @"WKVocabCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.vocab = [WKVocab requestResult:[[WKVocab all] orderBy:@"synchronizedAt", nil]
+                   managedObjectContext:mainThreadContext()];
+    
     [WKVocab fetchVocabWithSuccess:^(NSArray *vocab) {
         
         self.vocab = vocab;

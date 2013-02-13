@@ -11,6 +11,7 @@
 @property (strong, nonatomic) NSString *id;
 @property (strong, nonatomic) NSString *character;
 @property (strong, nonatomic) NSNumber *level;
+@property (strong, nonatomic) NSDate *synchronizedAt;
 @property (strong, nonatomic) WKItemStats *stats;
 
 - (NSString *)meaning;
