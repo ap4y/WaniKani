@@ -26,7 +26,7 @@
 #pragma mark - entity settings
 
 + (NSDictionary *)propertyMappings {
-    return @{ @"importantReading": @"important_reading" };
+    return @{ @"id": @"meaning", @"importantReading": @"important_reading" };
 }
 
 @end

@@ -10,15 +10,23 @@
 #import "WKItemStats.h"
 
 @implementation WKItem
+@dynamic id;
 @dynamic character;
 @dynamic level;
-@dynamic meaning;
 @dynamic stats;
+
+- (NSString *)meaning {
+    return self.id;
+}
 
 #pragma mark - entity settings
 
 + (NSString *)jsonRoot {
     return @"requested_information";
+}
+
++ (NSDictionary *)propertyMappings {
+    return @{ @"id": @"meaning" };
 }
 
 @end
