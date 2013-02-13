@@ -7,6 +7,7 @@
 //
 
 #import "WKLoginViewController.h"
+#import "WKHTTPClient.h"
 
 @interface WKLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userKeyTextField;

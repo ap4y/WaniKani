@@ -7,6 +7,7 @@
 //
 
 #import "WKVocabViewController.h"
+#import "WKVocab.h"
 
 @interface WKVocabViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *vocabTableView;

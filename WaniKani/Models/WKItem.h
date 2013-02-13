@@ -6,8 +6,30 @@
 //
 //
 
-#import "WKItemStats.h"
+#import <CoreData/CoreData.h>
+#import "AEManagedObject.h"
 
+#import "WKHTTPClient.h"
+#import "AEManagedObject+AEJSONSerialization.h"
+#import "AEManagedObject+AERemoteFetch.h"
+
+typedef enum : NSUInteger {
+    WKItemSRSApprentice = 0,
+    WKItemSRSGuru,
+    WKItemSRSMaster,
+    WKItemSRSEnlighten,
+    WKItemSRSBurned
+} WKItemSRSType;
+
+static NSString * const WKItemSRSTypeStrings[] = {
+    @"apprentice",
+    @"guru",
+    @"master",
+    @"enlighten",
+    @"burned"
+};
+
+@class WKItemStats;
 @interface WKItem : AEManagedObject
 @property (strong, nonatomic) NSString *id;
 @property (strong, nonatomic) NSString *character;

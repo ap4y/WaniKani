@@ -7,6 +7,7 @@
 //
 
 #import "WKHTTPClient.h"
+#import "AFHTTPClient.h"
 #import "AFJSONRequestOperation.h"
 
 @implementation WKHTTPClient

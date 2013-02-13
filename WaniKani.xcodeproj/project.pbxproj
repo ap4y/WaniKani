@@ -99,7 +99,6 @@
 		9514E82F16CB23B400DCF51D /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		9514E83116CB24A000DCF51D /* WKRadicalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKRadicalsViewController.h; path = ViewControllers/WKRadicalsViewController.h; sourceTree = "<group>"; };
 		9514E83216CB24A000DCF51D /* WKRadicalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKRadicalsViewController.m; path = ViewControllers/WKRadicalsViewController.m; sourceTree = "<group>"; };
-		9514E83416CB257100DCF51D /* WKModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WKModels.h; path = Models/WKModels.h; sourceTree = "<group>"; };
 		9514E83516CB287700DCF51D /* WKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKLoginViewController.h; path = ViewControllers/WKLoginViewController.h; sourceTree = "<group>"; };
 		9514E83616CB287700DCF51D /* WKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKLoginViewController.m; path = ViewControllers/WKLoginViewController.m; sourceTree = "<group>"; };
 		9514E83816CB2D2800DCF51D /* WKKanjiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKKanjiViewController.h; path = ViewControllers/WKKanjiViewController.h; sourceTree = "<group>"; };
@@ -174,7 +173,6 @@
 		9514E7F416CAE08400DCF51D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9514E83416CB257100DCF51D /* WKModels.h */,
 				9514E81016CAE4AB00DCF51D /* WKItem.h */,
 				9514E81116CAE4AB00DCF51D /* WKItem.m */,
 				9514E80716CAE4AA00DCF51D /* WKItemStats.h */,

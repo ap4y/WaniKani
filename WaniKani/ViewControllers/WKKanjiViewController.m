@@ -7,6 +7,7 @@
 //
 
 #import "WKKanjiViewController.h"
+#import "WKKanji.h"
 
 @interface WKKanjiViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *kanjiTableView;

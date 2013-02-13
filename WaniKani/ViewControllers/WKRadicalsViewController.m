@@ -7,6 +7,7 @@
 //
 
 #import "WKRadicalsViewController.h"
+#import "WKRadical.h"
 
 @interface WKRadicalsViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *radicalsTableView;
