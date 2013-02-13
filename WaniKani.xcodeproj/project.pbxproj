@@ -35,6 +35,7 @@
 		9514E83316CB24A000DCF51D /* WKRadicalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E83216CB24A000DCF51D /* WKRadicalsViewController.m */; };
 		9514E83716CB287700DCF51D /* WKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E83616CB287700DCF51D /* WKLoginViewController.m */; };
 		9514E83A16CB2D2800DCF51D /* WKKanjiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E83916CB2D2800DCF51D /* WKKanjiViewController.m */; };
+		9514E83D16CB301B00DCF51D /* WKVocabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E83C16CB301B00DCF51D /* WKVocabViewController.m */; };
 		95168B3116C88BF7003BE60A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3016C88BF7003BE60A /* UIKit.framework */; };
 		95168B3316C88BF7003BE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3216C88BF7003BE60A /* Foundation.framework */; };
 		95168B3516C88BF7003BE60A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3416C88BF7003BE60A /* CoreGraphics.framework */; };
@@ -103,6 +104,8 @@
 		9514E83616CB287700DCF51D /* WKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKLoginViewController.m; path = ViewControllers/WKLoginViewController.m; sourceTree = "<group>"; };
 		9514E83816CB2D2800DCF51D /* WKKanjiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKKanjiViewController.h; path = ViewControllers/WKKanjiViewController.h; sourceTree = "<group>"; };
 		9514E83916CB2D2800DCF51D /* WKKanjiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKKanjiViewController.m; path = ViewControllers/WKKanjiViewController.m; sourceTree = "<group>"; };
+		9514E83B16CB301A00DCF51D /* WKVocabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKVocabViewController.h; path = ViewControllers/WKVocabViewController.h; sourceTree = "<group>"; };
+		9514E83C16CB301B00DCF51D /* WKVocabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKVocabViewController.m; path = ViewControllers/WKVocabViewController.m; sourceTree = "<group>"; };
 		95168B2D16C88BF7003BE60A /* WaniKani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaniKani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95168B3016C88BF7003BE60A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95168B3216C88BF7003BE60A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -226,6 +229,8 @@
 				9514E83216CB24A000DCF51D /* WKRadicalsViewController.m */,
 				9514E83816CB2D2800DCF51D /* WKKanjiViewController.h */,
 				9514E83916CB2D2800DCF51D /* WKKanjiViewController.m */,
+				9514E83B16CB301A00DCF51D /* WKVocabViewController.h */,
+				9514E83C16CB301B00DCF51D /* WKVocabViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -476,6 +481,7 @@
 				9514E83316CB24A000DCF51D /* WKRadicalsViewController.m in Sources */,
 				9514E83716CB287700DCF51D /* WKLoginViewController.m in Sources */,
 				9514E83A16CB2D2800DCF51D /* WKKanjiViewController.m in Sources */,
+				9514E83D16CB301B00DCF51D /* WKVocabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
