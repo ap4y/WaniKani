@@ -78,7 +78,7 @@ NSString * const kUserKeySaveKey = @"WKUserKey";
 }
 
 - (NSString *)userScope {
-    return [NSString stringWithFormat:@"/user/%@", _userKey];
+    return [NSString stringWithFormat:@"user/%@", _userKey];
 }
 
 @end
