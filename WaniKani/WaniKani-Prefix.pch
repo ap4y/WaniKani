@@ -21,4 +21,5 @@
     #import "AEManagedObject+AERemoteFetch.h"
 
     #import "WKHTTPClient.h"
+    #import "WKModels.h"
 #endif
