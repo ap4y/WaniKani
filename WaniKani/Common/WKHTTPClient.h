@@ -12,4 +12,7 @@
 @property (copy, nonatomic) NSString *userKey;
 
 + (WKHTTPClient *)sharedClient;
+
+- (void)pingRequestWithSuccess:(void (^)())success failure:(void (^)(NSError *error))failure;
+
 @end

@@ -42,6 +42,20 @@ NSString * const kUserKeySaveKey = @"WKUserKey";
     return self;
 }
 
+- (void)pingRequestWithSuccess:(void (^)())success failure:(void (^)(NSError *error))failure {
+    
+    [self getPath:@"/user-information"
+       parameters:nil
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              
+              if (success) success();
+              
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              
+              if (failure) failure(error);
+          }];
+}
+
 #pragma mark - private
 
 - (void)setUserKey:(NSString *)userKey {
