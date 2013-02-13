@@ -70,6 +70,15 @@
     return [criticalItems filteredArrayUsingPredicate:percentagePredicate];
 }
 
++ (NSDate *)nextReviewDate {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stats.availableDate != nil"];
+    WKItem *latestAvailableItem = [self requestFirstResult:[[self where:predicate] orderBy:@"stats.availableDate", nil]
+                                      managedObjectContext:mainThreadContext()];
+    
+    return [NSDate dateWithTimeIntervalSince1970:[latestAvailableItem.stats.availableDate doubleValue]];
+}
+
 #pragma mark - entity settings
 
 - (void)updateFromJSONObject:(id)jsonObject withRelations:(BOOL)withRelations {
