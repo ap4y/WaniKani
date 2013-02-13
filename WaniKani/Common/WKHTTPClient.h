@@ -9,5 +9,7 @@
 #import "AFHTTPClient.h"
 
 @interface WKHTTPClient : AFHTTPClient
+@property (copy, nonatomic) NSString *userKey;
+
 + (WKHTTPClient *)sharedClient;
 @end
