@@ -32,6 +32,7 @@
 		9514E82916CAE95300DCF51D /* WKTestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E82816CAE95300DCF51D /* WKTestHelpers.m */; };
 		9514E82D16CAEB7200DCF51D /* WKHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E82C16CAEB7200DCF51D /* WKHTTPClient.m */; };
 		9514E83016CB23B500DCF51D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9514E82F16CB23B400DCF51D /* Storyboard.storyboard */; };
+		9514E83716CB287700DCF51D /* WKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E83616CB287700DCF51D /* WKLoginViewController.m */; };
 		95168B3116C88BF7003BE60A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3016C88BF7003BE60A /* UIKit.framework */; };
 		95168B3316C88BF7003BE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3216C88BF7003BE60A /* Foundation.framework */; };
 		95168B3516C88BF7003BE60A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3416C88BF7003BE60A /* CoreGraphics.framework */; };
@@ -94,6 +95,8 @@
 		9514E82C16CAEB7200DCF51D /* WKHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKHTTPClient.m; path = Common/WKHTTPClient.m; sourceTree = "<group>"; };
 		9514E82F16CB23B400DCF51D /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		9514E83416CB257100DCF51D /* WKModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WKModels.h; path = Models/WKModels.h; sourceTree = "<group>"; };
+		9514E83516CB287700DCF51D /* WKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKLoginViewController.h; path = ViewControllers/WKLoginViewController.h; sourceTree = "<group>"; };
+		9514E83616CB287700DCF51D /* WKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKLoginViewController.m; path = ViewControllers/WKLoginViewController.m; sourceTree = "<group>"; };
 		95168B2D16C88BF7003BE60A /* WaniKani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaniKani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95168B3016C88BF7003BE60A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95168B3216C88BF7003BE60A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -208,6 +211,15 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		9514E82E16CB239100DCF51D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9514E83516CB287700DCF51D /* WKLoginViewController.h */,
+				9514E83616CB287700DCF51D /* WKLoginViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		95168B2416C88BF6003BE60A = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +262,7 @@
 			children = (
 				9514E82A16CAEB5900DCF51D /* Common */,
 				9514E7F416CAE08400DCF51D /* Models */,
+				9514E82E16CB239100DCF51D /* ViewControllers */,
 				95168B3716C88BF7003BE60A /* Supporting Files */,
 				95168B3F16C88BF7003BE60A /* AppDelegate.h */,
 				95168B4016C88BF7003BE60A /* AppDelegate.m */,
@@ -450,6 +463,7 @@
 				9514E81216CAE4AB00DCF51D /* WKItem.m in Sources */,
 				9514E81516CAE4AB00DCF51D /* WKVocab.m in Sources */,
 				9514E82D16CAEB7200DCF51D /* WKHTTPClient.m in Sources */,
+				9514E83716CB287700DCF51D /* WKLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
