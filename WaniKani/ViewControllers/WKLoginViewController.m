@@ -19,11 +19,10 @@ static NSString * const kRadicalsSegueIdentifier = @"WKRadicalsSegue";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[WKHTTPClient sharedClient] pingRequestWithSuccess:^{
+    if ([WKHTTPClient sharedClient].userKey) {
         
         [self performSegueWithIdentifier:kRadicalsSegueIdentifier sender:self]; 
-        
-    } failure:nil];
+    }
 }
 
 - (IBAction)login:(id)sender {
@@ -47,6 +46,7 @@ static NSString * const kRadicalsSegueIdentifier = @"WKRadicalsSegue";
          TODO: Handle error situation
          */
         NSLog(@"%@", error);
+        client.userKey = nil;
     }];
 }
 
