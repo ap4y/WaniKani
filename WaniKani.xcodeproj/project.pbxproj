@@ -31,6 +31,7 @@
 		9514E82516CAE82300DCF51D /* WKVocabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E82416CAE82300DCF51D /* WKVocabTests.m */; };
 		9514E82916CAE95300DCF51D /* WKTestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E82816CAE95300DCF51D /* WKTestHelpers.m */; };
 		9514E82D16CAEB7200DCF51D /* WKHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E82C16CAEB7200DCF51D /* WKHTTPClient.m */; };
+		9514E83016CB23B500DCF51D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9514E82F16CB23B400DCF51D /* Storyboard.storyboard */; };
 		95168B3116C88BF7003BE60A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3016C88BF7003BE60A /* UIKit.framework */; };
 		95168B3316C88BF7003BE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3216C88BF7003BE60A /* Foundation.framework */; };
 		95168B3516C88BF7003BE60A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3416C88BF7003BE60A /* CoreGraphics.framework */; };
@@ -91,6 +92,7 @@
 		9514E82816CAE95300DCF51D /* WKTestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKTestHelpers.m; path = Helpers/WKTestHelpers.m; sourceTree = "<group>"; };
 		9514E82B16CAEB7200DCF51D /* WKHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKHTTPClient.h; path = Common/WKHTTPClient.h; sourceTree = "<group>"; };
 		9514E82C16CAEB7200DCF51D /* WKHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKHTTPClient.m; path = Common/WKHTTPClient.m; sourceTree = "<group>"; };
+		9514E82F16CB23B400DCF51D /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		95168B2D16C88BF7003BE60A /* WaniKani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaniKani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95168B3016C88BF7003BE60A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95168B3216C88BF7003BE60A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -250,6 +252,7 @@
 				95168B3F16C88BF7003BE60A /* AppDelegate.h */,
 				95168B4016C88BF7003BE60A /* AppDelegate.m */,
 				9514E7F516CAE09E00DCF51D /* DataModel.xcdatamodeld */,
+				9514E82F16CB23B400DCF51D /* Storyboard.storyboard */,
 			);
 			path = WaniKani;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				95168B4316C88BF7003BE60A /* Default.png in Resources */,
 				95168B4516C88BF7003BE60A /* Default@2x.png in Resources */,
 				95168B4716C88BF7003BE60A /* Default-568h@2x.png in Resources */,
+				9514E83016CB23B500DCF51D /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
