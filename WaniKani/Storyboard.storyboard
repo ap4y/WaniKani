@@ -199,7 +199,7 @@
         <!--Login View Controller-->
         <scene sceneID="Cx2-pN-9Lf">
             <objects>
-                <viewController id="hTf-rH-ckB" customClass="WKLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WKLoginViewController" id="hTf-rH-ckB" customClass="WKLoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GvJ-1M-Oee">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -249,6 +249,7 @@
         <class className="WKLoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKLoginViewController.h"/>
             <relationships>
+                <relationship kind="action" name="login:"/>
                 <relationship kind="outlet" name="userKeyTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
