@@ -39,6 +39,8 @@
 		9514E84316CC4F9700DCF51D /* WKStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E84216CC4F9600DCF51D /* WKStatsViewController.m */; };
 		9514E84716CC71DC00DCF51D /* WKLoginViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E84616CC71DC00DCF51D /* WKLoginViewControllerTests.m */; };
 		9514E84916CC74BE00DCF51D /* user_information.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E84816CC74BE00DCF51D /* user_information.json */; };
+		9514E84C16CC763400DCF51D /* WKRadicalsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9514E84B16CC763400DCF51D /* WKRadicalsViewControllerTests.m */; };
+		9514E84D16CC79C600DCF51D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9514E81616CAE52D00DCF51D /* CoreData.framework */; };
 		95168B3116C88BF7003BE60A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3016C88BF7003BE60A /* UIKit.framework */; };
 		95168B3316C88BF7003BE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3216C88BF7003BE60A /* Foundation.framework */; };
 		95168B3516C88BF7003BE60A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3416C88BF7003BE60A /* CoreGraphics.framework */; };
@@ -113,6 +115,8 @@
 		9514E84516CC71DC00DCF51D /* WKLoginViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKLoginViewControllerTests.h; path = ViewControllers/WKLoginViewControllerTests.h; sourceTree = "<group>"; };
 		9514E84616CC71DC00DCF51D /* WKLoginViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKLoginViewControllerTests.m; path = ViewControllers/WKLoginViewControllerTests.m; sourceTree = "<group>"; };
 		9514E84816CC74BE00DCF51D /* user_information.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_information.json; sourceTree = "<group>"; };
+		9514E84A16CC763400DCF51D /* WKRadicalsViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKRadicalsViewControllerTests.h; path = ViewControllers/WKRadicalsViewControllerTests.h; sourceTree = "<group>"; };
+		9514E84B16CC763400DCF51D /* WKRadicalsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKRadicalsViewControllerTests.m; path = ViewControllers/WKRadicalsViewControllerTests.m; sourceTree = "<group>"; };
 		95168B2D16C88BF7003BE60A /* WaniKani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaniKani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95168B3016C88BF7003BE60A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95168B3216C88BF7003BE60A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9514E84D16CC79C600DCF51D /* CoreData.framework in Frameworks */,
 				95168B4F16C88BF7003BE60A /* SenTestingKit.framework in Frameworks */,
 				95168B5016C88BF7003BE60A /* UIKit.framework in Frameworks */,
 				95168B5116C88BF7003BE60A /* Foundation.framework in Frameworks */,
@@ -249,6 +254,8 @@
 			children = (
 				9514E84516CC71DC00DCF51D /* WKLoginViewControllerTests.h */,
 				9514E84616CC71DC00DCF51D /* WKLoginViewControllerTests.m */,
+				9514E84A16CC763400DCF51D /* WKRadicalsViewControllerTests.h */,
+				9514E84B16CC763400DCF51D /* WKRadicalsViewControllerTests.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -515,6 +522,7 @@
 				9514E82516CAE82300DCF51D /* WKVocabTests.m in Sources */,
 				9514E82916CAE95300DCF51D /* WKTestHelpers.m in Sources */,
 				9514E84716CC71DC00DCF51D /* WKLoginViewControllerTests.m in Sources */,
+				9514E84C16CC763400DCF51D /* WKRadicalsViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,7 +22,7 @@ static NSString * const kRadicalsCellIdentifier = @"WKRadicalsCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.viewControllers = @[ self.parentViewController ];
+    self.navigationController.viewControllers = (self.parentViewController ? @[ self.parentViewController ] : @[]);
     
     self.radicals = [WKRadical requestResult:[[WKRadical all] orderBy:@"synchronizedAt", nil]
                         managedObjectContext:mainThreadContext()];

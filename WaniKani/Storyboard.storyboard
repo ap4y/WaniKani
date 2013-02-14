@@ -119,7 +119,7 @@
         <!--Radicals View Controller - Item-->
         <scene sceneID="AJl-Vu-8bd">
             <objects>
-                <tableViewController id="iYc-rq-Nzx" customClass="WKRadicalsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="WKRadicalsViewController" id="iYc-rq-Nzx" customClass="WKRadicalsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eBY-TM-awW">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,7 +157,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zy2-Nl-h7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583" y="-29"/>
+            <point key="canvasLocation" x="583" y="-23"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SZq-86-rLI">
