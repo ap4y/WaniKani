@@ -2,7 +2,7 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C3104" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="WKItem" representedClassName="WKItem" isAbstract="YES" syncable="YES">
         <attribute name="character" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="synchronizedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="stats" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="WKItemStats" inverseName="item" inverseEntity="WKItemStats" syncable="YES"/>
@@ -21,7 +21,7 @@
         <attribute name="readingMaxStreak" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="srs" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unlockedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="WKItem" inverseName="stats" inverseEntity="WKItem" syncable="YES"/>
+        <relationship name="item" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="WKItem" inverseName="stats" inverseEntity="WKItem" syncable="YES"/>
     </entity>
     <entity name="WKKanji" representedClassName="WKKanji" parentEntity="WKItem" syncable="YES">
         <attribute name="importantReading" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,13 +32,13 @@
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="WKVocab" representedClassName="WKVocab" parentEntity="WKItem" syncable="YES">
-        <attribute name="kana" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="kana" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="WKItem" positionX="153" positionY="18" width="128" height="120"/>
-        <element name="WKItemStats" positionX="-45" positionY="18" width="128" height="253"/>
+        <element name="WKItemStats" positionX="-45" positionY="18" width="128" height="255"/>
         <element name="WKKanji" positionX="385" positionY="189" width="128" height="88"/>
         <element name="WKRadical" positionX="153" positionY="192" width="128" height="58"/>
-        <element name="WKVocab" positionX="385" positionY="45" width="128" height="58"/>
+        <element name="WKVocab" positionX="385" positionY="45" width="128" height="60"/>
     </elements>
 </model>
