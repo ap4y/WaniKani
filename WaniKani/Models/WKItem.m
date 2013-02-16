@@ -72,7 +72,7 @@
 
 + (NSArray *)availableReviews {
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stats.availableDate >= %d",
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stats.availableDate <= %f",
                               [[NSDate date] timeIntervalSince1970]];
     return [self requestResult:[self where:predicate] managedObjectContext:mainThreadContext()];
 }
