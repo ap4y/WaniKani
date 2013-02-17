@@ -84,6 +84,8 @@
 		951D40BF16D09E9000703A05 /* kanji_selection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40BD16D09E9000703A05 /* kanji_selection@2x.png */; };
 		951D40C216D09E9700703A05 /* vocab_selection.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40C016D09E9700703A05 /* vocab_selection.png */; };
 		951D40C316D09E9700703A05 /* vocab_selection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40C116D09E9700703A05 /* vocab_selection@2x.png */; };
+		951D40C616D0A46400703A05 /* locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40C416D0A46400703A05 /* locked.png */; };
+		951D40C716D0A46400703A05 /* locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40C516D0A46400703A05 /* locked@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +202,8 @@
 		951D40BD16D09E9000703A05 /* kanji_selection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kanji_selection@2x.png"; sourceTree = "<group>"; };
 		951D40C016D09E9700703A05 /* vocab_selection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vocab_selection.png; sourceTree = "<group>"; };
 		951D40C116D09E9700703A05 /* vocab_selection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vocab_selection@2x.png"; sourceTree = "<group>"; };
+		951D40C416D0A46400703A05 /* locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locked.png; sourceTree = "<group>"; };
+		951D40C516D0A46400703A05 /* locked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locked@2x.png"; sourceTree = "<group>"; };
 		C1C66C383D4C4418A956E88D /* libPods-WaniKaniTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WaniKaniTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F9859464DB4E18A76EFB6E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -462,6 +466,8 @@
 				951D40B916D09BFC00703A05 /* radicals_selection@2x.png */,
 				951D40C016D09E9700703A05 /* vocab_selection.png */,
 				951D40C116D09E9700703A05 /* vocab_selection@2x.png */,
+				951D40C416D0A46400703A05 /* locked.png */,
+				951D40C516D0A46400703A05 /* locked@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -567,6 +573,8 @@
 				951D40BF16D09E9000703A05 /* kanji_selection@2x.png in Resources */,
 				951D40C216D09E9700703A05 /* vocab_selection.png in Resources */,
 				951D40C316D09E9700703A05 /* vocab_selection@2x.png in Resources */,
+				951D40C616D0A46400703A05 /* locked.png in Resources */,
+				951D40C716D0A46400703A05 /* locked@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

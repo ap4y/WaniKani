@@ -11,12 +11,14 @@
 #import "UIImageView+AFNetworking.h"
 
 #import "WKRadical.h"
+#import "WKCustomization.h"
 
 @interface WKRadicalViewCell ()
 @property (strong, nonatomic) IBOutlet UICollectionViewCell *cellView;
 @property (weak, nonatomic) IBOutlet UILabel *characterLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *characterImageView;
 @property (weak, nonatomic) IBOutlet UILabel *meaningLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *lockedImageView;
 
 @end
 
@@ -52,7 +54,9 @@
         _characterLabel.text        = nil;
         [_characterImageView setImageWithURL:[NSURL URLWithString:radical.image]];
     }
-    _meaningLabel.text      = [[radical.meaning componentsSeparatedByString:@","] objectAtIndex:0];
+    
+    _meaningLabel.text = [[radical.meaning componentsSeparatedByString:@","] objectAtIndex:0];
+    [_lockedImageView setHidden:(radical.stats != nil)];
 }
 
 #pragma mark - private
@@ -71,6 +75,10 @@
                                      (id)[RGBA(0.0, 147.0, 221.0, 1.0) CGColor] ];
     
     [self.layer insertSublayer:gradientLayer atIndex:0];
+    
+    _lockedImageView.image = [WKCustomization resizableImageNamed:@"locked"
+                                                    withCapInsets:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
+    [self addSubview:_lockedImageView];
 }
 
 @end

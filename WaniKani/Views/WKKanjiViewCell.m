@@ -10,12 +10,14 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "WKKanji.h"
+#import "WKCustomization.h"
 
 @interface WKKanjiViewCell ()
 @property (strong, nonatomic) IBOutlet UICollectionViewCell *cellView;
 @property (weak, nonatomic) IBOutlet UILabel *characterLabel;
 @property (weak, nonatomic) IBOutlet UILabel *readingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *meaningLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *lockedImageView;
 
 @end
 
@@ -46,6 +48,8 @@
     
     NSString *reading       = [kanjiItem valueForKey:kanjiItem.importantReading];
     _readingLabel.text      = [[reading componentsSeparatedByString:@","] objectAtIndex:0];
+    
+    [_lockedImageView setHidden:(kanjiItem.stats != nil)];
 }
 
 #pragma mark - private
@@ -64,6 +68,10 @@
                                      (id)[RGBA(221.0, 0.0, 147.0, 1.0) CGColor] ];
     
     [self.layer insertSublayer:gradientLayer atIndex:0];
+    
+    _lockedImageView.image = [WKCustomization resizableImageNamed:@"locked"
+                                                    withCapInsets:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
+    [self addSubview:_lockedImageView];
 }
 
 @end
