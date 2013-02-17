@@ -45,5 +45,6 @@ static NSString * const WKItemSRSTypeStrings[] = {
 + (NSArray *)criticalItemsWithPercentage:(CGFloat)percentage;
 + (NSArray *)availableReviews;
 + (NSDate *)nextReviewDate;
++ (NSDictionary *)itemsByLevel:(NSArray *)radicals;
 
 @end

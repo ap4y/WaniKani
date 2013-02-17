@@ -9,6 +9,8 @@
 #import "WKItem.h"
 #import "WKItemStats.h"
 
+#import "NSArray+orderBy.h"
+
 @implementation WKItem
 @dynamic id;
 @dynamic character;
@@ -84,6 +86,21 @@
                                       managedObjectContext:mainThreadContext()];
     
     return [NSDate dateWithTimeIntervalSince1970:[latestAvailableItem.stats.availableDate doubleValue]];
+}
+
++ (NSDictionary *)itemsByLevel:(NSArray *)radicals {
+    
+    NSMutableDictionary *radicalsByLevel = [NSMutableDictionary dictionary];
+    
+    NSArray *levels = [radicals valueForKeyPath:@"@distinctUnionOfObjects.level"];
+    [levels enumerateObjectsUsingBlock:^(NSNumber *level, NSUInteger idx, BOOL *stop) {
+        
+        NSPredicate *levelPredicate = [NSPredicate predicateWithFormat:@"level == %@", level];
+        [radicalsByLevel setObject:[[radicals filteredArrayUsingPredicate:levelPredicate] orderBy:@"meaning", nil]
+                            forKey:level];
+    }];
+    
+    return radicalsByLevel;
 }
 
 #pragma mark - entity settings
