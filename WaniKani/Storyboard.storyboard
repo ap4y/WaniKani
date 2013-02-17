@@ -4,54 +4,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Kanji View Controller - Item-->
-        <scene sceneID="ghe-BS-Yf0">
-            <objects>
-                <tableViewController storyboardIdentifier="WKKanjiViewControllerTests" id="Ltw-rX-O43" customClass="WKKanjiViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jdU-Hz-bSt">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WKKanjiCell" textLabel="3DF-ka-Suv" style="IBUITableViewCellStyleDefault" id="8Dz-K5-ZG6">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3DF-ka-Suv">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Ltw-rX-O43" id="sp6-eA-vXq"/>
-                            <outlet property="delegate" destination="Ltw-rX-O43" id="SJt-he-33I"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="i9z-3k-btU"/>
-                    <connections>
-                        <outlet property="kanjiTableView" destination="jdU-Hz-bSt" id="2eO-ZO-0FR"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2IF-F1-rtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="583" y="639"/>
-        </scene>
-        <!--Vocab View Controller - Item-->
+        <!--Vocab View Controller - Vocab-->
         <scene sceneID="U4S-RF-9GQ">
             <objects>
                 <tableViewController storyboardIdentifier="WKVocabViewController" id="JEW-Jm-Gnz" customClass="WKVocabViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eUT-SJ-nus">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -79,7 +37,7 @@
                             <outlet property="delegate" destination="JEW-Jm-Gnz" id="7cC-mf-odC"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Lwa-AS-ZxW"/>
+                    <tabBarItem key="tabBarItem" title="Vocab" image="btn_vocab_normal.png" id="Lwa-AS-ZxW"/>
                     <connections>
                         <outlet property="vocabTableView" destination="eUT-SJ-nus" id="d1x-6D-p9I"/>
                     </connections>
@@ -88,16 +46,16 @@
             </objects>
             <point key="canvasLocation" x="583" y="1316"/>
         </scene>
-        <!--Stats View Controller - Item-->
+        <!--Stats View Controller - Stats-->
         <scene sceneID="ELm-We-N93">
             <objects>
                 <viewController id="Ale-6b-SAL" customClass="WKStatsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KT6-f3-uKD">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="sD4-Ns-ND3">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -107,7 +65,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Ipj-Qc-9XU"/>
+                    <tabBarItem key="tabBarItem" title="Stats" id="Ipj-Qc-9XU"/>
                     <connections>
                         <outlet property="statsTextView" destination="sD4-Ns-ND3" id="HEl-RO-tj1"/>
                     </connections>
@@ -116,48 +74,89 @@
             </objects>
             <point key="canvasLocation" x="583" y="2002"/>
         </scene>
-        <!--Radicals View Controller - Item-->
-        <scene sceneID="AJl-Vu-8bd">
+        <!--Radicals View Controller - Radicals-->
+        <scene sceneID="4F2-aT-HTN">
             <objects>
-                <tableViewController storyboardIdentifier="WKRadicalsViewController" id="iYc-rq-Nzx" customClass="WKRadicalsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eBY-TM-awW">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="24v-uq-MBv" customClass="WKRadicalsViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="rUP-Gv-8A3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WKRadicalsCell" textLabel="Wkv-Ap-dp5" style="IBUITableViewCellStyleDefault" id="2ri-VQ-Yb9">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="N0c-4B-Z10">
+                            <size key="itemSize" width="100" height="150"/>
+                            <size key="headerReferenceSize" width="50" height="60"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WKRadicalsCell" id="PQX-lt-1Gq" customClass="WKRadicalViewCell">
+                                <rect key="frame" x="10" y="60" width="100" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wkv-Ap-dp5">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WKRadicalsSuppView" id="diB-NB-zoE" customClass="WKItemsHeaderView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
                         <connections>
-                            <outlet property="dataSource" destination="iYc-rq-Nzx" id="FAX-K9-N73"/>
-                            <outlet property="delegate" destination="iYc-rq-Nzx" id="g8x-r4-nu2"/>
+                            <outlet property="dataSource" destination="24v-uq-MBv" id="tV5-Tq-Fnf"/>
+                            <outlet property="delegate" destination="24v-uq-MBv" id="VTQ-vW-0Kw"/>
                         </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="YdQ-FE-zAM"/>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Radicals" image="btn_radicals_normal.png" id="Gk8-Cu-lAl"/>
                     <connections>
-                        <outlet property="radicalsTableView" destination="eBY-TM-awW" id="cyZ-mg-e65"/>
+                        <outlet property="radicalsCollectionView" destination="rUP-Gv-8A3" id="rzh-c4-O0X"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zy2-Nl-h7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="972-YB-Ced" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="583" y="-23"/>
+        </scene>
+        <!--Kanji View Controller - Kanji-->
+        <scene sceneID="yUk-33-4aO">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="Btb-eA-aIv" customClass="WKKanjiViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Nnq-jq-tZm">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="OSE-IT-H8i">
+                            <size key="itemSize" width="100" height="150"/>
+                            <size key="headerReferenceSize" width="50" height="60"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WKKanjiCell" id="wUc-yz-gTU" customClass="WKKanjiViewCell">
+                                <rect key="frame" x="10" y="60" width="100" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WKKanjiSuppView" id="D3b-Ic-31w" customClass="WKItemsHeaderView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="Btb-eA-aIv" id="inK-Kc-19i"/>
+                            <outlet property="delegate" destination="Btb-eA-aIv" id="myB-Le-Y4U"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Kanji" image="btn_kanji_normal.png" id="hPt-eV-c16"/>
+                    <connections>
+                        <outlet property="kanjiCollectionView" destination="Nnq-jq-tZm" id="Z5v-pV-dAC"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAW-2K-saR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="583" y="664"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SZq-86-rLI">
@@ -171,10 +170,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="iYc-rq-Nzx" kind="relationship" relationship="viewControllers" id="t4C-uW-sBG"/>
-                        <segue destination="Ltw-rX-O43" kind="relationship" relationship="viewControllers" id="fv0-SW-PWQ"/>
-                        <segue destination="JEW-Jm-Gnz" kind="relationship" relationship="viewControllers" id="cyX-Gy-ZYe"/>
-                        <segue destination="Ale-6b-SAL" kind="relationship" relationship="viewControllers" id="odj-i7-FJU"/>
+                        <segue destination="24v-uq-MBv" kind="relationship" relationship="viewControllers" id="Wvp-eg-dbu"/>
+                        <segue destination="Btb-eA-aIv" kind="relationship" relationship="viewControllers" id="mmy-zL-boJ"/>
+                        <segue destination="JEW-Jm-Gnz" kind="relationship" relationship="viewControllers" id="xDh-jA-rof"/>
+                        <segue destination="Ale-6b-SAL" kind="relationship" relationship="viewControllers" id="cea-JX-uqc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekY-Wa-PRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -184,7 +183,7 @@
         <!--Navigation Controller-->
         <scene sceneID="wCe-Og-rp7">
             <objects>
-                <navigationController definesPresentationContext="YES" id="MpX-y0-xnO" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="MpX-y0-xnO" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cud-1h-vUm">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -201,7 +200,7 @@
             <objects>
                 <viewController storyboardIdentifier="WKLoginViewController" id="hTf-rH-ckB" customClass="WKLoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GvJ-1M-Oee">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1b6ff781264e89d2e8ea78070c64a8d9" borderStyle="roundedRect" placeholder="User Key" minimumFontSize="17" id="cGG-iw-ynP">
@@ -239,11 +238,43 @@
             <point key="canvasLocation" x="-411" y="-29"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btn_kanji_normal.png" width="29" height="15"/>
+        <image name="btn_radicals_normal.png" width="29" height="15"/>
+        <image name="btn_vocab_normal.png" width="29" height="15"/>
+    </resources>
     <classes>
-        <class className="WKKanjiViewController" superclassName="UITableViewController">
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="WKItemsHeaderView" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemsHeaderView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="headerView" candidateClass="UICollectionReusableView"/>
+            </relationships>
+        </class>
+        <class className="WKKanjiViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WKKanjiViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cellView" candidateClass="UICollectionViewCell"/>
+                <relationship kind="outlet" name="characterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="readingLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="WKKanjiViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKKanjiViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="kanjiTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="kanjiCollectionView" candidateClass="UICollectionView"/>
             </relationships>
         </class>
         <class className="WKLoginViewController" superclassName="UIViewController">
@@ -253,10 +284,19 @@
                 <relationship kind="outlet" name="userKeyTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
-        <class className="WKRadicalsViewController" superclassName="UITableViewController">
+        <class className="WKRadicalViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WKRadicalViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cellView" candidateClass="UICollectionViewCell"/>
+                <relationship kind="outlet" name="characterImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="characterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="WKRadicalsViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKRadicalsViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="radicalsTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="radicalsCollectionView" candidateClass="UICollectionView"/>
             </relationships>
         </class>
         <class className="WKStatsViewController" superclassName="UIViewController">
