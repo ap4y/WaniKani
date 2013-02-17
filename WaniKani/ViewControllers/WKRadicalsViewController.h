@@ -6,6 +6,6 @@
 //
 //
 
-@interface WKRadicalsViewController : UITableViewController
+@interface WKRadicalsViewController : UICollectionViewController
 
 @end

@@ -7,28 +7,30 @@
 //
 
 #import "WKKanjiViewController.h"
+#import "WKKanjiViewCell.h"
 #import "WKKanji.h"
 
 @interface WKKanjiViewController ()
-@property (strong, nonatomic) IBOutlet UITableView *kanjiTableView;
+@property (strong, nonatomic) IBOutlet UICollectionView *kanjiCollectionView;
 
-@property (strong, nonatomic) NSArray *kanji;
+@property (strong, nonatomic) NSDictionary *kanjiByLevel;
 @end
 
 @implementation WKKanjiViewController
 
-static NSString * const kKanjiCellIdentifier = @"WKKanjiCell";
+static NSString * const kKanjiCellIdentifier        = @"WKKanjiCell";
+static NSString * const kKanjiSuppViewIdentifier    = @"WKKanjiSuppView";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.kanji = [WKKanji requestResult:[[WKKanji all] orderBy:@"synchronizedAt", nil]
-                   managedObjectContext:mainThreadContext()];
+    NSArray *kanji      = [WKKanji requestResult:[WKKanji all] managedObjectContext:mainThreadContext()];
+    self.kanjiByLevel   = [WKItem itemsByLevel:kanji];
     
     [WKKanji fetchKanjiWithSuccess:^(NSArray *kanji) {
         
-        self.kanji = kanji;
-        [_kanjiTableView reloadData];
+        self.kanjiByLevel = [WKItem itemsByLevel:kanji];
+        [_kanjiCollectionView reloadData];
         
     } failure:^(NSError *error) {
         
@@ -39,20 +41,48 @@ static NSString * const kKanjiCellIdentifier = @"WKKanjiCell";
     }];
 }
 
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_kanji count];
+- (void)viewWillAppear:(BOOL)animated {
+    
+    UIImage *selectionImage = [WKCustomization resizableImageNamed:@"kanji_selection"
+                                                     withCapInsets:UIEdgeInsetsMake(2.5f, 2.5f, 2.5f, 2.5f)];
+    [self.tabBarController.tabBar setSelectionIndicatorImage:selectionImage];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return [_kanjiByLevel count];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kKanjiCellIdentifier];
+    NSNumber *levelKey      = [[_kanjiByLevel allKeys] objectAtIndex:section];
+    NSArray *kanjiForLevel  = [_kanjiByLevel objectForKey:levelKey];
     
-    WKKanji *kanjiItem  = [_kanji objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@,%@ - %@",
-                           kanjiItem.character, kanjiItem.onyomi,
-                           kanjiItem.kunyomi, kanjiItem.meaning];
+    return [kanjiForLevel count];
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionReusableView *suppView;
+    suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                  withReuseIdentifier:kKanjiSuppViewIdentifier
+                                                         forIndexPath:indexPath];
+    return suppView;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSNumber *levelKey      = [[_kanjiByLevel allKeys] objectAtIndex:indexPath.section];
+    NSArray *kanjiForLevel  = [_kanjiByLevel objectForKey:levelKey];
+    WKKanji *kanjiItem      = [kanjiForLevel objectAtIndex:indexPath.row];
+    
+    WKKanjiViewCell *cell   = [collectionView dequeueReusableCellWithReuseIdentifier:kKanjiCellIdentifier
+                                                                        forIndexPath:indexPath];
+    [cell setKanjiItem:kanjiItem];
     
     return cell;
 }

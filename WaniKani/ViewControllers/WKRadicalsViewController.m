@@ -7,30 +7,32 @@
 //
 
 #import "WKRadicalsViewController.h"
+#import "WKRadicalViewCell.h"
 #import "WKRadical.h"
 
 @interface WKRadicalsViewController ()
-@property (strong, nonatomic) IBOutlet UITableView *radicalsTableView;
+@property (strong, nonatomic) IBOutlet UICollectionView *radicalsCollectionView;
 
-@property (strong, nonatomic) NSArray *radicals;
+@property (strong, nonatomic) NSDictionary *radicalsByLevel;
 @end
 
 @implementation WKRadicalsViewController
 
-static NSString * const kRadicalsCellIdentifier = @"WKRadicalsCell";
+static NSString * const kRadicalsCellIdentifier     = @"WKRadicalsCell";
+static NSString * const kRadicalsSuppViewIdentifier = @"WKRadicalsSuppView";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationController.viewControllers = (self.parentViewController ? @[ self.parentViewController ] : @[]);
     
-    self.radicals = [WKRadical requestResult:[[WKRadical all] orderBy:@"synchronizedAt", nil]
-                        managedObjectContext:mainThreadContext()];
+    NSArray *radicals       = [WKRadical requestResult:[WKRadical all] managedObjectContext:mainThreadContext()];
+    self.radicalsByLevel    = [WKItem itemsByLevel:radicals];
 
     [WKRadical fetchRadicalsWithSuccess:^(NSArray *radicals) {
        
-        self.radicals = radicals;
-        [_radicalsTableView reloadData];
+        self.radicalsByLevel = [WKItem itemsByLevel:radicals];
+        [_radicalsCollectionView reloadData];
         
     } failure:^(NSError *error) {
         
@@ -38,21 +40,51 @@ static NSString * const kRadicalsCellIdentifier = @"WKRadicalsCell";
          TODO: Add error handling
          */
         NSLog(@"%@", error);
-    }];
+    }];        
 }
 
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_radicals count];
+- (void)viewWillAppear:(BOOL)animated {
+    
+    UIImage *selectionImage = [WKCustomization resizableImageNamed:@"radicals_selection"
+                                                     withCapInsets:UIEdgeInsetsMake(2.5f, 2.5f, 2.5f, 2.5f)];
+    [self.tabBarController.tabBar setSelectionIndicatorImage:selectionImage];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return [_radicalsByLevel count];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kRadicalsCellIdentifier];
+    NSNumber *levelKey          = [[_radicalsByLevel allKeys] objectAtIndex:section];
+    NSArray *radicalsForLevel   = [_radicalsByLevel objectForKey:levelKey];
     
-    WKRadical *radical  = [_radicals objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", radical.character, radical.meaning];
+    return [radicalsForLevel count];
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionReusableView *suppView;
+    suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                  withReuseIdentifier:kRadicalsSuppViewIdentifier
+                                                         forIndexPath:indexPath];
+    return suppView;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSNumber *levelKey          = [[_radicalsByLevel allKeys] objectAtIndex:indexPath.section];
+    NSArray *radicalsForLevel   = [_radicalsByLevel objectForKey:levelKey];
+    WKRadical *radical          = [radicalsForLevel objectAtIndex:indexPath.row];
+    
+    WKRadicalViewCell *cell     = [collectionView dequeueReusableCellWithReuseIdentifier:kRadicalsCellIdentifier
+                                                                            forIndexPath:indexPath];
+    [cell setRadical:radical];
     
     return cell;
 }

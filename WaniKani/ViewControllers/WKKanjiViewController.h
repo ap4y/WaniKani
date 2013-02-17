@@ -6,6 +6,6 @@
 //
 //
 
-@interface WKKanjiViewController : UITableViewController
+@interface WKKanjiViewController : UICollectionViewController
 
 @end
