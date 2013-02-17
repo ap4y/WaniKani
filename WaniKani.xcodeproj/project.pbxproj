@@ -59,6 +59,8 @@
 		951D407316D0587500703A05 /* WKItemsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 951D407216D0587500703A05 /* WKItemsHeaderView.m */; };
 		951D407516D058C200703A05 /* WKItemsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951D407416D058C200703A05 /* WKItemsHeaderView.xib */; };
 		951D407C16D06F6000703A05 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D407B16D06F6000703A05 /* QuartzCore.framework */; };
+		951D407F16D07A3D00703A05 /* WKRadicalViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 951D407E16D07A3D00703A05 /* WKRadicalViewCell.m */; };
+		951D408116D07A9700703A05 /* WKRadicalViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951D408016D07A9700703A05 /* WKRadicalViewCell.xib */; };
 		951D408416D07CEE00703A05 /* WKCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 951D408316D07CEE00703A05 /* WKCustomization.m */; };
 		951D408D16D07D8D00703A05 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D408B16D07D8D00703A05 /* background.png */; };
 		951D408E16D07D8D00703A05 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D408C16D07D8D00703A05 /* background@2x.png */; };
@@ -168,6 +170,9 @@
 		951D407216D0587500703A05 /* WKItemsHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKItemsHeaderView.m; path = Views/WKItemsHeaderView.m; sourceTree = "<group>"; };
 		951D407416D058C200703A05 /* WKItemsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WKItemsHeaderView.xib; path = Views/WKItemsHeaderView.xib; sourceTree = "<group>"; };
 		951D407B16D06F6000703A05 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		951D407D16D07A3D00703A05 /* WKRadicalViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKRadicalViewCell.h; path = Views/WKRadicalViewCell.h; sourceTree = "<group>"; };
+		951D407E16D07A3D00703A05 /* WKRadicalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKRadicalViewCell.m; path = Views/WKRadicalViewCell.m; sourceTree = "<group>"; };
+		951D408016D07A9700703A05 /* WKRadicalViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WKRadicalViewCell.xib; path = Views/WKRadicalViewCell.xib; sourceTree = "<group>"; };
 		951D408216D07CEE00703A05 /* WKCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKCustomization.h; path = Common/WKCustomization.h; sourceTree = "<group>"; };
 		951D408316D07CEE00703A05 /* WKCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKCustomization.m; path = Common/WKCustomization.m; sourceTree = "<group>"; };
 		951D408B16D07D8D00703A05 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -419,6 +424,9 @@
 				951D407116D0587500703A05 /* WKItemsHeaderView.h */,
 				951D407216D0587500703A05 /* WKItemsHeaderView.m */,
 				951D407416D058C200703A05 /* WKItemsHeaderView.xib */,
+				951D407D16D07A3D00703A05 /* WKRadicalViewCell.h */,
+				951D407E16D07A3D00703A05 /* WKRadicalViewCell.m */,
+				951D408016D07A9700703A05 /* WKRadicalViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -529,6 +537,7 @@
 				95168B4716C88BF7003BE60A /* Default-568h@2x.png in Resources */,
 				9514E83016CB23B500DCF51D /* Storyboard.storyboard in Resources */,
 				951D407516D058C200703A05 /* WKItemsHeaderView.xib in Resources */,
+				951D408116D07A9700703A05 /* WKRadicalViewCell.xib in Resources */,
 				951D408D16D07D8D00703A05 /* background.png in Resources */,
 				951D408E16D07D8D00703A05 /* background@2x.png in Resources */,
 				951D40AC16D0978500703A05 /* btn_kanji_normal.png in Resources */,
@@ -635,6 +644,7 @@
 				9514E83D16CB301B00DCF51D /* WKVocabViewController.m in Sources */,
 				9514E84316CC4F9700DCF51D /* WKStatsViewController.m in Sources */,
 				951D407316D0587500703A05 /* WKItemsHeaderView.m in Sources */,
+				951D407F16D07A3D00703A05 /* WKRadicalViewCell.m in Sources */,
 				951D408416D07CEE00703A05 /* WKCustomization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
