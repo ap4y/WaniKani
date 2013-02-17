@@ -10,6 +10,8 @@
 #import "WKKanjiViewCell.h"
 #import "WKKanji.h"
 
+#import "WKCustomization.h"
+
 @interface WKKanjiViewController ()
 @property (strong, nonatomic) IBOutlet UICollectionView *kanjiCollectionView;
 
@@ -21,8 +23,21 @@
 static NSString * const kKanjiCellIdentifier        = @"WKKanjiCell";
 static NSString * const kKanjiSuppViewIdentifier    = @"WKKanjiSuppView";
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (!self) return nil;
+    
+    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_kanji_pressed"]
+                  withFinishedUnselectedImage:[UIImage imageNamed:@"btn_kanji_normal"]];
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [WKCustomization setBackgroundForView:self.view];
+    [_kanjiCollectionView setBackgroundColor:[UIColor clearColor]];
     
     NSArray *kanji      = [WKKanji requestResult:[WKKanji all] managedObjectContext:mainThreadContext()];
     self.kanjiByLevel   = [WKItem itemsByLevel:kanji];

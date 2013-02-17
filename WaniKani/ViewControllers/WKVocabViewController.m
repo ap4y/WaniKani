@@ -9,6 +9,8 @@
 #import "WKVocabViewController.h"
 #import "WKVocab.h"
 
+#import "WKCustomization.h"
+
 @interface WKVocabViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *vocabTableView;
 
@@ -18,6 +20,16 @@
 @implementation WKVocabViewController
 
 static NSString * const kVocabCellIdentifier = @"WKVocabCell";
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (!self) return nil;
+    
+    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_vocab_pressed"]
+                  withFinishedUnselectedImage:[UIImage imageNamed:@"btn_vocab_normal"]];
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +49,13 @@ static NSString * const kVocabCellIdentifier = @"WKVocabCell";
          */
         NSLog(@"%@", error);
     }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    UIImage *selectionImage = [WKCustomization resizableImageNamed:@"vocab_selection"
+                                                     withCapInsets:UIEdgeInsetsMake(2.5f, 2.5f, 2.5f, 2.5f)];
+    [self.tabBarController.tabBar setSelectionIndicatorImage:selectionImage];
 }
 
 #pragma mark - UITableViewDataSource

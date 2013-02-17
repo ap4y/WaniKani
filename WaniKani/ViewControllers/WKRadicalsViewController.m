@@ -10,6 +10,8 @@
 #import "WKRadicalViewCell.h"
 #import "WKRadical.h"
 
+#import "WKCustomization.h"
+
 @interface WKRadicalsViewController ()
 @property (strong, nonatomic) IBOutlet UICollectionView *radicalsCollectionView;
 
@@ -21,10 +23,22 @@
 static NSString * const kRadicalsCellIdentifier     = @"WKRadicalsCell";
 static NSString * const kRadicalsSuppViewIdentifier = @"WKRadicalsSuppView";
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (!self) return nil;
+    
+    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_radicals_pressed"]
+                  withFinishedUnselectedImage:[UIImage imageNamed:@"btn_radicals_normal"]];
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationController.viewControllers = (self.parentViewController ? @[ self.parentViewController ] : @[]);
+    [WKCustomization setBackgroundForView:self.view];
+    [_radicalsCollectionView setBackgroundColor:[UIColor clearColor]];
     
     NSArray *radicals       = [WKRadical requestResult:[WKRadical all] managedObjectContext:mainThreadContext()];
     self.radicalsByLevel    = [WKItem itemsByLevel:radicals];

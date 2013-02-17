@@ -8,6 +8,7 @@
 
 #import "WKLoginViewController.h"
 #import "WKHTTPClient.h"
+#import "WKCustomization.h"
 
 @interface WKLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userKeyTextField;
@@ -19,6 +20,8 @@ static NSString * const kRadicalsSegueIdentifier = @"WKRadicalsSegue";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [WKCustomization setBackgroundForView:self.view];
     
     if ([WKHTTPClient sharedClient].userKey) {
         
