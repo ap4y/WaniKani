@@ -57,6 +57,7 @@
 		95168B5116C88BF7003BE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95168B3216C88BF7003BE60A /* Foundation.framework */; };
 		95168B5916C88BF7003BE60A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95168B5716C88BF7003BE60A /* InfoPlist.strings */; };
 		951D407C16D06F6000703A05 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D407B16D06F6000703A05 /* QuartzCore.framework */; };
+		951D408416D07CEE00703A05 /* WKCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 951D408316D07CEE00703A05 /* WKCustomization.m */; };
 		951D408D16D07D8D00703A05 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D408B16D07D8D00703A05 /* background.png */; };
 		951D408E16D07D8D00703A05 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D408C16D07D8D00703A05 /* background@2x.png */; };
 		951D40AC16D0978500703A05 /* btn_kanji_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40A016D0978500703A05 /* btn_kanji_normal.png */; };
@@ -162,6 +163,8 @@
 		95168B5616C88BF7003BE60A /* WaniKaniTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WaniKaniTests-Info.plist"; sourceTree = "<group>"; };
 		95168B5816C88BF7003BE60A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		951D407B16D06F6000703A05 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		951D408216D07CEE00703A05 /* WKCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKCustomization.h; path = Common/WKCustomization.h; sourceTree = "<group>"; };
+		951D408316D07CEE00703A05 /* WKCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKCustomization.m; path = Common/WKCustomization.m; sourceTree = "<group>"; };
 		951D408B16D07D8D00703A05 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		951D408C16D07D8D00703A05 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		951D40A016D0978500703A05 /* btn_kanji_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_kanji_normal.png; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 			children = (
 				9514E82B16CAEB7200DCF51D /* WKHTTPClient.h */,
 				9514E82C16CAEB7200DCF51D /* WKHTTPClient.m */,
+				951D408216D07CEE00703A05 /* WKCustomization.h */,
+				951D408316D07CEE00703A05 /* WKCustomization.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -612,6 +617,7 @@
 				9514E83A16CB2D2800DCF51D /* WKKanjiViewController.m in Sources */,
 				9514E83D16CB301B00DCF51D /* WKVocabViewController.m in Sources */,
 				9514E84316CC4F9700DCF51D /* WKStatsViewController.m in Sources */,
+				951D408416D07CEE00703A05 /* WKCustomization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

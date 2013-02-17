@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AFNetworkActivityIndicatorManager.h"
+#import "WKCustomization.h"
 
 @implementation AppDelegate
 
@@ -18,6 +19,8 @@
                                                          diskCapacity:20 * 1024 *1024
                                                              diskPath:@"WKURLCache"];
     [NSURLCache setSharedURLCache:urlCache];
+    
+    [WKCustomization prepare];
     
     return YES;
 }
