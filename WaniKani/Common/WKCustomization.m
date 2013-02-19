@@ -18,24 +18,23 @@
 
 + (UIImage *)defaultViewControllerBackground {
     
-    UIEdgeInsets insets = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
-    return [[UIImage imageNamed:@"background"] resizableImageWithCapInsets:insets];
+    return [self resizableImageNamed:@"background"
+                       withCapInsets:UIEdgeInsetsMake(1.0f, 1.0f, 1.0f, 1.0f)];
 }
 
 + (void)setBackgroundForView:(UIView *)view {
     
-    [view setBackgroundColor:RGBA(238.0, 238.0, 238.0, 1.0)];
-    
     UIImage *defaultBackgroundImage     = [WKCustomization defaultViewControllerBackground];
     UIImageView *backgroundImageView    = [[UIImageView alloc] initWithImage:defaultBackgroundImage];
     
-    backgroundImageView.frame = view.bounds;
+    backgroundImageView.frame = view.bounds;    
     [view insertSubview:backgroundImageView atIndex:0];
 }
 
 + (void)prepare {
     
     [self prepareUITabBarCustomization];
+    [self prepareUIProgressViewCustomization];
 }
 
 + (void)prepareUITabBarCustomization {
@@ -58,6 +57,16 @@
         UITextAttributeFont: [UIFont fontWithName:@"HelveticaNeue" size:12.0f]
     };
     [[UITabBarItem appearance] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+}
+
++ (void)prepareUIProgressViewCustomization {
+    
+    UIImage *trackImage     = [self resizableImageNamed:@"progress_track"
+                                          withCapInsets:UIEdgeInsetsZero];
+    UIImage *progressImage  = [self resizableImageNamed:@"progress_progress"
+                                          withCapInsets:UIEdgeInsetsZero];
+    [[UIProgressView appearance] setTrackImage:trackImage];
+    [[UIProgressView appearance] setProgressImage:progressImage];
 }
 
 @end
