@@ -27,6 +27,9 @@ static NSString * const kKanjiSuppViewIdentifier    = @"WKKanjiSuppView";
     self = [super initWithCoder:aDecoder];
     if (!self) return nil;
     
+    NSArray *kanji      = [WKKanji requestResult:[WKKanji all] managedObjectContext:mainThreadContext()];
+    self.kanjiByLevel   = [WKItem itemsByLevel:kanji];
+    
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_kanji_pressed"]
                   withFinishedUnselectedImage:[UIImage imageNamed:@"btn_kanji_normal"]];
     
@@ -38,9 +41,6 @@ static NSString * const kKanjiSuppViewIdentifier    = @"WKKanjiSuppView";
     
     [WKCustomization setBackgroundForView:self.view];
     [_kanjiCollectionView setBackgroundColor:[UIColor clearColor]];
-    
-    NSArray *kanji      = [WKKanji requestResult:[WKKanji all] managedObjectContext:mainThreadContext()];
-    self.kanjiByLevel   = [WKItem itemsByLevel:kanji];
     
     [WKKanji fetchKanjiWithSuccess:^(NSArray *kanji) {
         

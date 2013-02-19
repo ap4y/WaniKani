@@ -27,6 +27,9 @@ static NSString * const kRadicalsSuppViewIdentifier = @"WKRadicalsSuppView";
     self = [super initWithCoder:aDecoder];
     if (!self) return nil;
     
+    NSArray *radicals       = [WKRadical requestResult:[WKRadical all] managedObjectContext:mainThreadContext()];
+    self.radicalsByLevel    = [WKItem itemsByLevel:radicals];
+
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_radicals_pressed"]
                   withFinishedUnselectedImage:[UIImage imageNamed:@"btn_radicals_normal"]];
     
@@ -40,9 +43,6 @@ static NSString * const kRadicalsSuppViewIdentifier = @"WKRadicalsSuppView";
     [WKCustomization setBackgroundForView:self.view];
     [_radicalsCollectionView setBackgroundColor:[UIColor clearColor]];
     
-    NSArray *radicals       = [WKRadical requestResult:[WKRadical all] managedObjectContext:mainThreadContext()];
-    self.radicalsByLevel    = [WKItem itemsByLevel:radicals];
-
     [WKRadical fetchRadicalsWithSuccess:^(NSArray *radicals) {
        
         self.radicalsByLevel = [WKItem itemsByLevel:radicals];
