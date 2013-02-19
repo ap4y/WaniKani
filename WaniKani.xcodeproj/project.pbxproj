@@ -84,6 +84,7 @@
 		951D40C316D09E9700703A05 /* vocab_selection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40C116D09E9700703A05 /* vocab_selection@2x.png */; };
 		951D40C616D0A46400703A05 /* locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40C416D0A46400703A05 /* locked.png */; };
 		951D40C716D0A46400703A05 /* locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40C516D0A46400703A05 /* locked@2x.png */; };
+		951D40D416D0BEC600703A05 /* WKGravatarImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 951D40D316D0BEC600703A05 /* WKGravatarImage.m */; };
 		951D40E116D0D31D00703A05 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40DF16D0D31C00703A05 /* background.png */; };
 		951D40E216D0D31D00703A05 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40E016D0D31D00703A05 /* background@2x.png */; };
 /* End PBXBuildFile section */
@@ -202,6 +203,8 @@
 		951D40C116D09E9700703A05 /* vocab_selection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vocab_selection@2x.png"; sourceTree = "<group>"; };
 		951D40C416D0A46400703A05 /* locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locked.png; sourceTree = "<group>"; };
 		951D40C516D0A46400703A05 /* locked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locked@2x.png"; sourceTree = "<group>"; };
+		951D40D216D0BEC600703A05 /* WKGravatarImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKGravatarImage.h; path = Common/WKGravatarImage.h; sourceTree = "<group>"; };
+		951D40D316D0BEC600703A05 /* WKGravatarImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKGravatarImage.m; path = Common/WKGravatarImage.m; sourceTree = "<group>"; };
 		951D40DF16D0D31C00703A05 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		951D40E016D0D31D00703A05 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		C1C66C383D4C4418A956E88D /* libPods-WaniKaniTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WaniKaniTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +304,8 @@
 				9514E82C16CAEB7200DCF51D /* WKHTTPClient.m */,
 				951D408216D07CEE00703A05 /* WKCustomization.h */,
 				951D408316D07CEE00703A05 /* WKCustomization.m */,
+				951D40D216D0BEC600703A05 /* WKGravatarImage.h */,
+				951D40D316D0BEC600703A05 /* WKGravatarImage.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -664,6 +669,7 @@
 				951D407816D058F700703A05 /* WKKanjiViewCell.m in Sources */,
 				951D407F16D07A3D00703A05 /* WKRadicalViewCell.m in Sources */,
 				951D408416D07CEE00703A05 /* WKCustomization.m in Sources */,
+				951D40D416D0BEC600703A05 /* WKGravatarImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
