@@ -12,11 +12,27 @@
 #import "WKKanji.h"
 #import "WKVocab.h"
 
+#import "WKGravatarImage.h"
+
 @interface WKStatsViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *statsTextView;
 @end
 
 @implementation WKStatsViewController
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (!self) return nil;
+
+    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_logo"]
+                  withFinishedUnselectedImage:[UIImage imageNamed:@"btn_logo"]];
+    [WKGravatarImage gravatarImageForGravatarId:@"f9e852694ab8a659d1edbf438c2bb4ea" success:^(UIImage *image) {
+       
+        [self.tabBarItem setFinishedSelectedImage:image withFinishedUnselectedImage:image];
+    }];
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -93,6 +93,8 @@
 		951D40DE16D0C81F00703A05 /* WKVocabViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951D40DD16D0C81F00703A05 /* WKVocabViewCell.xib */; };
 		951D40E116D0D31D00703A05 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40DF16D0D31C00703A05 /* background.png */; };
 		951D40E216D0D31D00703A05 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40E016D0D31D00703A05 /* background@2x.png */; };
+		951D40E916D0DDBF00703A05 /* btn_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40E716D0DDBF00703A05 /* btn_logo.png */; };
+		951D40EA16D0DDBF00703A05 /* btn_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40E816D0DDBF00703A05 /* btn_logo@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +222,8 @@
 		951D40DD16D0C81F00703A05 /* WKVocabViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WKVocabViewCell.xib; path = Views/WKVocabViewCell.xib; sourceTree = "<group>"; };
 		951D40DF16D0D31C00703A05 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		951D40E016D0D31D00703A05 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		951D40E716D0DDBF00703A05 /* btn_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_logo.png; sourceTree = "<group>"; };
+		951D40E816D0DDBF00703A05 /* btn_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_logo@2x.png"; sourceTree = "<group>"; };
 		C1C66C383D4C4418A956E88D /* libPods-WaniKaniTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WaniKaniTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F9859464DB4E18A76EFB6E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -493,6 +497,8 @@
 				951D40D616D0C31900703A05 /* progress_progress@2x.png */,
 				951D40D716D0C31900703A05 /* progress_track.png */,
 				951D40D816D0C31900703A05 /* progress_track@2x.png */,
+				951D40E716D0DDBF00703A05 /* btn_logo.png */,
+				951D40E816D0DDBF00703A05 /* btn_logo@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -605,6 +611,8 @@
 				951D40DE16D0C81F00703A05 /* WKVocabViewCell.xib in Resources */,
 				951D40E116D0D31D00703A05 /* background.png in Resources */,
 				951D40E216D0D31D00703A05 /* background@2x.png in Resources */,
+				951D40E916D0DDBF00703A05 /* btn_logo.png in Resources */,
+				951D40EA16D0DDBF00703A05 /* btn_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
