@@ -11,19 +11,25 @@
 
 #import "WKCustomization.h"
 
-@interface WKVocabViewController ()
-@property (strong, nonatomic) IBOutlet UITableView *vocabTableView;
+#import "WKVocabViewCell.h"
 
-@property (strong, nonatomic) NSArray *vocab;
+@interface WKVocabViewController ()
+@property (strong, nonatomic) IBOutlet UICollectionView *vocabCollectionView;
+
+@property (strong, nonatomic) NSDictionary *vocabByLevel;
 @end
 
 @implementation WKVocabViewController
 
-static NSString * const kVocabCellIdentifier = @"WKVocabCell";
+static NSString * const kVocabCellIdentifier        = @"WKVocabCell";
+static NSString * const kVocabSuppViewIdentifier    = @"WKVocabSuppView";
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (!self) return nil;
+    
+    NSArray *vocab      = [WKVocab requestResult:[WKVocab all] managedObjectContext:mainThreadContext()];
+    self.vocabByLevel   = [WKItem itemsByLevel:vocab];
     
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_vocab_pressed"]
                   withFinishedUnselectedImage:[UIImage imageNamed:@"btn_vocab_normal"]];
@@ -34,13 +40,13 @@ static NSString * const kVocabCellIdentifier = @"WKVocabCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.vocab = [WKVocab requestResult:[[WKVocab all] orderBy:@"synchronizedAt", nil]
-                   managedObjectContext:mainThreadContext()];
-    
+    [WKCustomization setBackgroundForView:self.view];
+    [_vocabCollectionView setBackgroundColor:[UIColor clearColor]];
+        
     [WKVocab fetchVocabWithSuccess:^(NSArray *vocab) {
         
-        self.vocab = vocab;
-        [_vocabTableView reloadData];
+        self.vocabByLevel = [WKItem itemsByLevel:vocab];
+        [_vocabCollectionView reloadData];
         
     } failure:^(NSError *error) {
         
@@ -58,19 +64,41 @@ static NSString * const kVocabCellIdentifier = @"WKVocabCell";
     [self.tabBarController.tabBar setSelectionIndicatorImage:selectionImage];
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UICollectionViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_vocab count];
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return [_vocabByLevel count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kVocabCellIdentifier];
+    NSNumber *levelKey      = [[_vocabByLevel allKeys] objectAtIndex:section];
+    NSArray *vocabForLevel  = [_vocabByLevel objectForKey:levelKey];
     
-    WKVocab *vocabItem  = [_vocab objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@",
-                           vocabItem.character, vocabItem.kana, vocabItem.meaning];
+    return [vocabForLevel count];
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionReusableView *suppView;
+    suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                  withReuseIdentifier:kVocabSuppViewIdentifier
+                                                         forIndexPath:indexPath];
+    return suppView;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSNumber *levelKey      = [[_vocabByLevel allKeys] objectAtIndex:indexPath.section];
+    NSArray *vocabForLevel  = [_vocabByLevel objectForKey:levelKey];
+    WKVocab *vocabItem      = [vocabForLevel objectAtIndex:indexPath.row];
+    
+    WKVocabViewCell *cell   = [collectionView dequeueReusableCellWithReuseIdentifier:kVocabCellIdentifier
+                                                                        forIndexPath:indexPath];
+    [cell setVocabItem:vocabItem];
     
     return cell;
 }

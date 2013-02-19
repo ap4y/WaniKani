@@ -6,6 +6,6 @@
 //
 //
 
-@interface WKVocabViewController : UITableViewController
+@interface WKVocabViewController : UICollectionViewController
 
 @end

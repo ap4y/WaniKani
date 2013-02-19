@@ -5,46 +5,46 @@
     </dependencies>
     <scenes>
         <!--Vocab View Controller - Vocab-->
-        <scene sceneID="U4S-RF-9GQ">
+        <scene sceneID="70p-Xa-UDO">
             <objects>
-                <tableViewController storyboardIdentifier="WKVocabViewController" id="JEW-Jm-Gnz" customClass="WKVocabViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eUT-SJ-nus">
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="SJe-dP-Yis" customClass="WKVocabViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="nd5-gs-TMy">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WKVocabCell" textLabel="ArZ-MA-fhl" style="IBUITableViewCellStyleDefault" id="Plv-Ld-p6E">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aPs-gH-TtJ">
+                            <size key="itemSize" width="320" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="60"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WKVocabCell" id="7Bj-gb-uZe" customClass="WKVocabViewCell">
+                                <rect key="frame" x="0.0" y="60" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ArZ-MA-fhl">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                            </tableViewCell>
-                        </prototypes>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WKVocabSuppView" id="dwH-4t-IFo" customClass="WKItemsHeaderView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
                         <connections>
-                            <outlet property="dataSource" destination="JEW-Jm-Gnz" id="rp2-eu-G35"/>
-                            <outlet property="delegate" destination="JEW-Jm-Gnz" id="7cC-mf-odC"/>
+                            <outlet property="dataSource" destination="SJe-dP-Yis" id="qXk-7T-swn"/>
+                            <outlet property="delegate" destination="SJe-dP-Yis" id="K5G-qZ-yZp"/>
                         </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Vocab" image="btn_vocab_normal.png" id="Lwa-AS-ZxW"/>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Vocab" image="btn_vocab_normal.png" id="SeU-XP-Swy"/>
                     <connections>
-                        <outlet property="vocabTableView" destination="eUT-SJ-nus" id="d1x-6D-p9I"/>
+                        <outlet property="vocabCollectionView" destination="nd5-gs-TMy" id="Tlo-Oh-kVI"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ud7-Re-mOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YcN-4V-lFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583" y="1316"/>
+            <point key="canvasLocation" x="583" y="1320"/>
         </scene>
         <!--Stats View Controller - Stats-->
         <scene sceneID="ELm-We-N93">
@@ -172,8 +172,8 @@
                     <connections>
                         <segue destination="24v-uq-MBv" kind="relationship" relationship="viewControllers" id="Wvp-eg-dbu"/>
                         <segue destination="Btb-eA-aIv" kind="relationship" relationship="viewControllers" id="mmy-zL-boJ"/>
-                        <segue destination="JEW-Jm-Gnz" kind="relationship" relationship="viewControllers" id="xDh-jA-rof"/>
-                        <segue destination="Ale-6b-SAL" kind="relationship" relationship="viewControllers" id="cea-JX-uqc"/>
+                        <segue destination="SJe-dP-Yis" kind="relationship" relationship="viewControllers" id="lrp-jD-UC8"/>
+                        <segue destination="Ale-6b-SAL" kind="relationship" relationship="viewControllers" id="bQL-B3-2MB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekY-Wa-PRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -267,6 +267,7 @@
             <relationships>
                 <relationship kind="outlet" name="cellView" candidateClass="UICollectionViewCell"/>
                 <relationship kind="outlet" name="characterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lockedImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="readingLabel" candidateClass="UILabel"/>
             </relationships>
@@ -290,6 +291,7 @@
                 <relationship kind="outlet" name="cellView" candidateClass="UICollectionViewCell"/>
                 <relationship kind="outlet" name="characterImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="characterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lockedImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -305,10 +307,20 @@
                 <relationship kind="outlet" name="statsTextView" candidateClass="UITextView"/>
             </relationships>
         </class>
-        <class className="WKVocabViewController" superclassName="UITableViewController">
+        <class className="WKVocabViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WKVocabViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cellView" candidateClass="UICollectionViewCell"/>
+                <relationship kind="outlet" name="characterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lockedImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="readingLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="WKVocabViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKVocabViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="vocabTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="vocabCollectionView" candidateClass="UICollectionView"/>
             </relationships>
         </class>
     </classes>
