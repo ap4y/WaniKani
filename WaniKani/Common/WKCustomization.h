@@ -14,6 +14,10 @@
 
 + (UIImage *)defaultViewControllerBackground;
 + (void)setBackgroundForView:(UIView *)view;
++ (UIImage *)gradientImageWithFrame:(CGRect)frame
+                             colors:(NSArray *)colors
+                         startPoint:(CGPoint)startPoint
+                           endPoint:(CGPoint)endPoint;
 
 + (void)prepare;
 

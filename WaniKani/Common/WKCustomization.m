@@ -31,26 +31,44 @@
     [view insertSubview:backgroundImageView atIndex:0];
 }
 
++ (UIImage *)gradientImageWithFrame:(CGRect)frame
+                             colors:(NSArray *)colors
+                         startPoint:(CGPoint)startPoint
+                           endPoint:(CGPoint)endPoint {
+    
+    NSMutableArray *cgColors        = [NSMutableArray array];
+    [colors enumerateObjectsUsingBlock:^(UIColor *color, NSUInteger idx, BOOL *stop) {        
+        [cgColors addObject:(id)color.CGColor];
+    }];
+    
+    CAGradientLayer *gradientLayer  = [CAGradientLayer layer];
+    gradientLayer.startPoint        = startPoint;
+    gradientLayer.endPoint          = endPoint;
+    gradientLayer.frame             = frame;
+    gradientLayer.colors            = cgColors;
+    
+    UIGraphicsBeginImageContextWithOptions(gradientLayer.frame.size, YES, 0.0f);
+    [gradientLayer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return outputImage;
+}
+
 + (void)prepare {
     
     [self prepareUITabBarCustomization];
     [self prepareUIProgressViewCustomization];
+    [self prepareUISliderCustomization];
 }
 
-+ (void)prepareUITabBarCustomization {
++ (void)prepareUITabBarCustomization {    
     
-    CAGradientLayer *gradientLayer  = [CAGradientLayer layer];
-    gradientLayer.startPoint        = CGPointMake(0.5f, 0.0f);
-    gradientLayer.endPoint          = CGPointMake(0.5f, 1.0f);
-    gradientLayer.frame             = CGRectMake(0.0f, 0.0f, 320.0f, 49.0f);
-    gradientLayer.colors            = @[ (id)[RGBA(242.0, 242.0, 242.0, 1.0) CGColor],
-                                         (id)[RGBA(255.0, 255.0, 255.0, 1.0) CGColor] ];
-    
-    UIGraphicsBeginImageContext([gradientLayer frame].size);
-    [gradientLayer renderInContext:UIGraphicsGetCurrentContext()];    
-    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
+    NSArray *colors         = @[ RGBA(242.0, 242.0, 242.0, 1.0), RGBA(255.0, 255.0, 255.0, 1.0) ];
+    UIImage *outputImage    = [self gradientImageWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 49.0f)
+                                                    colors:colors
+                                             startPoint:CGPointMake(0.5f, 0.0f)
+                                               endPoint:CGPointMake(0.5f, 1.0f)];
     [[UITabBar appearance] setBackgroundImage:outputImage];
     
     NSDictionary *textAttributes = @{
