@@ -79,12 +79,20 @@
 
 + (void)prepareUIProgressViewCustomization {
     
-    UIImage *trackImage     = [self resizableImageNamed:@"progress_track"
-                                          withCapInsets:UIEdgeInsetsZero];
-    UIImage *progressImage  = [self resizableImageNamed:@"progress_progress"
-                                          withCapInsets:UIEdgeInsetsZero];
+    UIImage *trackImage     = [self resizableImageNamed:@"progress_track" withCapInsets:UIEdgeInsetsZero];
+    UIImage *progressImage  = [self resizableImageNamed:@"progress_progress" withCapInsets:UIEdgeInsetsZero];
+    
     [[UIProgressView appearance] setTrackImage:trackImage];
     [[UIProgressView appearance] setProgressImage:progressImage];
+}
+
++ (void)prepareUISliderCustomization {
+    
+    UIImage *trackImage     = [self resizableImageNamed:@"progress_track" withCapInsets:UIEdgeInsetsZero];
+    UIImage *progressImage  = [self resizableImageNamed:@"progress_progress" withCapInsets:UIEdgeInsetsZero];
+    
+    [[UISlider appearance] setMinimumTrackImage:progressImage forState:UIControlStateNormal];
+    [[UISlider appearance] setMaximumTrackImage:trackImage forState:UIControlStateNormal];
 }
 
 @end
