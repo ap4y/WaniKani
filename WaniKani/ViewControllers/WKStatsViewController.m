@@ -7,15 +7,26 @@
 //
 
 #import "WKStatsViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 #import "WKRadical.h"
 #import "WKKanji.h"
 #import "WKVocab.h"
 
 #import "WKGravatarImage.h"
+#import "WKCustomization.h"
 
 @interface WKStatsViewController ()
-@property (weak, nonatomic) IBOutlet UITextView *statsTextView;
+@property (strong, nonatomic) IBOutlet UIView *statsView;
+@property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
+@property (weak, nonatomic) IBOutlet UIView *informationBox;
+@property (weak, nonatomic) IBOutlet UIView *settingsBox;
+@property (weak, nonatomic) IBOutlet UITableView *statsTableView;
+@property (weak, nonatomic) IBOutlet UIButton *apprenticeButton;
+@property (weak, nonatomic) IBOutlet UIButton *guruButton;
+@property (weak, nonatomic) IBOutlet UIButton *masterButton;
+@property (weak, nonatomic) IBOutlet UIButton *enlightenButton;
+@property (weak, nonatomic) IBOutlet UIButton *burnedButton;
 @end
 
 @implementation WKStatsViewController
@@ -37,49 +48,60 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    __block NSString *statsString = @"completed items:\n";
-    NSMutableArray *completedItems = [NSMutableArray array];
-    [completedItems addObjectsFromArray:[WKRadical completedItems]];
-    [completedItems addObjectsFromArray:[WKKanji completedItems]];
-    [completedItems addObjectsFromArray:[WKVocab completedItems]];
-    [completedItems enumerateObjectsUsingBlock:^(WKItem *obj, NSUInteger idx, BOOL *stop) {
-        
-        statsString = [statsString stringByAppendingFormat:@"%@ - %@\n", obj.character, obj.meaning];
-    }];
+    [WKCustomization setBackgroundForView:self.view];
+    
+    [[NSBundle mainBundle] loadNibNamed:@"WKStatsView" owner:self options:nil];
+    [_contentScrollView addSubview:_statsView];    
+    _contentScrollView.contentSize = CGSizeMake(_contentScrollView.contentSize.width, _statsView.bounds.size.height);
+    
+    _informationBox.layer.cornerRadius  = 5.0f;
+    _settingsBox.layer.cornerRadius     = 5.0f;
+    _statsTableView.layer.cornerRadius  = 5.0f;
+    
+    [self setButtonsGradients];
+}
 
-    statsString = [statsString stringByAppendingFormat:@"unlocked items:\n"];
-    NSMutableArray *unlockedItems = [NSMutableArray array];
-    [unlockedItems addObjectsFromArray:[WKRadical unlockedItems]];
-    [unlockedItems addObjectsFromArray:[WKKanji unlockedItems]];
-    [unlockedItems addObjectsFromArray:[WKVocab unlockedItems]];
-    [unlockedItems enumerateObjectsUsingBlock:^(WKItem *obj, NSUInteger idx, BOOL *stop) {
-        
-        statsString = [statsString stringByAppendingFormat:@"%@ - %@\n", obj.character, obj.meaning];
-    }];
+#pragma mark - private
 
-    statsString = [statsString stringByAppendingFormat:@"critical items:\n"];
-    NSMutableArray *criticalItems = [NSMutableArray array];
-    [criticalItems addObjectsFromArray:[WKRadical criticalItemsWithPercentage:95.0]];
-    [criticalItems addObjectsFromArray:[WKKanji criticalItemsWithPercentage:95.0]];
-    [criticalItems addObjectsFromArray:[WKVocab criticalItemsWithPercentage:95.0]];
-    [criticalItems enumerateObjectsUsingBlock:^(WKItem *obj, NSUInteger idx, BOOL *stop) {
-        
-        statsString = [statsString stringByAppendingFormat:@"%@ - %@\n", obj.character, obj.meaning];
-    }];
+- (void)setButtonsGradients {
     
-    statsString = [statsString stringByAppendingFormat:@"available review items:\n"];
-    NSMutableArray *reviewItems = [NSMutableArray array];
-    [reviewItems addObjectsFromArray:[WKRadical availableReviews]];
-    [reviewItems addObjectsFromArray:[WKKanji availableReviews]];
-    [reviewItems addObjectsFromArray:[WKVocab availableReviews]];
-    [reviewItems enumerateObjectsUsingBlock:^(WKItem *obj, NSUInteger idx, BOOL *stop) {
-        
-        statsString = [statsString stringByAppendingFormat:@"%@ - %@\n", obj.character, obj.meaning];
-    }];
+    UIImage *tempGradient;
+    NSArray *colors;
     
-    statsString = [statsString stringByAppendingFormat:@"radical next review date: %@", [WKRadical nextReviewDate]];
+    colors          = @[ RGBA(255.0, 0.0, 170.0, 1.0), RGBA(221.0, 0.0, 147.0, 1.0) ];
+    tempGradient    = [WKCustomization gradientImageWithFrame:_apprenticeButton.bounds
+                                                       colors:colors
+                                                   startPoint:CGPointMake(0.5f, 0.0f)
+                                                     endPoint:CGPointMake(0.5f, 1.0f)];
+    [_apprenticeButton setBackgroundImage:tempGradient forState:UIControlStateNormal];
     
-    _statsTextView.text = statsString;    
+    colors          = @[ RGBA(170.0, 56.0, 198.0, 1.0), RGBA(136.0, 45.0, 158.0, 1.0) ];
+    tempGradient    = [WKCustomization gradientImageWithFrame:_apprenticeButton.bounds
+                                                       colors:colors
+                                                   startPoint:CGPointMake(0.5f, 0.0f)
+                                                     endPoint:CGPointMake(0.5f, 1.0f)];
+    [_guruButton setBackgroundImage:tempGradient forState:UIControlStateNormal];
+    
+    colors          = @[ RGBA(85.0, 113.0, 226.0, 1.0), RGBA(41.0, 77.0, 219.0, 1.0) ];
+    tempGradient    = [WKCustomization gradientImageWithFrame:_apprenticeButton.bounds
+                                                       colors:colors
+                                                   startPoint:CGPointMake(0.5f, 0.0f)
+                                                     endPoint:CGPointMake(0.5f, 1.0f)];
+    [_masterButton setBackgroundImage:tempGradient forState:UIControlStateNormal];
+    
+    colors          = @[ RGBA(0.0, 170.0, 255.0, 1.0), RGBA(0.0, 147.0, 221.0, 1.0) ];
+    tempGradient    = [WKCustomization gradientImageWithFrame:_apprenticeButton.bounds
+                                                       colors:colors
+                                                   startPoint:CGPointMake(0.5f, 0.0f)
+                                                     endPoint:CGPointMake(0.5f, 1.0f)];
+    [_enlightenButton setBackgroundImage:tempGradient forState:UIControlStateNormal];
+    
+    colors          = @[ RGBA(85.0, 85.0, 85.0, 1.0), RGBA(67.0, 67.0, 67.0, 1.0) ];
+    tempGradient    = [WKCustomization gradientImageWithFrame:_burnedButton.bounds
+                                                       colors:colors
+                                                   startPoint:CGPointMake(0.5f, 0.0f)
+                                                     endPoint:CGPointMake(0.5f, 1.0f)];
+    [_burnedButton setBackgroundImage:tempGradient forState:UIControlStateNormal];
 }
 
 @end
