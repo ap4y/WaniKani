@@ -11,11 +11,12 @@
 
 #import "WKItem.h"
 #import "WKItemTableCell.h"
+#import "WKItemTableHeader.h"
 
 #import "WKGravatarImage.h"
 #import "WKCustomization.h"
 
-@interface WKStatsViewController () <UITableViewDataSource>
+@interface WKStatsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UIView *statsView;
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (weak, nonatomic) IBOutlet UIView *informationBox;
@@ -125,6 +126,15 @@ static NSString * const kStatsCellIdentifier = @"WKStatsCell";
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
     return [[_statsTableItems allKeys] objectAtIndex:section];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    NSString *sectionTitle          = [[_statsTableItems allKeys] objectAtIndex:section];
+    WKItemTableHeader *headerView   = [[WKItemTableHeader alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
+    [headerView setTitle:sectionTitle];
+    
+    return headerView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
