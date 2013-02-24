@@ -37,6 +37,7 @@ static NSString * const kGravatarUrl    = @"http://www.gravatar.com/avatar";
                                               
                                               UIImage *roundedImage = UIGraphicsGetImageFromCurrentImageContext();
                                               UIGraphicsEndImageContext();
+                                              CGPathRelease(ellipse);
                                               
                                               return roundedImage;
                                               
