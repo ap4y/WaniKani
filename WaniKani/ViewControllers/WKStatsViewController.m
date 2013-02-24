@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "WKItem.h"
+#import "WKItemTableCell.h"
 
 #import "WKGravatarImage.h"
 #import "WKCustomization.h"
@@ -31,6 +32,8 @@
 @end
 
 @implementation WKStatsViewController
+
+static NSString * const kStatsCellIdentifier = @"WKStatsCell";
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -90,6 +93,8 @@
                                                    forKey:NSLocalizedString(@"Unlocked Items", nil)];
     
     self.statsTableItems = statsItems;
+    
+    [_statsTableView registerClass:[WKItemTableCell class] forCellReuseIdentifier:kStatsCellIdentifier];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -124,14 +129,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                                   reuseIdentifier:@"test"];
+    WKItemTableCell *cell = [tableView dequeueReusableCellWithIdentifier:kStatsCellIdentifier];
     
     NSString *itemKey   = [[_statsTableItems allKeys] objectAtIndex:indexPath.section];
     NSArray *statsItems = [_statsTableItems objectForKey:itemKey];
     WKItem *item        = [statsItems objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = item.character;
+    [cell setItem:item];
     
     return cell;
 }
