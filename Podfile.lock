@@ -1,12 +1,10 @@
 
 PODS:
-- AEHelpers/REST (0.1.1):
+- AEHelpers/REST (0.1.3):
   - AFNetworking
-  - JSONKit
 - AETestHelpers (0.1.1):
   - OHHTTPStubs
 - AFNetworking (1.1.0)
-- JSONKit (1.5pre)
 - OCMock (2.0.1)
 - OHHTTPStubs (1.1.1)
 
@@ -22,9 +20,8 @@ EXTERNAL SOURCES:
     :git: https://github.com/ap4y/cocoa_helpers.git
 
 SPEC CHECKSUMS:
-  AEHelpers/REST: 0f9e712f3438fb55c69573b58331937091048ddb
+  AEHelpers/REST: fe6a39cfb9237e1cb6fc8af0ddc38535c7e1d1ff
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
-  JSONKit: 3d4708953ea7ae399a49777372d8b060a43ddd27
   AETestHelpers: bf2e98c3c2bfc4eeed511f3783eff07f70e81c6a
   OCMock: 77a9c4c57af6bf258a537d34cf09abf422affede
   OHHTTPStubs: cb1cef742f2fba18b192fb92ede52a69cf3a04d5
