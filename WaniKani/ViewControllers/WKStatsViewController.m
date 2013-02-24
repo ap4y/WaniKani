@@ -9,14 +9,12 @@
 #import "WKStatsViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-#import "WKRadical.h"
-#import "WKKanji.h"
-#import "WKVocab.h"
+#import "WKItem.h"
 
 #import "WKGravatarImage.h"
 #import "WKCustomization.h"
 
-@interface WKStatsViewController ()
+@interface WKStatsViewController () <UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *statsView;
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (weak, nonatomic) IBOutlet UIView *informationBox;
@@ -27,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *masterButton;
 @property (weak, nonatomic) IBOutlet UIButton *enlightenButton;
 @property (weak, nonatomic) IBOutlet UIButton *burnedButton;
+@property (weak, nonatomic) IBOutlet UILabel *nextReviewLabel;
+
+@property (strong, nonatomic) NSDictionary *statsTableItems;
 @end
 
 @implementation WKStatsViewController
@@ -59,9 +60,93 @@
     _statsTableView.layer.cornerRadius  = 5.0f;
     
     [self setButtonsGradients];
+    
+    _nextReviewLabel.text   = [WKItem nextReviewDateString];
+    
+    NSArray *burnedItems    = [WKItem combinedItemsWithSRSType:WKItemSRSBurned];
+    NSArray *criticalItems  = [WKItem combinedCriticalItemsWithPercentage:75.0f];
+    NSArray *unlockedItems  = [WKItem combinedUnlockedItems];
+    
+#define count_as_string(array) [NSString stringWithFormat:@"%i", [array count]]
+    [_apprenticeButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSApprentice])
+                       forState:UIControlStateNormal];
+    [_guruButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSGuru])
+                       forState:UIControlStateNormal];
+    [_masterButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSMaster])
+                       forState:UIControlStateNormal];
+    [_enlightenButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSEnlighten])
+                       forState:UIControlStateNormal];
+    [_burnedButton setTitle:count_as_string(burnedItems)
+                       forState:UIControlStateNormal];    
+#undef count_as_string
+    
+    NSMutableDictionary *statsItems = [NSMutableDictionary dictionary];
+    
+    if ([burnedItems count] > 0)    [statsItems setObject:burnedItems
+                                                   forKey:NSLocalizedString(@"Burned Items", nil)];
+    if ([criticalItems count] > 0)  [statsItems setObject:criticalItems
+                                                   forKey:NSLocalizedString(@"Critical Items", nil)];
+    if ([unlockedItems count] > 0)  [statsItems setObject:unlockedItems
+                                                   forKey:NSLocalizedString(@"Unlocked Items", nil)];
+    
+    self.statsTableItems = statsItems;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];    
+    [self adjustContentHeight];
+}
+
+- (IBAction)onlyCriticalsDidChanged:(id)sender {
+}
+
+- (IBAction)criticalPercentageDidChanged:(id)sender {
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return [_statsTableItems count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    NSString *itemKey   = [[_statsTableItems allKeys] objectAtIndex:section];
+    NSArray *statsItems = [_statsTableItems objectForKey:itemKey];
+    return [statsItems count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    return [[_statsTableItems allKeys] objectAtIndex:section];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                   reuseIdentifier:@"test"];
+    
+    NSString *itemKey   = [[_statsTableItems allKeys] objectAtIndex:indexPath.section];
+    NSArray *statsItems = [_statsTableItems objectForKey:itemKey];
+    WKItem *item        = [statsItems objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = item.character;
+    
+    return cell;
 }
 
 #pragma mark - private
+
+- (void)adjustContentHeight {
+    
+    CGRect statsTableBounds         = _statsTableView.frame;
+    statsTableBounds.size           = _statsTableView.contentSize;
+    _statsTableView.frame           = statsTableBounds;
+    
+    _contentScrollView.contentSize  = CGSizeMake(_contentScrollView.contentSize.width,
+                                                 statsTableBounds.origin.y + statsTableBounds.size.height + 20.0f);
+}
 
 - (void)setButtonsGradients {
     
