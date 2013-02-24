@@ -58,18 +58,19 @@
     
     NSPredicate *percentagePredicate = [NSPredicate predicateWithBlock:^BOOL(WKItem *item, NSDictionary *bindings) {
         
-        CGFloat meaningCorrect, meaningIncorrect, meaningPercentage,
-                readingCorrect, readingIncorrect, readingPercentage;
+        CGFloat meaningCorrect, meaningIncorrect,
+                readingCorrect, readingIncorrect,
+                correctPercentage;
         
         meaningCorrect      = item.stats.meaningCorrect.floatValue;
         meaningIncorrect    = item.stats.meaningIncorrect.floatValue;
         readingCorrect      = item.stats.readingCorrect.floatValue;
         readingIncorrect    = item.stats.readingIncorrect.floatValue;
         
-        meaningPercentage   = meaningCorrect/(meaningCorrect + meaningIncorrect);
-        readingPercentage   = readingCorrect/(readingCorrect + readingIncorrect);
+        correctPercentage   = ( (readingCorrect + meaningCorrect) /
+                                (meaningCorrect + meaningIncorrect + readingCorrect + readingIncorrect) );
         
-        return ( meaningPercentage <= percentage/100.0 ) || ( readingPercentage <= percentage/100.0 );
+        return ( correctPercentage <= percentage/100.0 );
     }];
     
     return [criticalItems filteredArrayUsingPredicate:percentagePredicate];
