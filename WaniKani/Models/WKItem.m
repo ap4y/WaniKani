@@ -31,15 +31,19 @@
     return [self requestResult:[self where:predicate] managedObjectContext:mainThreadContext()];
 }
 
-+ (NSArray *)completedItems {
++ (NSPredicate *)completedItemsPredicate {
     
     NSArray *completedSRSTypes = @[
-        WKItemSRSTypeStrings[WKItemSRSGuru],
-        WKItemSRSTypeStrings[WKItemSRSMaster],
-        WKItemSRSTypeStrings[WKItemSRSEnlighten]
-    ];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stats.srs IN %@", completedSRSTypes];
-    return [self requestResult:[self where:predicate] managedObjectContext:mainThreadContext()];
+                                   WKItemSRSTypeStrings[WKItemSRSGuru],
+                                   WKItemSRSTypeStrings[WKItemSRSMaster],
+                                   WKItemSRSTypeStrings[WKItemSRSEnlighten]
+                                   ];
+    return [NSPredicate predicateWithFormat:@"stats.srs IN %@", completedSRSTypes];
+}
+
++ (NSArray *)completedItems {
+    
+    return [self requestResult:[self where:[self completedItemsPredicate]] managedObjectContext:mainThreadContext()];
 }
 
 + (NSArray *)unlockedItems {
@@ -105,6 +109,12 @@
     }];
     
     return radicalsByLevel;
+}
+
++ (NSArray *)itemsForLevel:(NSNumber *)level {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"level == %@", level];
+    return [self requestResult:[self where:predicate] managedObjectContext:mainThreadContext()];
 }
 
 + (NSString *)nextReviewDateString {

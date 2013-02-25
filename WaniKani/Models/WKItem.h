@@ -40,12 +40,14 @@ static NSString * const WKItemSRSTypeStrings[] = {
 - (NSString *)meaning;
 
 + (NSArray *)itemsWithSRSType:(WKItemSRSType)srsType;
++ (NSPredicate *)completedItemsPredicate;
 + (NSArray *)completedItems;
 + (NSArray *)unlockedItems;
 + (NSArray *)criticalItemsWithPercentage:(CGFloat)percentage;
 + (NSArray *)availableReviews;
 + (NSDate *)nextReviewDate;
 + (NSDictionary *)itemsByLevel:(NSArray *)radicals;
++ (NSArray *)itemsForLevel:(NSNumber *)level;
 
 + (NSString *)nextReviewDateString;
 + (NSArray *)combinedItemsWithSRSType:(WKItemSRSType)srsType;
