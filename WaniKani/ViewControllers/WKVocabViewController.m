@@ -7,11 +7,11 @@
 //
 
 #import "WKVocabViewController.h"
+#import "WKItemsHeaderView.h"
+#import "WKVocabViewCell.h"
 #import "WKVocab.h"
 
 #import "WKCustomization.h"
-
-#import "WKVocabViewCell.h"
 
 @interface WKVocabViewController ()
 @property (strong, nonatomic) IBOutlet UICollectionView *vocabCollectionView;
@@ -82,10 +82,12 @@ static NSString * const kVocabSuppViewIdentifier    = @"WKVocabSuppView";
            viewForSupplementaryElementOfKind:(NSString *)kind
                                  atIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionReusableView *suppView;
-    suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
-                                                  withReuseIdentifier:kVocabSuppViewIdentifier
-                                                         forIndexPath:indexPath];
+    WKItemsHeaderView *suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                                     withReuseIdentifier:kVocabSuppViewIdentifier
+                                                                            forIndexPath:indexPath];
+    NSNumber *levelKey          = [[_vocabByLevel allKeys] objectAtIndex:indexPath.section];
+    [suppView setItems:[WKVocab itemsForLevel:levelKey] level:levelKey];
+
     return suppView;
 }
 

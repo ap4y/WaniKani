@@ -7,6 +7,7 @@
 //
 
 #import "WKRadicalsViewController.h"
+#import "WKItemsHeaderView.h"
 #import "WKRadicalViewCell.h"
 #import "WKRadical.h"
 
@@ -82,10 +83,12 @@ static NSString * const kRadicalsSuppViewIdentifier = @"WKRadicalsSuppView";
            viewForSupplementaryElementOfKind:(NSString *)kind
                                  atIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionReusableView *suppView;
-    suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
-                                                  withReuseIdentifier:kRadicalsSuppViewIdentifier
-                                                         forIndexPath:indexPath];
+    WKItemsHeaderView *suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                                     withReuseIdentifier:kRadicalsSuppViewIdentifier
+                                                                            forIndexPath:indexPath];
+    NSNumber *levelKey          = [[_radicalsByLevel allKeys] objectAtIndex:indexPath.section];
+    [suppView setItems:[WKRadical itemsForLevel:levelKey] level:levelKey];
+    
     return suppView;
 }
 

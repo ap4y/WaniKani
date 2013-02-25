@@ -7,6 +7,7 @@
 //
 
 #import "WKKanjiViewController.h"
+#import "WKItemsHeaderView.h"
 #import "WKKanjiViewCell.h"
 #import "WKKanji.h"
 
@@ -81,10 +82,12 @@ static NSString * const kKanjiSuppViewIdentifier    = @"WKKanjiSuppView";
            viewForSupplementaryElementOfKind:(NSString *)kind
                                  atIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionReusableView *suppView;
-    suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
-                                                  withReuseIdentifier:kKanjiSuppViewIdentifier
-                                                         forIndexPath:indexPath];
+    WKItemsHeaderView *suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                                     withReuseIdentifier:kKanjiSuppViewIdentifier
+                                                                            forIndexPath:indexPath];
+    NSNumber *levelKey          = [[_kanjiByLevel allKeys] objectAtIndex:indexPath.section];
+    [suppView setItems:[WKKanji itemsForLevel:levelKey] level:levelKey];
+    
     return suppView;
 }
 

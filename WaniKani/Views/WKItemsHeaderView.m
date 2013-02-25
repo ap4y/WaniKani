@@ -7,10 +7,13 @@
 //
 
 #import "WKItemsHeaderView.h"
+#import "WKItem.h"
 
 @interface WKItemsHeaderView ()
 @property (strong, nonatomic) IBOutlet UICollectionReusableView *headerView;
-
+@property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *levelTitleLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *percentageProgressBar;
 @end
 
 @implementation WKItemsHeaderView
@@ -31,6 +34,17 @@
     [self createViewFromNib];
     
     return self;
+}
+
+- (void)setItems:(NSArray *)items level:(NSNumber *)level {
+    
+    NSArray *finishedItems  = [items filteredArrayUsingPredicate:[WKItem completedItemsPredicate]];
+    
+    _levelTitleLabel.text   = [NSLocalizedString(@"Level ", nil) stringByAppendingString:[level stringValue]];
+    _percentageLabel.text   = [NSString stringWithFormat:@"%i/%i", [finishedItems count], [items count]];
+    
+    CGFloat percentage      = (CGFloat)[finishedItems count] / (CGFloat)[items count];
+    [_percentageProgressBar setProgress:percentage];
 }
 
 #pragma mark - private

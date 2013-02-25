@@ -10,4 +10,6 @@
 
 @interface WKItemsHeaderView : UICollectionReusableView
 
+- (void)setItems:(NSArray *)items level:(NSNumber *)level;
+
 @end
