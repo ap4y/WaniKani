@@ -113,7 +113,7 @@
     NSArray *reviewDates    = @[ [WKRadical nextReviewDate], [WKKanji nextReviewDate], [WKVocab nextReviewDate] ];
     NSDate *closestDate     = [[reviewDates orderBy:@"self", nil] objectAtIndex:0];
     localDateFormatter      = [[NSDateFormatter alloc] init];
-    [localDateFormatter setDateFormat:@"eeee 'at' HH:mm"];
+    [localDateFormatter setDateFormat:@"cccc HH:mm"];
     
     return [localDateFormatter stringFromDate:closestDate];
 }
