@@ -57,11 +57,11 @@
     }
     
     NSArray *colors = @[ RGBA(0.0, 170.0, 255.0, 1.0), RGBA(0.0, 147.0, 221.0, 1.0) ];
-    if ([item isKindOfClass:[WKRadical class]]) {
+    if ([item isKindOfClass:[WKKanji class]]) {
         
         colors = @[ RGBA(255.0, 0.0, 170.0, 1.0), RGBA(221.0, 0.0, 147.0, 1.0) ];
         
-    } else if ([item isKindOfClass:[WKRadical class]]) {
+    } else if ([item isKindOfClass:[WKVocab class]]) {
         
         colors = @[ RGBA(170.0, 0.0, 255.0, 1.0), RGBA(147.0, 0.0, 221.0, 1.0) ];
     }
