@@ -29,6 +29,18 @@ static NSString * const kRadicalsSegueIdentifier = @"WKRadicalsSegue";
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [_userKeyTextField becomeFirstResponder];
+}
+
+- (IBAction)showKeyInfo:(id)sender {
+    
+    NSURL *apiInfoUrl = [NSURL URLWithString:@"http://www.wanikani.com/api"];
+    [[UIApplication sharedApplication] openURL:apiInfoUrl];
+}
+
 - (IBAction)login:(id)sender {
     
     if ([_userKeyTextField.text length] <= 0) {        
