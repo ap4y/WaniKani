@@ -75,7 +75,6 @@
 								<string key="NSFrame">{{0, 149}, {100, 1}}</string>
 								<reference key="NSSuperview" ref="457031110"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
@@ -196,6 +195,7 @@
 				<bool key="IBUIClipsSubviews">YES</bool>
 				<int key="IBUIContentMode">4</int>
 				<bool key="IBUIMultipleTouchEnabled">YES</bool>
+				<bool key="IBUIUserInteractionEnabled">NO</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<reference key="IBUIContentView" ref="457031110"/>
 			</object>
@@ -205,7 +205,6 @@
 				<string key="NSFrameSize">{100, 150}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="IBUIUserInteractionEnabled">NO</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -371,6 +370,7 @@
 						<string key="cellView">UICollectionViewCell</string>
 						<string key="characterImageView">UIImageView</string>
 						<string key="characterLabel">UILabel</string>
+						<string key="lockedImageView">UIImageView</string>
 						<string key="meaningLabel">UILabel</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -385,6 +385,10 @@
 						<object class="IBToOneOutletInfo" key="characterLabel">
 							<string key="name">characterLabel</string>
 							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="lockedImageView">
+							<string key="name">lockedImageView</string>
+							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="meaningLabel">
 							<string key="name">meaningLabel</string>
