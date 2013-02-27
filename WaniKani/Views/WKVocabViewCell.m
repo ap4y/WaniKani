@@ -10,6 +10,7 @@
 #import "WKVocab.h"
 
 #import "WKCustomization.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface WKVocabViewCell ()
 @property (strong, nonatomic) IBOutlet UICollectionViewCell *cellView;
@@ -54,6 +55,16 @@
     
     [[NSBundle mainBundle] loadNibNamed:@"WKVocabViewCell" owner:self options:nil];
     [self addSubview:_cellView];
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    
+    gradientLayer.startPoint    = CGPointMake(0.5f, 0.0f);
+    gradientLayer.endPoint      = CGPointMake(0.5f, 1.0f);
+    gradientLayer.frame         = self.bounds;
+    gradientLayer.colors        = @[ (id)[RGBA(170.0, 0.0, 255.0, 1.0) CGColor],
+                                     (id)[RGBA(147.0, 0.0, 221.0, 1.0) CGColor] ];
+    
+    [self.layer insertSublayer:gradientLayer atIndex:0];
     
     _lockedImageView.image = [WKCustomization resizableImageNamed:@"locked"
                                                     withCapInsets:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
