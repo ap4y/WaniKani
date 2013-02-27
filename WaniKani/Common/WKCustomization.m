@@ -58,6 +58,7 @@
 + (void)prepare {
     
     [self prepareUITabBarCustomization];
+    [self prepareUINavigationBarCustomization];
     [self prepareUIProgressViewCustomization];
     [self prepareUISliderCustomization];
 }
@@ -75,6 +76,21 @@
         UITextAttributeFont: [UIFont fontWithName:@"HelveticaNeue" size:12.0f]
     };
     [[UITabBarItem appearance] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+}
+
++ (void)prepareUINavigationBarCustomization {
+    
+    NSArray *colors         = @[ RGBA(255.0, 255.0, 255.0, 1.0), RGBA(242.0, 242.0, 242.0, 1.0) ];
+    UIImage *outputImage    = [self gradientImageWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)
+                                                    colors:colors
+                                                startPoint:CGPointMake(0.5f, 0.0f)
+                                                  endPoint:CGPointMake(0.5f, 1.0f)];
+    [[UINavigationBar appearance] setBackgroundImage:outputImage forBarMetrics:UIBarMetricsDefault];
+    NSDictionary *textAttributes = @{
+        UITextAttributeTextColor: RGBA(153.0, 153.0, 153.0, 1.0),
+        UITextAttributeTextShadowOffset: [NSValue valueWithCGSize:CGSizeMake(0.0f, 0.0f)]
+    };    
+    [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
 }
 
 + (void)prepareUIProgressViewCustomization {
