@@ -25,6 +25,16 @@
 @dynamic readingCurrentStreak;
 @dynamic item;
 
+- (NSDate *)nextReviewDate {
+    
+    return [NSDate dateWithTimeIntervalSince1970:[self.availableDate doubleValue]];
+}
+
+- (NSDate *)unlockDate {
+ 
+    return [NSDate dateWithTimeIntervalSince1970:[self.unlockedDate doubleValue]];
+}
+
 #pragma mark - entity settings
 
 + (NSDictionary *)propertyMappings {

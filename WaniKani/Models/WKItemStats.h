@@ -24,4 +24,8 @@
 @property (strong, nonatomic) NSNumber *readingMaxStreak;
 @property (strong, nonatomic) NSNumber *readingCurrentStreak;
 @property (strong, nonatomic) WKItem *item;
+
+- (NSDate *)nextReviewDate;
+- (NSDate *)unlockDate;
+
 @end
