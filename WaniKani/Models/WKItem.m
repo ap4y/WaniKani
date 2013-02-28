@@ -66,10 +66,10 @@
                 readingCorrect, readingIncorrect,
                 correctPercentage;
         
-        meaningCorrect      = item.stats.meaningCorrect.floatValue;
-        meaningIncorrect    = item.stats.meaningIncorrect.floatValue;
-        readingCorrect      = item.stats.readingCorrect.floatValue;
-        readingIncorrect    = item.stats.readingIncorrect.floatValue;
+        meaningCorrect      = [item.stats.meaningCorrect floatValue];
+        meaningIncorrect    = [item.stats.meaningIncorrect floatValue];
+        readingCorrect      = [item.stats.readingCorrect floatValue];
+        readingIncorrect    = [item.stats.readingIncorrect floatValue];
         
         correctPercentage   = ( (readingCorrect + meaningCorrect) /
                                 (meaningCorrect + meaningIncorrect + readingCorrect + readingIncorrect) );
