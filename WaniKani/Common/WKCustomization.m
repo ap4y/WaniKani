@@ -87,10 +87,13 @@
                                                   endPoint:CGPointMake(0.5f, 1.0f)];
     [[UINavigationBar appearance] setBackgroundImage:outputImage forBarMetrics:UIBarMetricsDefault];
     NSDictionary *textAttributes = @{
-        UITextAttributeTextColor: RGBA(153.0, 153.0, 153.0, 1.0),
-        UITextAttributeTextShadowOffset: [NSValue valueWithCGSize:CGSizeMake(0.0f, 0.0f)]
-    };    
+        UITextAttributeFont: [UIFont fontWithName:@"HelveticaNeue" size:22.0f],
+        UITextAttributeTextColor: RGBA(51.0, 51.0, 51.0, 1.0),
+        UITextAttributeTextShadowColor: RGBA(255.0, 255.0, 255.0, 1.0),
+        UITextAttributeTextShadowOffset: [NSValue valueWithCGSize:CGSizeMake(0.0f, 1.0f)]
+    };
     [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
+    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:0.0f forBarMetrics:UIBarMetricsDefault];
 }
 
 + (void)prepareUIProgressViewCustomization {
