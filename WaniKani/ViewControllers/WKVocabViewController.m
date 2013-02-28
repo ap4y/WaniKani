@@ -23,6 +23,7 @@
 
 static NSString * const kVocabCellIdentifier        = @"WKVocabCell";
 static NSString * const kVocabSuppViewIdentifier    = @"WKVocabSuppView";
+static NSString * const kDetailsSegueIdentifier     = @"WKVocabDetailsSegue";
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -62,6 +63,19 @@ static NSString * const kVocabSuppViewIdentifier    = @"WKVocabSuppView";
     UIImage *selectionImage = [WKCustomization resizableImageNamed:@"vocab_selection"
                                                      withCapInsets:UIEdgeInsetsMake(2.5f, 2.5f, 2.5f, 2.5f)];
     [self.tabBarController.tabBar setSelectionIndicatorImage:selectionImage];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
+        
+        NSIndexPath *indexPath      = [_vocabCollectionView indexPathForCell:sender];
+        NSNumber *levelKey          = [[_vocabByLevel allKeys] objectAtIndex:indexPath.section];
+        NSArray *vocabForLevel      = [_vocabByLevel objectForKey:levelKey];
+        WKVocab *vocabItem          = [vocabForLevel objectAtIndex:indexPath.row];
+        
+        [segue.destinationViewController setValue:vocabItem forKey:@"item"];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource

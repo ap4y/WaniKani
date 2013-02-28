@@ -34,7 +34,8 @@
 
 @implementation WKStatsViewController
 
-static NSString * const kStatsCellIdentifier = @"WKStatsCell";
+static NSString * const kStatsCellIdentifier        = @"WKStatsCell";
+static NSString * const kDetailsSegueIdentifier     = @"WKStatDetailsSegue";
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -103,6 +104,19 @@ static NSString * const kStatsCellIdentifier = @"WKStatsCell";
     [self adjustContentHeight];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
+        
+        NSIndexPath *indexPath  = [_statsTableView indexPathForCell:sender];
+        NSString *itemKey       = [[_statsTableItems allKeys] objectAtIndex:indexPath.section];
+        NSArray *statsItems     = [_statsTableItems objectForKey:itemKey];
+        WKItem *item            = [statsItems objectAtIndex:indexPath.row];
+        
+        [segue.destinationViewController setValue:item forKey:@"item"];
+    }
+}
+
 - (IBAction)onlyCriticalsDidChanged:(id)sender {
 }
 
@@ -148,6 +162,14 @@ static NSString * const kStatsCellIdentifier = @"WKStatsCell";
     [cell setItem:item];
     
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:kDetailsSegueIdentifier sender:[tableView cellForRowAtIndexPath:indexPath]];
 }
 
 #pragma mark - private

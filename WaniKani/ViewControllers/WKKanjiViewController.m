@@ -23,6 +23,7 @@
 
 static NSString * const kKanjiCellIdentifier        = @"WKKanjiCell";
 static NSString * const kKanjiSuppViewIdentifier    = @"WKKanjiSuppView";
+static NSString * const kDetailsSegueIdentifier     = @"WKKanjiDetailsSegue";
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -62,6 +63,19 @@ static NSString * const kKanjiSuppViewIdentifier    = @"WKKanjiSuppView";
     UIImage *selectionImage = [WKCustomization resizableImageNamed:@"kanji_selection"
                                                      withCapInsets:UIEdgeInsetsMake(2.5f, 2.5f, 2.5f, 2.5f)];
     [self.tabBarController.tabBar setSelectionIndicatorImage:selectionImage];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
+        
+        NSIndexPath *indexPath      = [_kanjiCollectionView indexPathForCell:sender];
+        NSNumber *levelKey          = [[_kanjiByLevel allKeys] objectAtIndex:indexPath.section];
+        NSArray *kanjiForLevel      = [_kanjiByLevel objectForKey:levelKey];
+        WKKanji *kanjiItem          = [kanjiForLevel objectAtIndex:indexPath.row];
+        
+        [segue.destinationViewController setValue:kanjiItem forKey:@"item"];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource

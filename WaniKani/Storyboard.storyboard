@@ -26,6 +26,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="YT0-3n-m4d" kind="push" identifier="WKVocabDetailsSegue" id="fOG-ip-kSb"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WKVocabSuppView" id="dwH-4t-IFo" customClass="WKItemsHeaderView">
@@ -64,6 +67,7 @@
                     <tabBarItem key="tabBarItem" title="Stats" id="Ipj-Qc-9XU"/>
                     <connections>
                         <outlet property="contentScrollView" destination="Pjm-sf-mG8" id="om7-ZD-aGE"/>
+                        <segue destination="YT0-3n-m4d" kind="push" identifier="WKStatDetailsSegue" id="7AW-Fi-pgm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8d-vQ-5dU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -92,6 +96,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="YT0-3n-m4d" kind="push" identifier="WKRadicalDetailsSegue" id="G1L-E5-Gla"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WKRadicalsSuppView" id="diB-NB-zoE" customClass="WKItemsHeaderView">
@@ -111,6 +118,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="972-YB-Ced" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="583" y="-23"/>
+        </scene>
+        <!--Item Details View Controller-->
+        <scene sceneID="Cpd-mD-tz5">
+            <objects>
+                <viewController id="YT0-3n-m4d" customClass="WKItemDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Kq-A6-mnV">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rxQ-3o-27G">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Cr-Mo-blG"/>
+                    <connections>
+                        <outlet property="contentScrollView" destination="rxQ-3o-27G" id="02P-ej-3r4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibk-7Q-2fT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="-23"/>
         </scene>
         <!--Kanji View Controller - Kanji-->
         <scene sceneID="yUk-33-4aO">
@@ -134,6 +165,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="YT0-3n-m4d" kind="push" identifier="WKKanjiDetailsSegue" id="0MY-Nl-ELO"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WKKanjiSuppView" id="D3b-Ic-31w" customClass="WKItemsHeaderView">
@@ -277,6 +311,41 @@
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
+        <class className="WKItemDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="characterBackgroundView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="characterImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="characterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="combinedPercentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="combinedProgressView" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="contentScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="kanjiReadingView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="kunReadingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="levelBackgroundView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="levelLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="meaningPercentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="meaningProgressView" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="meaningsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="meaningsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="namingPercentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="namingProgressView" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="nextReviewDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="onReadingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="progressFooterView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="progressHeaderView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="progressView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="radicalProgressView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="readingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="readingPercentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="readingProgressView" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="readingView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="srsBackgroundView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="srsLevelLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="unlockedDateLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="WKItemsHeaderView" superclassName="UICollectionReusableView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemsHeaderView.h"/>
             <relationships>
@@ -328,6 +397,8 @@
         <class className="WKStatsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKStatsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="criticalPercentageDidChanged:"/>
+                <relationship kind="action" name="onlyCriticalsDidChanged:"/>
                 <relationship kind="outlet" name="apprenticeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="burnedButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="contentScrollView" candidateClass="UIScrollView"/>
@@ -363,4 +434,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="7AW-Fi-pgm"/>
+    </inferredMetricsTieBreakers>
 </document>

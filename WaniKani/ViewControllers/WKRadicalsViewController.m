@@ -23,6 +23,7 @@
 
 static NSString * const kRadicalsCellIdentifier     = @"WKRadicalsCell";
 static NSString * const kRadicalsSuppViewIdentifier = @"WKRadicalsSuppView";
+static NSString * const kDetailsSegueIdentifier     = @"WKRadicalDetailsSegue";
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -63,6 +64,19 @@ static NSString * const kRadicalsSuppViewIdentifier = @"WKRadicalsSuppView";
     UIImage *selectionImage = [WKCustomization resizableImageNamed:@"radicals_selection"
                                                      withCapInsets:UIEdgeInsetsMake(2.5f, 2.5f, 2.5f, 2.5f)];
     [self.tabBarController.tabBar setSelectionIndicatorImage:selectionImage];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
+    
+        NSIndexPath *indexPath      = [_radicalsCollectionView indexPathForCell:sender];
+        NSNumber *levelKey          = [[_radicalsByLevel allKeys] objectAtIndex:indexPath.section];
+        NSArray *radicalsForLevel   = [_radicalsByLevel objectForKey:levelKey];
+        WKRadical *radical          = [radicalsForLevel objectAtIndex:indexPath.row];
+
+        [segue.destinationViewController setValue:radical forKey:@"item"];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
