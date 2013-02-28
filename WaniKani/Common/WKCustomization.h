@@ -19,6 +19,9 @@
                          startPoint:(CGPoint)startPoint
                            endPoint:(CGPoint)endPoint;
 
++ (void)insertView:(UIView *)view into:(UIView *)containerView positionedBelow:(UIView *)aboveView;
++ (CGSize)sizeThatFitsView:(UIView *)view;
+
 + (void)prepare;
 
 @end

@@ -55,6 +55,19 @@
     return outputImage;
 }
 
++ (void)insertView:(UIView *)view into:(UIView *)containerView positionedBelow:(UIView *)aboveView {
+    
+    CGRect viewFrame    = view.frame;
+    viewFrame.origin.y  = aboveView.frame.origin.y + aboveView.frame.size.height;
+    view.frame          = viewFrame;
+    [containerView addSubview:view];
+}
+
++ (CGSize)sizeThatFitsView:(UIView *)view {
+    
+    return CGSizeMake(view.frame.origin.x + view.frame.size.width, view.frame.origin.y + view.frame.size.height);
+}
+
 + (void)prepare {
     
     [self prepareUITabBarCustomization];
