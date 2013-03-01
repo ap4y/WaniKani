@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *radicalsCollectionView;
 
 @property (strong, nonatomic) NSDictionary *radicalsByLevel;
+@property (strong, nonatomic) NSMutableDictionary *collapsedRadicalsByLevel;
 @end
 
 @implementation WKRadicalsViewController
@@ -32,6 +33,19 @@ static NSString * const kDetailsSegueIdentifier     = @"WKRadicalDetailsSegue";
     NSArray *radicals       = [WKRadical requestResult:[WKRadical all] managedObjectContext:mainThreadContext()];
     self.radicalsByLevel    = [WKItem itemsByLevel:radicals];
 
+    self.collapsedRadicalsByLevel = [NSMutableDictionary dictionary];
+    [[_radicalsByLevel allKeys] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+       
+        if (idx == 0) {
+            
+            [_collapsedRadicalsByLevel setObject:[_radicalsByLevel objectForKey:obj] forKey:obj];
+            
+        } else {
+            
+            [_collapsedRadicalsByLevel setValue:nil forKey:obj];
+        }
+    }];
+    
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_radicals_pressed"]
                   withFinishedUnselectedImage:[UIImage imageNamed:@"btn_radicals_normal"]];
     
@@ -88,7 +102,7 @@ static NSString * const kDetailsSegueIdentifier     = @"WKRadicalDetailsSegue";
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
     NSNumber *levelKey          = [[_radicalsByLevel allKeys] objectAtIndex:section];
-    NSArray *radicalsForLevel   = [_radicalsByLevel objectForKey:levelKey];
+    NSArray *radicalsForLevel   = [_collapsedRadicalsByLevel objectForKey:levelKey];
     
     return [radicalsForLevel count];
 }
@@ -102,6 +116,21 @@ static NSString * const kDetailsSegueIdentifier     = @"WKRadicalDetailsSegue";
                                                                             forIndexPath:indexPath];
     NSNumber *levelKey          = [[_radicalsByLevel allKeys] objectAtIndex:indexPath.section];
     [suppView setItems:[WKRadical itemsForLevel:levelKey] level:levelKey];
+    [suppView setHeaderViewTouched:^{
+        
+        if (![_collapsedRadicalsByLevel objectForKey:levelKey]) {
+            
+            [_collapsedRadicalsByLevel setObject:[_radicalsByLevel objectForKey:levelKey] forKey:levelKey];
+            [collectionView reloadData];
+            [collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:indexPath.section]
+                                   atScrollPosition:UICollectionViewScrollPositionBottom
+                                           animated:YES];
+        } else {
+            
+            [_collapsedRadicalsByLevel setValue:nil forKey:(id)levelKey];
+            [collectionView reloadData];
+        }
+    }];
     
     return suppView;
 }

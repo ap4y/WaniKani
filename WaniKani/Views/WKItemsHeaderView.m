@@ -55,4 +55,9 @@
     [self addSubview:_headerView];
 }
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    if ([touches count] == 1 && _headerViewTouched) _headerViewTouched();
+}
+
 @end

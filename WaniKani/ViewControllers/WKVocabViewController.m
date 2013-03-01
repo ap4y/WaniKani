@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *vocabCollectionView;
 
 @property (strong, nonatomic) NSDictionary *vocabByLevel;
+@property (strong, nonatomic) NSMutableDictionary *collapsedVocabByLevel;
 @end
 
 @implementation WKVocabViewController
@@ -31,6 +32,19 @@ static NSString * const kDetailsSegueIdentifier     = @"WKVocabDetailsSegue";
     
     NSArray *vocab      = [WKVocab requestResult:[WKVocab all] managedObjectContext:mainThreadContext()];
     self.vocabByLevel   = [WKItem itemsByLevel:vocab];
+    
+    self.collapsedVocabByLevel = [NSMutableDictionary dictionary];
+    [[_vocabByLevel allKeys] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        if (idx == 0) {
+            
+            [_collapsedVocabByLevel setObject:[_vocabByLevel objectForKey:obj] forKey:obj];
+            
+        } else {
+            
+            [_collapsedVocabByLevel setValue:nil forKey:obj];
+        }
+    }];    
     
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_vocab_pressed"]
                   withFinishedUnselectedImage:[UIImage imageNamed:@"btn_vocab_normal"]];
@@ -87,7 +101,7 @@ static NSString * const kDetailsSegueIdentifier     = @"WKVocabDetailsSegue";
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
     NSNumber *levelKey      = [[_vocabByLevel allKeys] objectAtIndex:section];
-    NSArray *vocabForLevel  = [_vocabByLevel objectForKey:levelKey];
+    NSArray *vocabForLevel  = [_collapsedVocabByLevel objectForKey:levelKey];
     
     return [vocabForLevel count];
 }
@@ -101,7 +115,22 @@ static NSString * const kDetailsSegueIdentifier     = @"WKVocabDetailsSegue";
                                                                             forIndexPath:indexPath];
     NSNumber *levelKey          = [[_vocabByLevel allKeys] objectAtIndex:indexPath.section];
     [suppView setItems:[WKVocab itemsForLevel:levelKey] level:levelKey];
-
+    [suppView setHeaderViewTouched:^{
+       
+        if (![_collapsedVocabByLevel objectForKey:levelKey]) {
+            
+            [_collapsedVocabByLevel setObject:[_vocabByLevel objectForKey:levelKey] forKey:levelKey];
+            [collectionView reloadData];
+            [collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:indexPath.section]
+                                   atScrollPosition:UICollectionViewScrollPositionBottom
+                                           animated:YES];
+        } else {
+            
+            [_collapsedVocabByLevel setValue:nil forKey:(id)levelKey];
+            [collectionView reloadData];
+        }
+    }];
+    
     return suppView;
 }
 
