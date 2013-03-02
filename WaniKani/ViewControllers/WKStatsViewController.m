@@ -15,6 +15,7 @@
 
 #import "WKGravatarImage.h"
 #import "WKCustomization.h"
+#import "WKSyncManager.h"
 
 @interface WKStatsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UIView *statsView;
@@ -48,6 +49,15 @@ static NSString * const kDetailsSegueIdentifier     = @"WKStatDetailsSegue";
         [self.tabBarItem setFinishedSelectedImage:image withFinishedUnselectedImage:image];
     }];
     
+    [[NSNotificationCenter defaultCenter] addObserverForName:WKSyncMangerDidSyncNotification
+                                                      object:[WKSyncManager sharedManager]
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      
+                                                      [self updateViewValues];
+                                                      [_statsTableView reloadData];
+                                                  }];
+    
     return self;
 }
 
@@ -65,38 +75,9 @@ static NSString * const kDetailsSegueIdentifier     = @"WKStatDetailsSegue";
     _statsTableView.layer.cornerRadius  = 5.0f;
     
     [self setButtonsGradients];
-    
-    _nextReviewLabel.text   = [WKItem nextReviewDateString];
-    
-    NSArray *burnedItems    = [WKItem combinedItemsWithSRSType:WKItemSRSBurned];
-    NSArray *criticalItems  = [WKItem combinedCriticalItemsWithPercentage:75.0f];
-    NSArray *unlockedItems  = [WKItem combinedUnlockedItems];
-    
-#define count_as_string(array) [NSString stringWithFormat:@"%i", [array count]]
-    [_apprenticeButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSApprentice])
-                       forState:UIControlStateNormal];
-    [_guruButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSGuru])
-                       forState:UIControlStateNormal];
-    [_masterButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSMaster])
-                       forState:UIControlStateNormal];
-    [_enlightenButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSEnlighten])
-                       forState:UIControlStateNormal];
-    [_burnedButton setTitle:count_as_string(burnedItems)
-                       forState:UIControlStateNormal];    
-#undef count_as_string
-    
-    NSMutableDictionary *statsItems = [NSMutableDictionary dictionary];
-    
-    if ([burnedItems count] > 0)    [statsItems setObject:burnedItems
-                                                   forKey:NSLocalizedString(@"Burned Items", nil)];
-    if ([criticalItems count] > 0)  [statsItems setObject:criticalItems
-                                                   forKey:NSLocalizedString(@"Critical Items", nil)];
-    if ([unlockedItems count] > 0)  [statsItems setObject:unlockedItems
-                                                   forKey:NSLocalizedString(@"Unlocked Items", nil)];
-    
-    self.statsTableItems = statsItems;
-    
     [_statsTableView registerClass:[WKItemTableCell class] forCellReuseIdentifier:kStatsCellIdentifier];
+    
+    [self updateViewValues];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -181,7 +162,7 @@ static NSString * const kDetailsSegueIdentifier     = @"WKStatDetailsSegue";
     _statsTableView.frame           = statsTableBounds;
     
     _contentScrollView.contentSize  = CGSizeMake(_contentScrollView.contentSize.width,
-                                                 statsTableBounds.origin.y + statsTableBounds.size.height + 20.0f);
+                                                 statsTableBounds.origin.y + statsTableBounds.size.height + 10.0f);
 }
 
 - (void)setButtonsGradients {
@@ -223,6 +204,39 @@ static NSString * const kDetailsSegueIdentifier     = @"WKStatDetailsSegue";
                                                    startPoint:CGPointMake(0.5f, 0.0f)
                                                      endPoint:CGPointMake(0.5f, 1.0f)];
     [_burnedButton setBackgroundImage:tempGradient forState:UIControlStateNormal];
+}
+
+- (void)updateViewValues {
+    
+    _nextReviewLabel.text   = [WKItem nextReviewDateString];
+    
+    NSArray *burnedItems    = [WKItem combinedItemsWithSRSType:WKItemSRSBurned];
+    NSArray *criticalItems  = [WKItem combinedCriticalItemsWithPercentage:75.0f];
+    NSArray *unlockedItems  = [WKItem combinedUnlockedItems];
+    
+#define count_as_string(array) [NSString stringWithFormat:@"%i", [array count]]
+    [_apprenticeButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSApprentice])
+                       forState:UIControlStateNormal];
+    [_guruButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSGuru])
+                 forState:UIControlStateNormal];
+    [_masterButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSMaster])
+                   forState:UIControlStateNormal];
+    [_enlightenButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSEnlighten])
+                      forState:UIControlStateNormal];
+    [_burnedButton setTitle:count_as_string(burnedItems)
+                   forState:UIControlStateNormal];
+#undef count_as_string
+    
+    NSMutableDictionary *statsItems = [NSMutableDictionary dictionary];
+    
+    if ([burnedItems count] > 0)    [statsItems setObject:burnedItems
+                                                   forKey:NSLocalizedString(@"Burned Items", nil)];
+    if ([criticalItems count] > 0)  [statsItems setObject:criticalItems
+                                                   forKey:NSLocalizedString(@"Critical Items", nil)];
+    if ([unlockedItems count] > 0)  [statsItems setObject:unlockedItems
+                                                   forKey:NSLocalizedString(@"Unlocked Items", nil)];
+    
+    self.statsTableItems = statsItems;
 }
 
 @end
