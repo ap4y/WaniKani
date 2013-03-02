@@ -65,7 +65,15 @@ static const NSUInteger kMaxFinishedBlocksCount = 3;
 #pragma mark - private
 
 - (void)createLocalNotification {
+
+    UILocalNotification *localNotification;
+    localNotification           = [[UILocalNotification alloc] init];
+    localNotification.fireDate  = [WKItem nextReviewDate];
+    localNotification.alertBody = NSLocalizedString(@"New Reviews Available", nil);
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
     
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
 @end
