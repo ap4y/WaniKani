@@ -116,6 +116,8 @@
 		95672BA216D4BF6E00DD16E8 /* burned@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95672BA016D4BF6E00DD16E8 /* burned@2x.png */; };
 		958DC8B216E17CD300F948F4 /* WKItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958DC8B116E17CD300F948F4 /* WKItemViewController.m */; };
 		958DC8B516E1829100F948F4 /* WKSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 958DC8B416E1829100F948F4 /* WKSyncManager.m */; };
+		958DC8B816E1B0CC00F948F4 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 958DC8B616E1B0CC00F948F4 /* Icon.png */; };
+		958DC8B916E1B0CC00F948F4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 958DC8B716E1B0CC00F948F4 /* Icon@2x.png */; };
 		95AF233716DB4FF100ABEA65 /* login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 95AF233516DB4FF100ABEA65 /* login_background.png */; };
 		95AF233816DB4FF100ABEA65 /* login_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95AF233616DB4FF100ABEA65 /* login_background@2x.png */; };
 /* End PBXBuildFile section */
@@ -273,6 +275,8 @@
 		958DC8B116E17CD300F948F4 /* WKItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKItemViewController.m; path = ViewControllers/WKItemViewController.m; sourceTree = "<group>"; };
 		958DC8B316E1829100F948F4 /* WKSyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKSyncManager.h; path = Common/WKSyncManager.h; sourceTree = "<group>"; };
 		958DC8B416E1829100F948F4 /* WKSyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKSyncManager.m; path = Common/WKSyncManager.m; sourceTree = "<group>"; };
+		958DC8B616E1B0CC00F948F4 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		958DC8B716E1B0CC00F948F4 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		95AF233516DB4FF100ABEA65 /* login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_background.png; sourceTree = "<group>"; };
 		95AF233616DB4FF100ABEA65 /* login_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_background@2x.png"; sourceTree = "<group>"; };
 		C1C66C383D4C4418A956E88D /* libPods-WaniKaniTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WaniKaniTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -481,6 +485,8 @@
 				95168B4216C88BF7003BE60A /* Default.png */,
 				95168B4416C88BF7003BE60A /* Default@2x.png */,
 				95168B4616C88BF7003BE60A /* Default-568h@2x.png */,
+				958DC8B616E1B0CC00F948F4 /* Icon.png */,
+				958DC8B716E1B0CC00F948F4 /* Icon@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -710,6 +716,8 @@
 				95AF233716DB4FF100ABEA65 /* login_background.png in Resources */,
 				95AF233816DB4FF100ABEA65 /* login_background@2x.png in Resources */,
 				9546858916DDE669006AE86F /* WKItemDetailViews.xib in Resources */,
+				958DC8B816E1B0CC00F948F4 /* Icon.png in Resources */,
+				958DC8B916E1B0CC00F948F4 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
