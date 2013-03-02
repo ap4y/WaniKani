@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-NSString * const WKSyncMangerDidSyncNotification;
-NSString * const WKSyncMangerDidFailNotification;
-NSString * const WKSyncMangerFailErrorKey;
+static NSString * const WKSyncMangerDidSyncNotification = @"WKSyncMangerDidSyncNotification";
+static NSString * const WKSyncMangerDidFailNotification = @"WKSyncMangerDidFailNotification";
+static NSString * const WKSyncMangerFailErrorKey        = @"WKSyncMangerFailErrorKey";
 
 @interface WKSyncManager : NSObject
 

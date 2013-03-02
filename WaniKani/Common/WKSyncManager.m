@@ -43,7 +43,7 @@ static const NSUInteger kMaxFinishedBlocksCount = 3;
         
         if ( _finishedBlocksCount == kMaxFinishedBlocksCount ) {
             
-            [[NSNotificationCenter defaultCenter] postNotificationName:WKSyncMangerDidSyncNotification object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:WKSyncMangerDidSyncNotification object:self];
             _isSyncing = NO;
             [self createLocalNotification];
         }
@@ -52,7 +52,7 @@ static const NSUInteger kMaxFinishedBlocksCount = 3;
     void (^failureBlock)(NSError *error) = ^(NSError *error) {
 
         [[NSNotificationCenter defaultCenter] postNotificationName:WKSyncMangerDidFailNotification
-                                                            object:nil
+                                                            object:self
                                                           userInfo:@{ WKSyncMangerFailErrorKey: error }];
         _isSyncing = NO;
     };

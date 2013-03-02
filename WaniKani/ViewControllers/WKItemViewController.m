@@ -12,6 +12,7 @@
 #import "WKSyncManager.h"
 
 #import "WKCustomization.h"
+#import "UIScrollView+SVPullToRefresh.h"
 
 @interface WKItemViewController ()
 @property (strong, nonatomic) NSDictionary *itemsByLevel;
@@ -29,24 +30,27 @@
     self.collapsedItemsByLevel  = [NSMutableDictionary dictionary];
     [self updateItemCollectionsWithCollapsedRefresh:NO];
     
-    [[WKSyncManager sharedManager] fetchItems];
     [[NSNotificationCenter defaultCenter] addObserverForName:WKSyncMangerDidSyncNotification
-                                                      object:self
+                                                      object:[WKSyncManager sharedManager]
                                                        queue:[NSOperationQueue mainQueue]
                                                   usingBlock:^(NSNotification *note) {
-                                                     
+                                                      
+                                                      [_itemsCollectionView.pullToRefreshView stopAnimating];
                                                       [self updateItemCollectionsWithCollapsedRefresh:YES];
                                                   }];
     [[NSNotificationCenter defaultCenter] addObserverForName:WKSyncMangerDidFailNotification
-                                                      object:self
+                                                      object:[WKSyncManager sharedManager]
                                                        queue:[NSOperationQueue mainQueue]
-                                                  usingBlock:^(NSNotification *note) {                                                     
+                                                  usingBlock:^(NSNotification *note) {
+                                                      
+                                                      [_itemsCollectionView.pullToRefreshView stopAnimating];
                                                       /**
                                                        TODO: Handle error situation
                                                        */
                                                       NSLog(@"%@", [[note userInfo] valueForKey:WKSyncMangerFailErrorKey]);
                                                   }];
     
+    [[WKSyncManager sharedManager] fetchItems];    
     return self;
 }
 
@@ -54,7 +58,11 @@
     [super viewDidLoad];
     
     [WKCustomization setBackgroundForView:self.view];
-    [_itemsCollectionView setBackgroundColor:[UIColor clearColor]];        
+    [_itemsCollectionView setBackgroundColor:[UIColor clearColor]];    
+    [_itemsCollectionView addPullToRefreshWithActionHandler:^{
+       
+        [[WKSyncManager sharedManager] fetchItems];
+    }];
 }
 
 #pragma mark - private
