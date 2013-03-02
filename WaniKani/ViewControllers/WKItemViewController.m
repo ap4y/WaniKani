@@ -9,6 +9,7 @@
 #import "WKItemViewController.h"
 #import "WKItemsHeaderView.h"
 #import "WKItem.h"
+#import "WKSyncManager.h"
 
 #import "WKCustomization.h"
 
@@ -23,25 +24,29 @@
     self = [super initWithCoder:aDecoder];
     if (!self) return nil;
     
-    Class itemClass         = [self itemClass];
-    if (![itemClass isSubclassOfClass:[WKItem class]]) return nil;
+    if (![[self itemClass] isSubclassOfClass:[WKItem class]]) return nil;
+
+    self.collapsedItemsByLevel  = [NSMutableDictionary dictionary];
+    [self updateItemCollectionsWithCollapsedRefresh:NO];
     
-    NSArray *items          = [itemClass requestResult:[itemClass all] managedObjectContext:mainThreadContext()];
-    self.itemsByLevel       = [WKItem itemsByLevel:items];
+    [[WKSyncManager sharedManager] fetchItems];
+    [[NSNotificationCenter defaultCenter] addObserverForName:WKSyncMangerDidSyncNotification
+                                                      object:self
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                     
+                                                      [self updateItemCollectionsWithCollapsedRefresh:YES];
+                                                  }];
+    [[NSNotificationCenter defaultCenter] addObserverForName:WKSyncMangerDidFailNotification
+                                                      object:self
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {                                                     
+                                                      /**
+                                                       TODO: Handle error situation
+                                                       */
+                                                      NSLog(@"%@", [[note userInfo] valueForKey:WKSyncMangerFailErrorKey]);
+                                                  }];
     
-    self.collapsedItemsByLevel = [NSMutableDictionary dictionary];
-    [[_itemsByLevel allKeys] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        
-        if (idx == 0) {
-            
-            [_collapsedItemsByLevel setObject:[_itemsByLevel objectForKey:obj] forKey:obj];
-            
-        } else {
-            
-            [_collapsedItemsByLevel setValue:nil forKey:obj];
-        }
-    }];
-        
     return self;
 }
 
@@ -49,7 +54,40 @@
     [super viewDidLoad];
     
     [WKCustomization setBackgroundForView:self.view];
-    [_itemsCollectionView setBackgroundColor:[UIColor clearColor]];
+    [_itemsCollectionView setBackgroundColor:[UIColor clearColor]];        
+}
+
+#pragma mark - private
+
+- (void)updateItemCollectionsWithCollapsedRefresh:(BOOL)withCollapsedRefresh {
+    
+    Class itemClass         = [self itemClass];
+    NSArray *items          = [itemClass requestResult:[itemClass all] managedObjectContext:mainThreadContext()];
+    self.itemsByLevel       = [WKItem itemsByLevel:items];
+    
+    [[_itemsByLevel allKeys] enumerateObjectsUsingBlock:^(id levelKey, NSUInteger idx, BOOL *stop) {
+        
+        if (withCollapsedRefresh) {
+            
+            if ([_collapsedItemsByLevel objectForKey:levelKey]) {
+                
+                [_collapsedItemsByLevel setObject:[_itemsByLevel objectForKey:levelKey] forKey:levelKey];
+            }
+            
+        } else {
+            
+            if (idx == 0) {
+                
+                [_collapsedItemsByLevel setObject:[_itemsByLevel objectForKey:levelKey] forKey:levelKey];
+                
+            } else {
+                
+                [_collapsedItemsByLevel setValue:nil forKey:levelKey];
+            }
+        }
+    }];
+    
+    if (withCollapsedRefresh) [_itemsCollectionView reloadData];
 }
 
 #pragma mark - controller setting
