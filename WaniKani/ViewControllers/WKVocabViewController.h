@@ -6,6 +6,8 @@
 //
 //
 
-@interface WKVocabViewController : UICollectionViewController
+#import "WKItemViewController.h"
+
+@interface WKVocabViewController : WKItemViewController
 
 @end

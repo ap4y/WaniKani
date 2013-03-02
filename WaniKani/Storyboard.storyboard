@@ -42,7 +42,7 @@
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Vocab" image="btn_vocab_normal.png" id="SeU-XP-Swy"/>
                     <connections>
-                        <outlet property="vocabCollectionView" destination="nd5-gs-TMy" id="Tlo-Oh-kVI"/>
+                        <outlet property="itemsCollectionView" destination="nd5-gs-TMy" id="b00-YK-ysd"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YcN-4V-lFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,7 +112,7 @@
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Radicals" image="btn_radicals_normal.png" id="Gk8-Cu-lAl"/>
                     <connections>
-                        <outlet property="radicalsCollectionView" destination="rUP-Gv-8A3" id="rzh-c4-O0X"/>
+                        <outlet property="itemsCollectionView" destination="rUP-Gv-8A3" id="1ol-Ta-Bng"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="972-YB-Ced" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,7 +181,7 @@
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Kanji" image="btn_kanji_normal.png" id="hPt-eV-c16"/>
                     <connections>
-                        <outlet property="kanjiCollectionView" destination="Nnq-jq-tZm" id="Z5v-pV-dAC"/>
+                        <outlet property="itemsCollectionView" destination="Nnq-jq-tZm" id="Pfo-YS-s4X"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LAW-2K-saR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -346,6 +346,12 @@
                 <relationship kind="outlet" name="unlockedDateLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="WKItemViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="itemsCollectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
         <class className="WKItemsHeaderView" superclassName="UICollectionReusableView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemsHeaderView.h"/>
             <relationships>
@@ -365,11 +371,8 @@
                 <relationship kind="outlet" name="readingLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="WKKanjiViewController" superclassName="UICollectionViewController">
+        <class className="WKKanjiViewController" superclassName="WKItemViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKKanjiViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="kanjiCollectionView" candidateClass="UICollectionView"/>
-            </relationships>
         </class>
         <class className="WKLoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKLoginViewController.h"/>
@@ -388,11 +391,8 @@
                 <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="WKRadicalsViewController" superclassName="UICollectionViewController">
+        <class className="WKRadicalsViewController" superclassName="WKItemViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKRadicalsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="radicalsCollectionView" candidateClass="UICollectionView"/>
-            </relationships>
         </class>
         <class className="WKStatsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKStatsViewController.h"/>
@@ -422,11 +422,8 @@
                 <relationship kind="outlet" name="readingLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="WKVocabViewController" superclassName="UICollectionViewController">
+        <class className="WKVocabViewController" superclassName="WKItemViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKVocabViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="vocabCollectionView" candidateClass="UICollectionView"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -435,6 +432,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7AW-Fi-pgm"/>
+        <segue reference="fOG-ip-kSb"/>
     </inferredMetricsTieBreakers>
 </document>

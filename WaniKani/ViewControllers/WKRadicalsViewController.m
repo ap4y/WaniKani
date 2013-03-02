@@ -7,17 +7,13 @@
 //
 
 #import "WKRadicalsViewController.h"
-#import "WKItemsHeaderView.h"
 #import "WKRadicalViewCell.h"
 #import "WKRadical.h"
 
 #import "WKCustomization.h"
 
 @interface WKRadicalsViewController ()
-@property (strong, nonatomic) IBOutlet UICollectionView *radicalsCollectionView;
 
-@property (strong, nonatomic) NSDictionary *radicalsByLevel;
-@property (strong, nonatomic) NSMutableDictionary *collapsedRadicalsByLevel;
 @end
 
 @implementation WKRadicalsViewController
@@ -30,47 +26,11 @@ static NSString * const kDetailsSegueIdentifier     = @"WKRadicalDetailsSegue";
     self = [super initWithCoder:aDecoder];
     if (!self) return nil;
     
-    NSArray *radicals       = [WKRadical requestResult:[WKRadical all] managedObjectContext:mainThreadContext()];
-    self.radicalsByLevel    = [WKItem itemsByLevel:radicals];
-
-    self.collapsedRadicalsByLevel = [NSMutableDictionary dictionary];
-    [[_radicalsByLevel allKeys] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-       
-        if (idx == 0) {
-            
-            [_collapsedRadicalsByLevel setObject:[_radicalsByLevel objectForKey:obj] forKey:obj];
-            
-        } else {
-            
-            [_collapsedRadicalsByLevel setValue:nil forKey:obj];
-        }
-    }];
-    
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_radicals_pressed"]
                   withFinishedUnselectedImage:[UIImage imageNamed:@"btn_radicals_normal"]];
+    self.navigationController.viewControllers = (self.parentViewController ? @[ self.parentViewController ] : @[]);
     
     return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.navigationController.viewControllers = (self.parentViewController ? @[ self.parentViewController ] : @[]);
-    [WKCustomization setBackgroundForView:self.view];
-    [_radicalsCollectionView setBackgroundColor:[UIColor clearColor]];
-    
-    [WKRadical fetchRadicalsWithSuccess:^(NSArray *radicals) {
-       
-        self.radicalsByLevel = [WKItem itemsByLevel:radicals];
-        [_radicalsCollectionView reloadData];
-        
-    } failure:^(NSError *error) {
-        
-        /**
-         TODO: Add error handling
-         */
-        NSLog(@"%@", error);
-    }];        
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -84,69 +44,35 @@ static NSString * const kDetailsSegueIdentifier     = @"WKRadicalDetailsSegue";
     
     if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
     
-        NSIndexPath *indexPath      = [_radicalsCollectionView indexPathForCell:sender];
-        NSNumber *levelKey          = [[_radicalsByLevel allKeys] objectAtIndex:indexPath.section];
-        NSArray *radicalsForLevel   = [_radicalsByLevel objectForKey:levelKey];
+        NSIndexPath *indexPath      = [self.itemsCollectionView indexPathForCell:sender];
+        NSNumber *levelKey          = [[self.itemsByLevel allKeys] objectAtIndex:indexPath.section];
+        NSArray *radicalsForLevel   = [self.itemsByLevel objectForKey:levelKey];
         WKRadical *radical          = [radicalsForLevel objectAtIndex:indexPath.row];
 
         [segue.destinationViewController setValue:radical forKey:@"item"];
     }
 }
 
-#pragma mark - UICollectionViewDataSource
+#pragma mark - controller setting
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return [_radicalsByLevel count];
+- (Class)itemClass {
+    
+    return [WKRadical class];
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSString *)collectionItemCellViewIdentifier {
     
-    NSNumber *levelKey          = [[_radicalsByLevel allKeys] objectAtIndex:section];
-    NSArray *radicalsForLevel   = [_collapsedRadicalsByLevel objectForKey:levelKey];
-    
-    return [radicalsForLevel count];
+    return kRadicalsCellIdentifier;
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
-           viewForSupplementaryElementOfKind:(NSString *)kind
-                                 atIndexPath:(NSIndexPath *)indexPath {
+- (NSString *)collectionItemSupplementaryViewIdentifier {
     
-    WKItemsHeaderView *suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
-                                                                     withReuseIdentifier:kRadicalsSuppViewIdentifier
-                                                                            forIndexPath:indexPath];
-    NSNumber *levelKey          = [[_radicalsByLevel allKeys] objectAtIndex:indexPath.section];
-    [suppView setItems:[WKRadical itemsForLevel:levelKey] level:levelKey];
-    [suppView setHeaderViewTouched:^{
-        
-        if (![_collapsedRadicalsByLevel objectForKey:levelKey]) {
-            
-            [_collapsedRadicalsByLevel setObject:[_radicalsByLevel objectForKey:levelKey] forKey:levelKey];
-            [collectionView reloadData];
-            [collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:indexPath.section]
-                                   atScrollPosition:UICollectionViewScrollPositionBottom
-                                           animated:YES];
-        } else {
-            
-            [_collapsedRadicalsByLevel setValue:nil forKey:(id)levelKey];
-            [collectionView reloadData];
-        }
-    }];
-    
-    return suppView;
+    return kRadicalsSuppViewIdentifier;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
-                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSNumber *levelKey          = [[_radicalsByLevel allKeys] objectAtIndex:indexPath.section];
-    NSArray *radicalsForLevel   = [_radicalsByLevel objectForKey:levelKey];
-    WKRadical *radical          = [radicalsForLevel objectAtIndex:indexPath.row];
-    
-    WKRadicalViewCell *cell     = [collectionView dequeueReusableCellWithReuseIdentifier:kRadicalsCellIdentifier
-                                                                            forIndexPath:indexPath];
-    [cell setRadical:radical];
-    
-    return cell;
+- (void)configureCollectionItemCell:(UICollectionViewCell *)cell forItem:(WKItem *)item {
+ 
+    [(WKRadicalViewCell *)cell setRadical:(WKRadical *)item];
 }
 
 @end

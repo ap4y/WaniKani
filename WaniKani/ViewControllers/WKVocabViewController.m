@@ -7,17 +7,12 @@
 //
 
 #import "WKVocabViewController.h"
-#import "WKItemsHeaderView.h"
 #import "WKVocabViewCell.h"
 #import "WKVocab.h"
 
 #import "WKCustomization.h"
 
 @interface WKVocabViewController ()
-@property (strong, nonatomic) IBOutlet UICollectionView *vocabCollectionView;
-
-@property (strong, nonatomic) NSDictionary *vocabByLevel;
-@property (strong, nonatomic) NSMutableDictionary *collapsedVocabByLevel;
 @end
 
 @implementation WKVocabViewController
@@ -30,46 +25,10 @@ static NSString * const kDetailsSegueIdentifier     = @"WKVocabDetailsSegue";
     self = [super initWithCoder:aDecoder];
     if (!self) return nil;
     
-    NSArray *vocab      = [WKVocab requestResult:[WKVocab all] managedObjectContext:mainThreadContext()];
-    self.vocabByLevel   = [WKItem itemsByLevel:vocab];
-    
-    self.collapsedVocabByLevel = [NSMutableDictionary dictionary];
-    [[_vocabByLevel allKeys] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        
-        if (idx == 0) {
-            
-            [_collapsedVocabByLevel setObject:[_vocabByLevel objectForKey:obj] forKey:obj];
-            
-        } else {
-            
-            [_collapsedVocabByLevel setValue:nil forKey:obj];
-        }
-    }];    
-    
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_vocab_pressed"]
                   withFinishedUnselectedImage:[UIImage imageNamed:@"btn_vocab_normal"]];
     
     return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [WKCustomization setBackgroundForView:self.view];
-    [_vocabCollectionView setBackgroundColor:[UIColor clearColor]];
-        
-    [WKVocab fetchVocabWithSuccess:^(NSArray *vocab) {
-        
-        self.vocabByLevel = [WKItem itemsByLevel:vocab];
-        [_vocabCollectionView reloadData];
-        
-    } failure:^(NSError *error) {
-        
-        /**
-         TODO: Add error handling
-         */
-        NSLog(@"%@", error);
-    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -83,69 +42,35 @@ static NSString * const kDetailsSegueIdentifier     = @"WKVocabDetailsSegue";
     
     if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
         
-        NSIndexPath *indexPath      = [_vocabCollectionView indexPathForCell:sender];
-        NSNumber *levelKey          = [[_vocabByLevel allKeys] objectAtIndex:indexPath.section];
-        NSArray *vocabForLevel      = [_vocabByLevel objectForKey:levelKey];
+        NSIndexPath *indexPath      = [self.itemsCollectionView indexPathForCell:sender];
+        NSNumber *levelKey          = [[self.itemsByLevel allKeys] objectAtIndex:indexPath.section];
+        NSArray *vocabForLevel      = [self.itemsByLevel objectForKey:levelKey];
         WKVocab *vocabItem          = [vocabForLevel objectAtIndex:indexPath.row];
         
         [segue.destinationViewController setValue:vocabItem forKey:@"item"];
     }
 }
 
-#pragma mark - UICollectionViewDataSource
+#pragma mark - controller setting
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return [_vocabByLevel count];
+- (Class)itemClass {
+    
+    return [WKVocab class];
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSString *)collectionItemCellViewIdentifier {
     
-    NSNumber *levelKey      = [[_vocabByLevel allKeys] objectAtIndex:section];
-    NSArray *vocabForLevel  = [_collapsedVocabByLevel objectForKey:levelKey];
-    
-    return [vocabForLevel count];
+    return kVocabCellIdentifier;
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
-           viewForSupplementaryElementOfKind:(NSString *)kind
-                                 atIndexPath:(NSIndexPath *)indexPath {
+- (NSString *)collectionItemSupplementaryViewIdentifier {
     
-    WKItemsHeaderView *suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
-                                                                     withReuseIdentifier:kVocabSuppViewIdentifier
-                                                                            forIndexPath:indexPath];
-    NSNumber *levelKey          = [[_vocabByLevel allKeys] objectAtIndex:indexPath.section];
-    [suppView setItems:[WKVocab itemsForLevel:levelKey] level:levelKey];
-    [suppView setHeaderViewTouched:^{
-       
-        if (![_collapsedVocabByLevel objectForKey:levelKey]) {
-            
-            [_collapsedVocabByLevel setObject:[_vocabByLevel objectForKey:levelKey] forKey:levelKey];
-            [collectionView reloadData];
-            [collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:indexPath.section]
-                                   atScrollPosition:UICollectionViewScrollPositionBottom
-                                           animated:YES];
-        } else {
-            
-            [_collapsedVocabByLevel setValue:nil forKey:(id)levelKey];
-            [collectionView reloadData];
-        }
-    }];
-    
-    return suppView;
+    return kVocabSuppViewIdentifier;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
-                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCollectionItemCell:(UICollectionViewCell *)cell forItem:(WKItem *)item {
     
-    NSNumber *levelKey      = [[_vocabByLevel allKeys] objectAtIndex:indexPath.section];
-    NSArray *vocabForLevel  = [_vocabByLevel objectForKey:levelKey];
-    WKVocab *vocabItem      = [vocabForLevel objectAtIndex:indexPath.row];
-    
-    WKVocabViewCell *cell   = [collectionView dequeueReusableCellWithReuseIdentifier:kVocabCellIdentifier
-                                                                        forIndexPath:indexPath];
-    [cell setVocabItem:vocabItem];
-    
-    return cell;
+    [(WKVocabViewCell *)cell setVocabItem:(WKVocab *)item];
 }
 
 @end

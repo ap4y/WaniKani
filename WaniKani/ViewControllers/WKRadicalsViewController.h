@@ -6,6 +6,8 @@
 //
 //
 
-@interface WKRadicalsViewController : UICollectionViewController
+#import "WKItemViewController.h"
+
+@interface WKRadicalsViewController : WKItemViewController
 
 @end

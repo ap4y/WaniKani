@@ -7,16 +7,12 @@
 //
 
 #import "WKKanjiViewController.h"
-#import "WKItemsHeaderView.h"
 #import "WKKanjiViewCell.h"
 #import "WKKanji.h"
 
 #import "WKCustomization.h"
 
 @interface WKKanjiViewController ()
-@property (strong, nonatomic) IBOutlet UICollectionView *kanjiCollectionView;
-
-@property (strong, nonatomic) NSDictionary *kanjiByLevel;
 @end
 
 @implementation WKKanjiViewController
@@ -29,33 +25,10 @@ static NSString * const kDetailsSegueIdentifier     = @"WKKanjiDetailsSegue";
     self = [super initWithCoder:aDecoder];
     if (!self) return nil;
     
-    NSArray *kanji      = [WKKanji requestResult:[WKKanji all] managedObjectContext:mainThreadContext()];
-    self.kanjiByLevel   = [WKItem itemsByLevel:kanji];
-    
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_kanji_pressed"]
                   withFinishedUnselectedImage:[UIImage imageNamed:@"btn_kanji_normal"]];
     
     return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [WKCustomization setBackgroundForView:self.view];
-    [_kanjiCollectionView setBackgroundColor:[UIColor clearColor]];
-    
-    [WKKanji fetchKanjiWithSuccess:^(NSArray *kanji) {
-        
-        self.kanjiByLevel = [WKItem itemsByLevel:kanji];
-        [_kanjiCollectionView reloadData];
-        
-    } failure:^(NSError *error) {
-        
-        /**
-         TODO: Add error handling
-         */
-        NSLog(@"%@", error);
-    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,54 +42,35 @@ static NSString * const kDetailsSegueIdentifier     = @"WKKanjiDetailsSegue";
     
     if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
         
-        NSIndexPath *indexPath      = [_kanjiCollectionView indexPathForCell:sender];
-        NSNumber *levelKey          = [[_kanjiByLevel allKeys] objectAtIndex:indexPath.section];
-        NSArray *kanjiForLevel      = [_kanjiByLevel objectForKey:levelKey];
+        NSIndexPath *indexPath      = [self.itemsCollectionView indexPathForCell:sender];
+        NSNumber *levelKey          = [[self.itemsByLevel allKeys] objectAtIndex:indexPath.section];
+        NSArray *kanjiForLevel      = [self.itemsByLevel objectForKey:levelKey];
         WKKanji *kanjiItem          = [kanjiForLevel objectAtIndex:indexPath.row];
         
         [segue.destinationViewController setValue:kanjiItem forKey:@"item"];
     }
 }
 
-#pragma mark - UICollectionViewDataSource
+#pragma mark - controller setting
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return [_kanjiByLevel count];
+- (Class)itemClass {
+    
+    return [WKKanji class];
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSString *)collectionItemCellViewIdentifier {
     
-    NSNumber *levelKey      = [[_kanjiByLevel allKeys] objectAtIndex:section];
-    NSArray *kanjiForLevel  = [_kanjiByLevel objectForKey:levelKey];
-    
-    return [kanjiForLevel count];
+    return kKanjiCellIdentifier;
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
-           viewForSupplementaryElementOfKind:(NSString *)kind
-                                 atIndexPath:(NSIndexPath *)indexPath {
+- (NSString *)collectionItemSupplementaryViewIdentifier {
     
-    WKItemsHeaderView *suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
-                                                                     withReuseIdentifier:kKanjiSuppViewIdentifier
-                                                                            forIndexPath:indexPath];
-    NSNumber *levelKey          = [[_kanjiByLevel allKeys] objectAtIndex:indexPath.section];
-    [suppView setItems:[WKKanji itemsForLevel:levelKey] level:levelKey];
-    
-    return suppView;
+    return kKanjiSuppViewIdentifier;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
-                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCollectionItemCell:(UICollectionViewCell *)cell forItem:(WKItem *)item {
     
-    NSNumber *levelKey      = [[_kanjiByLevel allKeys] objectAtIndex:indexPath.section];
-    NSArray *kanjiForLevel  = [_kanjiByLevel objectForKey:levelKey];
-    WKKanji *kanjiItem      = [kanjiForLevel objectAtIndex:indexPath.row];
-    
-    WKKanjiViewCell *cell   = [collectionView dequeueReusableCellWithReuseIdentifier:kKanjiCellIdentifier
-                                                                        forIndexPath:indexPath];
-    [cell setKanjiItem:kanjiItem];
-    
-    return cell;
+    [(WKKanjiViewCell *)cell setKanjiItem:(WKKanji *)item];
 }
 
 @end

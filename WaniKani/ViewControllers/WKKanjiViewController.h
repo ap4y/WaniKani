@@ -6,6 +6,8 @@
 //
 //
 
-@interface WKKanjiViewController : UICollectionViewController
+#import "WKItemViewController.h"
+
+@interface WKKanjiViewController : WKItemViewController
 
 @end
