@@ -6,11 +6,7 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+#import "WKItemCollectionCell.h"
 
-@class WKKanji;
-@interface WKKanjiViewCell : UICollectionViewCell
-@property (copy, nonatomic) void (^cellViewTouched)();
-
-- (void)setKanjiItem:(WKKanji *)kanjiItem;
+@interface WKKanjiViewCell : WKItemCollectionCell
 @end

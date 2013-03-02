@@ -14,7 +14,6 @@
 #import "WKCustomization.h"
 
 @interface WKRadicalViewCell ()
-@property (strong, nonatomic) IBOutlet UICollectionViewCell *cellView;
 @property (weak, nonatomic) IBOutlet UILabel *characterLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *characterImageView;
 @property (weak, nonatomic) IBOutlet UILabel *meaningLabel;
@@ -24,26 +23,9 @@
 
 @implementation WKRadicalViewCell
 
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (!self) return nil;
+- (void)setItem:(WKItem *)item {
     
-    [self createViewFromNib];
-    
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (!self) return nil;
-    
-    [self createViewFromNib];
-    
-    return self;
-}
-
-- (void)setRadical:(WKRadical *)radical {
-    
+    WKRadical *radical = (WKRadical *)item;    
     if (radical.character) {
         
         _characterLabel.text        = radical.character;
@@ -62,9 +44,7 @@
 #pragma mark - private
 
 - (void)createViewFromNib {
-    
-    [[NSBundle mainBundle] loadNibNamed:@"WKRadicalViewCell" owner:self options:nil];
-    [self addSubview:_cellView];
+    [super createViewFromNib];
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     
@@ -79,11 +59,6 @@
     _lockedImageView.image = [WKCustomization resizableImageNamed:@"locked"
                                                     withCapInsets:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
     [self addSubview:_lockedImageView];
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    if ([touches count] == 1 && _cellViewTouched) _cellViewTouched();
 }
 
 @end

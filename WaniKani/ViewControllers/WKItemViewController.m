@@ -8,6 +8,7 @@
 
 #import "WKItemViewController.h"
 #import "WKItemsHeaderView.h"
+#import "WKItemCollectionCell.h"
 #import "WKItem.h"
 #import "WKSyncManager.h"
 
@@ -98,6 +99,16 @@
     if (withCollapsedRefresh) [_itemsCollectionView reloadData];
 }
 
+- (void)configureCollectionItemCell:(WKItemCollectionCell *)cell forItem:(WKItem *)item {
+    
+    __weak WKItemCollectionCell *weakCell = cell;
+    [cell setItem:item];
+    [cell setCellViewTouched:^{
+        
+        [self performSegueWithIdentifier:[self detailsSegueIdentifier] sender:weakCell];
+    }];
+}
+
 #pragma mark - controller setting
 
 - (Class)itemClass {
@@ -117,8 +128,9 @@
     return @"";
 }
 
-- (void)configureCollectionItemCell:(UICollectionViewCell *)cell forItem:(WKItem *)item {
+- (NSString *)detailsSegueIdentifier {
     
+    return @"";
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -172,7 +184,7 @@
     WKItem *item                = [itemsForLevel objectAtIndex:indexPath.row];
     
     NSString *cellIdentifier    = [self collectionItemCellViewIdentifier];
-    UICollectionViewCell *cell  = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier
+    WKItemCollectionCell *cell  = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier
                                                                             forIndexPath:indexPath];
     [self configureCollectionItemCell:cell forItem:item];
     

@@ -68,14 +68,9 @@ static NSString * const kDetailsSegueIdentifier     = @"WKVocabDetailsSegue";
     return kVocabSuppViewIdentifier;
 }
 
-- (void)configureCollectionItemCell:(UICollectionViewCell *)cell forItem:(WKItem *)item {
+- (NSString *)detailsSegueIdentifier {
     
-    WKVocabViewCell* vocabCell = (WKVocabViewCell *)cell;
-    [vocabCell setVocabItem:(WKVocab *)item];
-    [vocabCell setCellViewTouched:^{
-        
-        [self performSegueWithIdentifier:kDetailsSegueIdentifier sender:cell];
-    }];
+    return kDetailsSegueIdentifier;
 }
 
 @end

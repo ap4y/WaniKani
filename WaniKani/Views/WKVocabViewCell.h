@@ -6,11 +6,7 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+#import "WKItemCollectionCell.h"
 
-@class WKVocab;
-@interface WKVocabViewCell : UICollectionViewCell
-@property (copy, nonatomic) void (^cellViewTouched)();
-
-- (void)setVocabItem:(WKVocab *)vocabItem;
+@interface WKVocabViewCell : WKItemCollectionCell
 @end

@@ -13,36 +13,17 @@
 #import "WKCustomization.h"
 
 @interface WKKanjiViewCell ()
-@property (strong, nonatomic) IBOutlet UICollectionViewCell *cellView;
 @property (weak, nonatomic) IBOutlet UILabel *characterLabel;
 @property (weak, nonatomic) IBOutlet UILabel *readingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *meaningLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *lockedImageView;
-
 @end
 
 @implementation WKKanjiViewCell
 
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (!self) return nil;
+- (void)setItem:(id)item {
     
-    [self createViewFromNib];
-    
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (!self) return nil;
-    
-    [self createViewFromNib];
-    
-    return self;
-}
-
-- (void)setKanjiItem:(WKKanji *)kanjiItem {
-    
+    WKKanji *kanjiItem      = (WKKanji *)item;
     _characterLabel.text    = kanjiItem.character;
     _meaningLabel.text      = [[kanjiItem.meaning componentsSeparatedByString:@","] objectAtIndex:0];
     
@@ -55,9 +36,7 @@
 #pragma mark - private
 
 - (void)createViewFromNib {
-    
-    [[NSBundle mainBundle] loadNibNamed:@"WKKanjiViewCell" owner:self options:nil];
-    [self addSubview:_cellView];
+    [super createViewFromNib];
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
 
@@ -72,11 +51,6 @@
     _lockedImageView.image = [WKCustomization resizableImageNamed:@"locked"
                                                     withCapInsets:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
     [self addSubview:_lockedImageView];
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    if ([touches count] == 1 && _cellViewTouched) _cellViewTouched();
 }
 
 @end

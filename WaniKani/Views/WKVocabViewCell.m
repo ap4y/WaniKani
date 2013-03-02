@@ -13,36 +13,17 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface WKVocabViewCell ()
-@property (strong, nonatomic) IBOutlet UICollectionViewCell *cellView;
 @property (weak, nonatomic) IBOutlet UILabel *characterLabel;
 @property (weak, nonatomic) IBOutlet UILabel *readingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *meaningLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *lockedImageView;
-
 @end
 
 @implementation WKVocabViewCell
 
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (!self) return nil;
+-(void)setItem:(WKItem *)item {
     
-    [self createViewFromNib];
-    
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (!self) return nil;
-    
-    [self createViewFromNib];
-    
-    return self;
-}
-
-- (void)setVocabItem:(WKVocab *)vocabItem {
-    
+    WKVocab *vocabItem      = (WKVocab *)item;
     _characterLabel.text    = vocabItem.character;
     _readingLabel.text      = [[vocabItem.kana componentsSeparatedByString:@","] objectAtIndex:0];
     _meaningLabel.text      = [[vocabItem.meaning componentsSeparatedByString:@","] objectAtIndex:0];
@@ -52,9 +33,7 @@
 #pragma mark - private
 
 - (void)createViewFromNib {
-    
-    [[NSBundle mainBundle] loadNibNamed:@"WKVocabViewCell" owner:self options:nil];
-    [self addSubview:_cellView];
+    [super createViewFromNib];
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     
@@ -69,11 +48,6 @@
     _lockedImageView.image = [WKCustomization resizableImageNamed:@"locked"
                                                     withCapInsets:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
     [self addSubview:_lockedImageView];
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    if ([touches count] == 1 && _cellViewTouched) _cellViewTouched();
 }
 
 @end

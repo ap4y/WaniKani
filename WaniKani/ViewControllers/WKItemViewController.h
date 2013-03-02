@@ -16,5 +16,6 @@
 - (Class)itemClass;
 - (NSString *)collectionItemSupplementaryViewIdentifier;
 - (NSString *)collectionItemCellViewIdentifier;
-- (void)configureCollectionItemCell:(UICollectionViewCell *)cell forItem:(WKItem *)item;
+- (NSString *)detailsSegueIdentifier;
+
 @end

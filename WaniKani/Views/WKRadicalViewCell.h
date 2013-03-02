@@ -6,11 +6,7 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+#import "WKItemCollectionCell.h"
 
-@class WKRadical;
-@interface WKRadicalViewCell : UICollectionViewCell
-@property (copy, nonatomic) void (^cellViewTouched)();
-
-- (void)setRadical:(WKRadical *)radical;
+@interface WKRadicalViewCell : WKItemCollectionCell
 @end
