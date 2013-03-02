@@ -10,5 +10,7 @@
 
 @class WKRadical;
 @interface WKRadicalViewCell : UICollectionViewCell
+@property (copy, nonatomic) void (^cellViewTouched)();
+
 - (void)setRadical:(WKRadical *)radical;
 @end

@@ -72,7 +72,12 @@ static NSString * const kDetailsSegueIdentifier     = @"WKRadicalDetailsSegue";
 
 - (void)configureCollectionItemCell:(UICollectionViewCell *)cell forItem:(WKItem *)item {
  
-    [(WKRadicalViewCell *)cell setRadical:(WKRadical *)item];
+    WKRadicalViewCell* radicalCell = (WKRadicalViewCell *)cell;
+    [radicalCell setRadical:(WKRadical *)item];
+    [radicalCell setCellViewTouched:^{
+       
+        [self performSegueWithIdentifier:kDetailsSegueIdentifier sender:cell];
+    }];
 }
 
 @end

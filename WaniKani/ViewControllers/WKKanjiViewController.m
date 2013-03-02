@@ -70,7 +70,12 @@ static NSString * const kDetailsSegueIdentifier     = @"WKKanjiDetailsSegue";
 
 - (void)configureCollectionItemCell:(UICollectionViewCell *)cell forItem:(WKItem *)item {
     
-    [(WKKanjiViewCell *)cell setKanjiItem:(WKKanji *)item];
+    WKKanjiViewCell* kanjiCell = (WKKanjiViewCell *)cell;
+    [kanjiCell setKanjiItem:(WKKanji *)item];
+    [kanjiCell setCellViewTouched:^{
+        
+        [self performSegueWithIdentifier:kDetailsSegueIdentifier sender:cell];
+    }];
 }
 
 @end

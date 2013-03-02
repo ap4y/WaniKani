@@ -81,4 +81,9 @@
     [self addSubview:_lockedImageView];
 }
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    if ([touches count] == 1 && _cellViewTouched) _cellViewTouched();
+}
+
 @end

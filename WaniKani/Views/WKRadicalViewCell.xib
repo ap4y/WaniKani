@@ -53,6 +53,7 @@
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC41MzMzMzMzMzMzIDAuODQzMTM3MjU0OSAxAA</bytes>
 								</object>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<object class="IBUIView" id="306115206">
@@ -67,6 +68,7 @@
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC41MzMzMzMzMzMzIDAuODQzMTM3MjU0OSAxAA</bytes>
 								</object>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<object class="IBUIView" id="445297142">
@@ -80,6 +82,7 @@
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MCAwLjQgMC42AA</bytes>
 								</object>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<object class="IBUILabel" id="698352020">

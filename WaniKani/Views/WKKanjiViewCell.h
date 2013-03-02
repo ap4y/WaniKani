@@ -10,5 +10,7 @@
 
 @class WKKanji;
 @interface WKKanjiViewCell : UICollectionViewCell
+@property (copy, nonatomic) void (^cellViewTouched)();
+
 - (void)setKanjiItem:(WKKanji *)kanjiItem;
 @end
