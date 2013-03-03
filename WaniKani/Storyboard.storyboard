@@ -408,7 +408,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1b6ff781264e89d2e8ea78070c64a8d9" borderStyle="roundedRect" placeholder="Public API Key" minimumFontSize="17" id="cGG-iw-ynP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Public API Key" minimumFontSize="17" id="cGG-iw-ynP">
                                 <rect key="frame" x="20" y="20" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -492,9 +492,6 @@
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
         <class className="WKItemCollectionCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemCollectionCell.h"/>
             <relationships>
@@ -540,7 +537,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemTableCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="cellView" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="characterImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="chracterLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="detailsTextLabel" candidateClass="UILabel"/>
