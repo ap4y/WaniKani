@@ -43,8 +43,11 @@ static const CGFloat kCriticalLevelPercentage       = 75.0f;
     self = [super initWithCoder:aDecoder];
     if (!self) return nil;
 
-    self.dateFormatter = [[NSDateFormatter alloc] init];
-    [_dateFormatter setDateFormat:@"MMM d"];
+    self.dateFormatter      = [[NSDateFormatter alloc] init];
+    NSString *dateFormat    = [NSDateFormatter dateFormatFromTemplate:@"MMMd"
+                                                              options:0
+                                                               locale:[NSLocale currentLocale]];
+    [_dateFormatter setDateFormat:dateFormat];
 
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_logo"]
                   withFinishedUnselectedImage:[UIImage imageNamed:@"btn_logo"]];
