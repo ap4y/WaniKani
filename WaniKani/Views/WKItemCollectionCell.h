@@ -13,6 +13,5 @@
 @property (copy, nonatomic) void (^cellViewTouched)();
 
 - (void)setItem:(WKItem *)item;
-- (void)createViewFromNib;
 
 @end

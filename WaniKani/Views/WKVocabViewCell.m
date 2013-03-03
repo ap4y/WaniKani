@@ -32,8 +32,8 @@
 
 #pragma mark - private
 
-- (void)createViewFromNib {
-    [super createViewFromNib];
+- (void)awakeFromNib {
+    [super awakeFromNib];
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     
@@ -47,7 +47,6 @@
     
     _lockedImageView.image = [WKCustomization resizableImageNamed:@"locked"
                                                     withCapInsets:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
-    [self addSubview:_lockedImageView];
 }
 
 @end
