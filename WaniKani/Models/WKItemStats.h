@@ -28,4 +28,8 @@
 - (NSDate *)nextReviewDate;
 - (NSDate *)unlockDate;
 
+- (CGFloat)readingCorrectPercentage;
+- (CGFloat)meaningCorrectPercentage;
+- (CGFloat)combinedCorrectPercentage;
+
 @end

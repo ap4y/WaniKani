@@ -35,6 +35,41 @@
     return [NSDate dateWithTimeIntervalSince1970:[self.unlockedDate doubleValue]];
 }
 
+- (CGFloat)readingCorrectPercentage {
+
+    CGFloat readingCorrect, readingIncorrect;
+    readingCorrect      = [self.readingCorrect floatValue];
+    readingIncorrect    = [self.readingIncorrect floatValue];
+    
+    return ( readingCorrect / (readingCorrect + readingIncorrect) );
+}
+
+- (CGFloat)meaningCorrectPercentage {
+
+    CGFloat meaningCorrect, meaningIncorrect;
+    meaningCorrect      = [self.meaningCorrect floatValue];
+    meaningIncorrect    = [self.meaningIncorrect floatValue];
+
+    return ( meaningCorrect / (meaningCorrect + meaningIncorrect) );
+}
+
+- (CGFloat)combinedCorrectPercentage {
+    
+    CGFloat meaningCorrect, meaningIncorrect,
+    readingCorrect, readingIncorrect,
+    correctPercentage;
+    
+    meaningCorrect      = [self.meaningCorrect floatValue];
+    meaningIncorrect    = [self.meaningIncorrect floatValue];
+    readingCorrect      = [self.readingCorrect floatValue];
+    readingIncorrect    = [self.readingIncorrect floatValue];
+    
+    correctPercentage   = ( (readingCorrect + meaningCorrect) /
+                           (meaningCorrect + meaningIncorrect + readingCorrect + readingIncorrect) );
+    
+    return correctPercentage;
+}
+
 #pragma mark - entity settings
 
 + (NSDictionary *)propertyMappings {

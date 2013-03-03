@@ -249,11 +249,9 @@
     meaningIncorrect    = [stats.meaningIncorrect floatValue];
     readingCorrect      = [stats.readingCorrect floatValue];
     readingIncorrect    = [stats.readingIncorrect floatValue];
-    
-    meaningPercentage   = meaningCorrect / ( meaningCorrect + meaningIncorrect );
-    readingPercentage   = readingCorrect / ( readingCorrect + readingIncorrect );
-    correctPercentage   = ( (readingCorrect + meaningCorrect) /
-                            (meaningCorrect + meaningIncorrect + readingCorrect + readingIncorrect) );
+    meaningPercentage   = [stats meaningCorrectPercentage];
+    readingPercentage   = [stats readingCorrectPercentage];
+    correctPercentage   = [stats combinedCorrectPercentage];
     
     _namingPercentLabel.text        = [NSString stringWithFormat:@"%.00f/%.00f",
                                        meaningCorrect, ( meaningCorrect + meaningIncorrect )];
