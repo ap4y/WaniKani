@@ -10,9 +10,10 @@
 
 @interface WKHTTPClient : AFHTTPClient
 @property (copy, nonatomic) NSString *userKey;
+@property (copy, nonatomic) NSString *gravatarId;
 
 + (WKHTTPClient *)sharedClient;
 
-- (void)pingRequestWithSuccess:(void (^)())success failure:(void (^)(NSError *error))failure;
+- (void)pingRequestWithSuccess:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
 @end

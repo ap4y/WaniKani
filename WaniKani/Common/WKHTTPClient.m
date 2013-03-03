@@ -12,8 +12,9 @@
 
 @implementation WKHTTPClient
 
-NSString * const kBaseUrlString  = @"http://www.wanikani.com/api";
-NSString * const kUserKeySaveKey = @"WKUserKey";
+NSString * const kBaseUrlString     = @"http://www.wanikani.com/api";
+NSString * const kUserKeySaveKey    = @"WKUserKey";
+NSString * const kGravatarIdSaveKey = @"WKGravatarIdKey";
 
 + (WKHTTPClient *)sharedClient {
     static WKHTTPClient *_sharedClient;
@@ -43,13 +44,13 @@ NSString * const kUserKeySaveKey = @"WKUserKey";
     return self;
 }
 
-- (void)pingRequestWithSuccess:(void (^)())success failure:(void (^)(NSError *error))failure {
+- (void)pingRequestWithSuccess:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure {
     
     [self getPath:@"/user-information"
        parameters:nil
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               
-              if (success) success();
+              if (success) success(responseObject);
               
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               
@@ -58,6 +59,14 @@ NSString * const kUserKeySaveKey = @"WKUserKey";
 }
 
 #pragma mark - private
+
+- (void)setGravatarId:(NSString *)gravatarId {
+    _gravatarId = [gravatarId copy];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setValue:_gravatarId forKey:kGravatarIdSaveKey];
+    [userDefaults synchronize];    
+}
 
 - (void)setUserKey:(NSString *)userKey {
     _userKey = [userKey copy];

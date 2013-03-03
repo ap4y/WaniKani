@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface WKGravatarImage : NSObject
+
++ (void)gravatarImageForCurrentUserWithSuccess:(void (^)(UIImage *image))success;
 + (void)gravatarImageForGravatarId:(NSString *)gravatarId success:(void (^)(UIImage *image))success;
+
 @end

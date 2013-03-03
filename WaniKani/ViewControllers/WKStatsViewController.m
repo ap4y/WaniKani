@@ -48,8 +48,8 @@ static const CGFloat kCriticalLevelPercentage       = 75.0f;
 
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_logo"]
                   withFinishedUnselectedImage:[UIImage imageNamed:@"btn_logo"]];
-    [WKGravatarImage gravatarImageForGravatarId:@"f9e852694ab8a659d1edbf438c2bb4ea" success:^(UIImage *image) {
-       
+    [WKGravatarImage gravatarImageForCurrentUserWithSuccess:^(UIImage *image) {
+        
         [self.tabBarItem setFinishedSelectedImage:image withFinishedUnselectedImage:image];
     }];
     

@@ -10,6 +10,8 @@
 #import "WKHTTPClient.h"
 #import "WKCustomization.h"
 
+#import "AEAlert.h"
+
 @interface WKLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userKeyTextField;
 @end
@@ -52,16 +54,15 @@ static NSString * const kRadicalsSegueIdentifier = @"WKRadicalsSegue";
 
     WKHTTPClient *client    = [WKHTTPClient sharedClient];
     client.userKey          = _userKeyTextField.text;
-    
-    [client pingRequestWithSuccess:^{
+    [client pingRequestWithSuccess:^(id responseObject) {
         
-        [self performSegueWithIdentifier:kRadicalsSegueIdentifier sender:self]; 
+        [self performSegueWithIdentifier:kRadicalsSegueIdentifier sender:self];
+        client.gravatarId   = [responseObject valueForKeyPath:@"user_information.gravatar"];
         
     } failure:^(NSError *error) {
-        /**
-         TODO: Handle error situation
-         */
-        NSLog(@"%@", error);
+        
+        [AEAlert composeAlertViewWithTitle:NSLocalizedString(@"Error", nil)
+                                andMessage:NSLocalizedString(@"Unable to connect. Please check your API key.", nil)];
         client.userKey = nil;
     }];
 }

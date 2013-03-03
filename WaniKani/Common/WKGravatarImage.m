@@ -8,10 +8,17 @@
 
 #import "WKGravatarImage.h"
 #import "AFImageRequestOperation.h"
+#import "WKHTTPClient.h"
 
 @implementation WKGravatarImage
 
-static NSString * const kGravatarUrl    = @"http://www.gravatar.com/avatar";
+static NSString * const kGravatarUrl = @"http://www.gravatar.com/avatar";
+
++ (void)gravatarImageForCurrentUserWithSuccess:(void (^)(UIImage *image))success {
+    
+    if (!success) return;
+    [self gravatarImageForGravatarId:[WKHTTPClient sharedClient].gravatarId success:success];
+}
 
 + (void)gravatarImageForGravatarId:(NSString *)gravatarId success:(void (^)(UIImage *image))success {
     
