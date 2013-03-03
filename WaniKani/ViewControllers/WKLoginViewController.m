@@ -56,8 +56,8 @@ static NSString * const kRadicalsSegueIdentifier = @"WKRadicalsSegue";
     client.userKey          = _userKeyTextField.text;
     [client pingRequestWithSuccess:^(id responseObject) {
         
-        [self performSegueWithIdentifier:kRadicalsSegueIdentifier sender:self];
         client.gravatarId   = [responseObject valueForKeyPath:@"user_information.gravatar"];
+        [self performSegueWithIdentifier:kRadicalsSegueIdentifier sender:self];
         
     } failure:^(NSError *error) {
         

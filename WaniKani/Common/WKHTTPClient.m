@@ -39,7 +39,8 @@ NSString * const kGravatarIdSaveKey = @"WKGravatarIdKey";
     [self setParameterEncoding:AFJSONParameterEncoding];
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    self.userKey = [userDefaults valueForKey:kUserKeySaveKey];
+    _userKey    = [userDefaults valueForKey:kUserKeySaveKey];
+    _gravatarId = [userDefaults valueForKey:kGravatarIdSaveKey];
     
     return self;
 }
