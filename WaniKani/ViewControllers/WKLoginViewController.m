@@ -46,9 +46,9 @@ static NSString * const kRadicalsSegueIdentifier = @"WKRadicalsSegue";
 - (IBAction)login:(id)sender {
     
     if ([_userKeyTextField.text length] <= 0) {        
-        /**
-         TODO: Handle error situation
-         */
+        
+        [AEAlert composeAlertViewWithTitle:NSLocalizedString(@"Error", nil)
+                                andMessage:NSLocalizedString(@"API key can't be empty.", nil)];
         return;
     }
 
