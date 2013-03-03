@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class WKItem;
-@interface WKItemCollectionCell : UICollectionViewCell
+@interface WKItemCollectionCell : PSUICollectionViewCell
 @property (copy, nonatomic) void (^cellViewTouched)();
 
 - (void)setItem:(WKItem *)item;

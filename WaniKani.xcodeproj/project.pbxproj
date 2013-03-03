@@ -932,12 +932,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A0FC0DE456F40D58C5F1149 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arthur Evstifeev (635FG62A9Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WaniKani/WaniKani-Prefix.pch";
 				INFOPLIST_FILE = "WaniKani/WaniKani-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B0E48CC1-588C-489C-A876-67D1242599A5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -946,12 +944,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A0FC0DE456F40D58C5F1149 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arthur Evstifeev (635FG62A9Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WaniKani/WaniKani-Prefix.pch";
 				INFOPLIST_FILE = "WaniKani/WaniKani-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B0E48CC1-588C-489C-A876-67D1242599A5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

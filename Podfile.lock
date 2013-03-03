@@ -7,12 +7,14 @@ PODS:
 - AFNetworking (1.1.0)
 - OCMock (2.0.1)
 - OHHTTPStubs (1.1.1)
+- PSTCollectionView (0.0.1)
 - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
 - AEHelpers/REST (from `https://github.com/ap4y/cocoa_helpers.git')
 - AETestHelpers (from `https://github.com/ap4y/cocoa_helpers.git')
 - OCMock
+- PSTCollectionView
 - SVPullToRefresh
 
 EXTERNAL SOURCES:
@@ -24,6 +26,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AEHelpers/REST: fe6a39cfb9237e1cb6fc8af0ddc38535c7e1d1ff
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  PSTCollectionView: c2ce6d64ffe55a8c3e68bb1036442817aaf83409
   SVPullToRefresh: 61a0e4bd12bd6f8e3465909810b0fbeb1a28d5f2
   AETestHelpers: bf2e98c3c2bfc4eeed511f3783eff07f70e81c6a
   OCMock: 77a9c4c57af6bf258a537d34cf09abf422affede

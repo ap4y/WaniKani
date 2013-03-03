@@ -14,6 +14,7 @@
 
 #import "WKCustomization.h"
 #import "UIScrollView+SVPullToRefresh.h"
+#import "PSTCollectionView.h"
 
 @interface WKItemViewController ()
 @property (strong, nonatomic) NSDictionary *itemsByLevel;
@@ -135,11 +136,11 @@
 
 #pragma mark - UICollectionViewDataSource
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+- (NSInteger)numberOfSectionsInCollectionView:(PSUICollectionView *)collectionView {
     return [_itemsByLevel count];
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(PSUICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
     NSNumber *levelKey          = [[_itemsByLevel allKeys] objectAtIndex:section];
     NSArray *itemsForLevel      = [_collapsedItemsByLevel objectForKey:levelKey];
@@ -147,9 +148,9 @@
     return [itemsForLevel count];
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
-           viewForSupplementaryElementOfKind:(NSString *)kind
-                                 atIndexPath:(NSIndexPath *)indexPath {
+- (PSUICollectionReusableView *)collectionView:(PSUICollectionView *)collectionView
+             viewForSupplementaryElementOfKind:(NSString *)kind
+                                   atIndexPath:(NSIndexPath *)indexPath {
     
     NSString *suppIdentifier    = [self collectionItemSupplementaryViewIdentifier];
     WKItemsHeaderView *suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
@@ -164,7 +165,7 @@
             [_collapsedItemsByLevel setObject:[_itemsByLevel objectForKey:levelKey] forKey:levelKey];
             [collectionView reloadData];
             [collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:indexPath.section]
-                                   atScrollPosition:UICollectionViewScrollPositionBottom
+                                   atScrollPosition:PSTCollectionViewScrollPositionBottom
                                            animated:YES];
         } else {
             
@@ -176,8 +177,8 @@
     return suppView;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
-                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (PSUICollectionViewCell *)collectionView:(PSUICollectionView *)collectionView
+                    cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     NSNumber *levelKey          = [[_itemsByLevel allKeys] objectAtIndex:indexPath.section];
     NSArray *itemsForLevel      = [_itemsByLevel objectForKey:levelKey];

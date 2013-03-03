@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @class WKItem;
-@interface WKItemViewController : UICollectionViewController
-@property (strong, nonatomic) IBOutlet UICollectionView *itemsCollectionView;
+@interface WKItemViewController : PSUICollectionViewController
+@property (strong, nonatomic) IBOutlet PSUICollectionView *itemsCollectionView;
 @property (strong, nonatomic, readonly) NSDictionary *itemsByLevel;
 
 - (Class)itemClass;

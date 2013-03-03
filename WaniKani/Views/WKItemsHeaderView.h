@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WKItemsHeaderView : UICollectionReusableView
+@interface WKItemsHeaderView : PSUICollectionReusableView
 @property (copy, nonatomic) void (^headerViewTouched)();
 
 - (void)setItems:(NSArray *)items level:(NSNumber *)level;

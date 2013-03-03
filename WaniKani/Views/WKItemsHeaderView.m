@@ -10,7 +10,7 @@
 #import "WKItem.h"
 
 @interface WKItemsHeaderView ()
-@property (strong, nonatomic) IBOutlet UICollectionReusableView *headerView;
+@property (strong, nonatomic) IBOutlet PSUICollectionReusableView *headerView;
 @property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *levelTitleLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *percentageProgressBar;
