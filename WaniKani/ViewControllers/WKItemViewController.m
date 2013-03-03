@@ -75,6 +75,7 @@
     NSArray *items          = [itemClass requestResult:[itemClass all] managedObjectContext:mainThreadContext()];
     self.itemsByLevel       = [WKItem itemsByLevel:items];
     
+    __block NSUInteger uncollapsetCount = 0;
     [[_itemsByLevel allKeys] enumerateObjectsUsingBlock:^(id levelKey, NSUInteger idx, BOOL *stop) {
         
         if (withCollapsedRefresh) {
@@ -82,20 +83,20 @@
             if ([_collapsedItemsByLevel objectForKey:levelKey]) {
                 
                 [_collapsedItemsByLevel setObject:[_itemsByLevel objectForKey:levelKey] forKey:levelKey];
+                uncollapsetCount++;
             }
             
         } else {
             
-            if (idx == 0) {
-                
-                [_collapsedItemsByLevel setObject:[_itemsByLevel objectForKey:levelKey] forKey:levelKey];
-                
-            } else {
-                
-                [_collapsedItemsByLevel setValue:nil forKey:levelKey];
-            }
+            [_collapsedItemsByLevel setValue:nil forKey:levelKey];
         }
     }];
+    
+    if (uncollapsetCount == 0 && [_itemsByLevel count] > 0) {
+        
+        id levelKey = [[_itemsByLevel allKeys] objectAtIndex:0];
+        [_collapsedItemsByLevel setObject:[_itemsByLevel objectForKey:levelKey] forKey:levelKey];
+    }
     
     if (withCollapsedRefresh) [_itemsCollectionView reloadData];
 }
