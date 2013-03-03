@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "WKItem.h"
+#import "WKItemStats.h"
 #import "WKItemTableCell.h"
 #import "WKItemTableHeader.h"
 
@@ -18,10 +19,8 @@
 #import "WKSyncManager.h"
 
 @interface WKStatsViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UIView *statsView;
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (weak, nonatomic) IBOutlet UIView *informationBox;
-@property (weak, nonatomic) IBOutlet UIView *settingsBox;
 @property (weak, nonatomic) IBOutlet UITableView *statsTableView;
 @property (weak, nonatomic) IBOutlet UIButton *apprenticeButton;
 @property (weak, nonatomic) IBOutlet UIButton *guruButton;
@@ -31,16 +30,21 @@
 @property (weak, nonatomic) IBOutlet UILabel *nextReviewLabel;
 
 @property (strong, nonatomic) NSDictionary *statsTableItems;
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @end
 
 @implementation WKStatsViewController
 
 static NSString * const kStatsCellIdentifier        = @"WKStatsCell";
 static NSString * const kDetailsSegueIdentifier     = @"WKStatDetailsSegue";
+static const CGFloat kCriticalLevelPercentage       = 75.0f;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (!self) return nil;
+
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    [_dateFormatter setDateFormat:@"MMM d"];
 
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_logo"]
                   withFinishedUnselectedImage:[UIImage imageNamed:@"btn_logo"]];
@@ -56,6 +60,7 @@ static NSString * const kDetailsSegueIdentifier     = @"WKStatDetailsSegue";
                                                       
                                                       [self updateViewValues];
                                                       [_statsTableView reloadData];
+                                                      [self adjustContentHeight];
                                                   }];
     
     return self;
@@ -66,17 +71,10 @@ static NSString * const kDetailsSegueIdentifier     = @"WKStatDetailsSegue";
     
     [WKCustomization setBackgroundForView:self.view];
     
-    [[NSBundle mainBundle] loadNibNamed:@"WKStatsView" owner:self options:nil];
-    [_contentScrollView addSubview:_statsView];    
-    _contentScrollView.contentSize = CGSizeMake(_contentScrollView.contentSize.width, _statsView.bounds.size.height);
-    
     _informationBox.layer.cornerRadius  = 5.0f;
-    _settingsBox.layer.cornerRadius     = 5.0f;
     _statsTableView.layer.cornerRadius  = 5.0f;
     
     [self setButtonsGradients];
-    [_statsTableView registerClass:[WKItemTableCell class] forCellReuseIdentifier:kStatsCellIdentifier];
-    
     [self updateViewValues];
 }
 
@@ -96,12 +94,6 @@ static NSString * const kDetailsSegueIdentifier     = @"WKStatDetailsSegue";
         
         [segue.destinationViewController setValue:item forKey:@"item"];
     }
-}
-
-- (IBAction)onlyCriticalsDidChanged:(id)sender {
-}
-
-- (IBAction)criticalPercentageDidChanged:(id)sender {
 }
 
 #pragma mark - UITableViewDataSource
@@ -141,6 +133,15 @@ static NSString * const kDetailsSegueIdentifier     = @"WKStatDetailsSegue";
     WKItem *item        = [statsItems objectAtIndex:indexPath.row];
     
     [cell setItem:item];
+    
+    if (indexPath.section == 0) {
+        
+        [cell setDetailsText:[NSString stringWithFormat:@"%.00f%%", [item.stats combinedCorrectPercentage] * 100.0f]];
+        
+    } else {
+        
+        [cell setDetailsText:[_dateFormatter stringFromDate:[item.stats nextReviewDate]]];
+    }
     
     return cell;
 }
@@ -211,7 +212,7 @@ static NSString * const kDetailsSegueIdentifier     = @"WKStatDetailsSegue";
     _nextReviewLabel.text   = [WKItem nextReviewDateString];
     
     NSArray *burnedItems    = [WKItem combinedItemsWithSRSType:WKItemSRSBurned];
-    NSArray *criticalItems  = [WKItem combinedCriticalItemsWithPercentage:75.0f];
+    NSArray *criticalItems  = [WKItem combinedCriticalItemsWithPercentage:kCriticalLevelPercentage];
     NSArray *unlockedItems  = [WKItem combinedUnlockedItems];
     
 #define count_as_string(array) [NSString stringWithFormat:@"%i", [array count]]

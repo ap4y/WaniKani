@@ -60,13 +60,188 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pjm-sf-mG8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="35" sectionFooterHeight="22" id="g4B-tx-kFe">
+                                        <rect key="frame" x="10" y="299" width="300" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WKStatsCell" id="szg-JK-Fnp" customClass="WKItemTableCell">
+                                                <rect key="frame" x="0.0" y="35" width="300" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="f8K-dq-DvG">
+                                                            <rect key="frame" x="10" y="10" width="24" height="24"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="p4Z-bY-Hg4">
+                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="66%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JvH-pm-7ZT">
+                                                            <rect key="frame" x="243" y="0.0" width="51" height="44"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                                            <size key="shadowOffset" width="0.0" height="1"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="上" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TzK-DO-4U5">
+                                                            <rect key="frame" x="10" y="5" width="230" height="33"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                                            <size key="shadowOffset" width="0.0" height="2"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <connections>
+                                                    <outlet property="backgroundImageView" destination="p4Z-bY-Hg4" id="Wo8-Qs-UKx"/>
+                                                    <outlet property="characterImageView" destination="f8K-dq-DvG" id="KKz-xA-g7v"/>
+                                                    <outlet property="chracterLabel" destination="TzK-DO-4U5" id="dan-wH-R19"/>
+                                                    <outlet property="detailsTextLabel" destination="JvH-pm-7ZT" id="Sbl-vW-wZu"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Ale-6b-SAL" id="p79-AQ-w5T"/>
+                                            <outlet property="delegate" destination="Ale-6b-SAL" id="j9s-RA-7Yr"/>
+                                        </connections>
+                                    </tableView>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" id="0of-yj-o2D">
+                                        <rect key="frame" x="10" y="10" width="300" height="281"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UQ2-Y8-P01">
+                                                <rect key="frame" x="0.0" y="141" width="150" height="81"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.16078431369999999" green="0.30196078430000001" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                                <size key="titleShadowOffset" width="0.0" height="-1"/>
+                                                <state key="normal" title="18">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="about 24 hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="END-TB-k8l">
+                                                <rect key="frame" x="43" y="17" width="247" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="shadowOffset" width="0.0" height="1"/>
+                                            </label>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uRH-RJ-GWv">
+                                                <rect key="frame" x="0.0" y="60" width="150" height="81"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.86666666670000003" green="0.0" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                                <size key="titleShadowOffset" width="0.0" height="-1"/>
+                                                <state key="normal" title="18">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="coJ-AX-NhF">
+                                                <rect key="frame" x="150" y="141" width="150" height="81"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="130" maxY="0.0"/>
+                                                <size key="titleShadowOffset" width="0.0" height="-1"/>
+                                                <state key="normal" title="18">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4c1-7z-kAW">
+                                                <rect key="frame" x="150" y="60" width="150" height="81"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.53333333329999999" green="0.1764705882" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                                <size key="titleShadowOffset" width="0.0" height="-1"/>
+                                                <state key="normal" title="18">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AZv-jp-zG1">
+                                                <rect key="frame" x="0.0" y="221" width="300" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                                <size key="titleShadowOffset" width="0.0" height="-1"/>
+                                                <state key="normal" title="18">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="clock_icon.png" id="5IG-TQ-BYM">
+                                                <rect key="frame" x="10" y="17" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" image="burned.png" id="jdK-M2-QIP">
+                                                <rect key="frame" x="10" y="238" width="25" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" image="apprentice.png" id="nDg-EB-eeh">
+                                                <rect key="frame" x="10" y="88" width="25" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" image="guru.png" id="ZJ9-7W-pye">
+                                                <rect key="frame" x="265" y="88" width="25" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" image="enlighted.png" id="Z2h-WC-R73">
+                                                <rect key="frame" x="265" y="169" width="25" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" image="master.png" id="qf3-Hp-Zp8">
+                                                <rect key="frame" x="10" y="169" width="25" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" id="Ipj-Qc-9XU"/>
                     <connections>
+                        <outlet property="apprenticeButton" destination="uRH-RJ-GWv" id="9RZ-Oa-iKi"/>
+                        <outlet property="burnedButton" destination="AZv-jp-zG1" id="bxm-cl-I52"/>
                         <outlet property="contentScrollView" destination="Pjm-sf-mG8" id="om7-ZD-aGE"/>
+                        <outlet property="enlightenButton" destination="coJ-AX-NhF" id="jLm-mO-Siz"/>
+                        <outlet property="guruButton" destination="4c1-7z-kAW" id="1I8-A1-Td8"/>
+                        <outlet property="informationBox" destination="0of-yj-o2D" id="BVP-gg-3TZ"/>
+                        <outlet property="masterButton" destination="UQ2-Y8-P01" id="Gyw-aN-UmD"/>
+                        <outlet property="nextReviewLabel" destination="END-TB-k8l" id="nrB-kf-6uK"/>
+                        <outlet property="statsTableView" destination="g4B-tx-kFe" id="xfz-qE-pbn"/>
                         <segue destination="YT0-3n-m4d" kind="push" identifier="WKStatDetailsSegue" id="7AW-Fi-pgm"/>
                     </connections>
                 </viewController>
@@ -293,10 +468,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="apprentice.png" width="20" height="26"/>
         <image name="btn_kanji_normal.png" width="29" height="15"/>
         <image name="btn_radicals_normal.png" width="29" height="15"/>
         <image name="btn_vocab_normal.png" width="29" height="15"/>
+        <image name="burned.png" width="25" height="26"/>
+        <image name="clock_icon.png" width="25" height="25"/>
+        <image name="enlighted.png" width="25" height="26"/>
+        <image name="guru.png" width="20" height="26"/>
         <image name="login_background.png" width="345" height="200"/>
+        <image name="master.png" width="22" height="26"/>
     </resources>
     <classes>
         <class className="UICollectionReusableView" superclassName="UIView">
@@ -310,6 +491,15 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+        <class className="WKItemCollectionCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemCollectionCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cellView" candidateClass="UICollectionViewCell"/>
+            </relationships>
         </class>
         <class className="WKItemDetailsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemDetailsViewController.h"/>
@@ -346,6 +536,16 @@
                 <relationship kind="outlet" name="unlockedDateLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="WKItemTableCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemTableCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cellView" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="characterImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="chracterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailsTextLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="WKItemViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemViewController.h"/>
             <relationships>
@@ -361,10 +561,9 @@
                 <relationship kind="outlet" name="percentageProgressBar" candidateClass="UIProgressView"/>
             </relationships>
         </class>
-        <class className="WKKanjiViewCell" superclassName="UICollectionViewCell">
+        <class className="WKKanjiViewCell" superclassName="WKItemCollectionCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKKanjiViewCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="cellView" candidateClass="UICollectionViewCell"/>
                 <relationship kind="outlet" name="characterLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lockedImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
@@ -381,10 +580,9 @@
                 <relationship kind="outlet" name="userKeyTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
-        <class className="WKRadicalViewCell" superclassName="UICollectionViewCell">
+        <class className="WKRadicalViewCell" superclassName="WKItemCollectionCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKRadicalViewCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="cellView" candidateClass="UICollectionViewCell"/>
                 <relationship kind="outlet" name="characterImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="characterLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lockedImageView" candidateClass="UIImageView"/>
@@ -397,8 +595,6 @@
         <class className="WKStatsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKStatsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="criticalPercentageDidChanged:"/>
-                <relationship kind="action" name="onlyCriticalsDidChanged:"/>
                 <relationship kind="outlet" name="apprenticeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="burnedButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="contentScrollView" candidateClass="UIScrollView"/>
@@ -407,15 +603,12 @@
                 <relationship kind="outlet" name="informationBox" candidateClass="UIView"/>
                 <relationship kind="outlet" name="masterButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="nextReviewLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="settingsBox" candidateClass="UIView"/>
                 <relationship kind="outlet" name="statsTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="statsView" candidateClass="UIView"/>
             </relationships>
         </class>
-        <class className="WKVocabViewCell" superclassName="UICollectionViewCell">
+        <class className="WKVocabViewCell" superclassName="WKItemCollectionCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKVocabViewCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="cellView" candidateClass="UICollectionViewCell"/>
                 <relationship kind="outlet" name="characterLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lockedImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
@@ -432,6 +625,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="fOG-ip-kSb"/>
+        <segue reference="7AW-Fi-pgm"/>
     </inferredMetricsTieBreakers>
 </document>

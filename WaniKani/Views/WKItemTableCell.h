@@ -11,4 +11,5 @@
 @class WKItem;
 @interface WKItemTableCell : UITableViewCell
 - (void)setItem:(WKItem *)item;
+- (void)setDetailsText:(NSString *)detailsText;
 @end

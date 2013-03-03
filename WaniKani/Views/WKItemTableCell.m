@@ -17,30 +17,13 @@
 #import "WKCustomization.h"
 
 @interface WKItemTableCell ()
-@property (strong, nonatomic) IBOutlet UITableViewCell *cellView;
 @property (weak, nonatomic) IBOutlet UILabel *chracterLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *characterImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (weak, nonatomic) IBOutlet UILabel *detailsTextLabel;
 @end
 
 @implementation WKItemTableCell
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (!self) return nil;
-    
-    [self createViewFromNib];
-    
-    return self;}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (!self) return nil;
-    
-    [self createViewFromNib];
-    
-    return self;
-}
 
 - (void)setItem:(WKItem *)item {
  
@@ -72,12 +55,9 @@
                                                                   endPoint:CGPointMake(0.5f, 1.0f)]];
 }
 
-#pragma mark - private
-
-- (void)createViewFromNib {
+- (void)setDetailsText:(NSString *)detailsText {
     
-    [[NSBundle mainBundle] loadNibNamed:@"WKItemTableCell" owner:self options:nil];
-    [self addSubview:_cellView];    
+    _detailsTextLabel.text = detailsText;
 }
 
 @end
