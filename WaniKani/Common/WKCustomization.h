@@ -19,6 +19,8 @@
                          startPoint:(CGPoint)startPoint
                            endPoint:(CGPoint)endPoint;
 
++ (UIImage *)resizableBackButtonImageNamedForItemClass:(Class)itemClass;
+
 + (void)insertView:(UIView *)view into:(UIView *)containerView positionedBelow:(UIView *)aboveView;
 + (CGSize)sizeThatFitsView:(UIView *)view;
 

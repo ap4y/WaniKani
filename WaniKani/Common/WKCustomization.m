@@ -9,6 +9,11 @@
 #import "WKCustomization.h"
 #import <QuartzCore/QuartzCore.h>
 
+#import "WKItem.h"
+#import "WKRadical.h"
+#import "WKKanji.h"
+#import "WKVocab.h"
+
 @implementation WKCustomization
 
 + (UIImage *)resizableImageNamed:(NSString *)imageName withCapInsets:(UIEdgeInsets)edgeInsets {
@@ -53,6 +58,22 @@
     UIGraphicsEndImageContext();
     
     return outputImage;
+}
+
++ (UIImage *)resizableBackButtonImageNamedForItemClass:(Class)itemClass {
+    
+    NSString *imageName = @"radical_back_button";
+    if ( itemClass == [WKKanji class] ) {
+        
+        imageName = @"kanji_back_button";
+        
+    } else if ( itemClass == [WKVocab class] ) {
+        
+        imageName = @"vocab_back_button";
+    }
+
+    
+    return [WKCustomization resizableImageNamed:imageName withCapInsets:UIEdgeInsetsMake(0.0f, 14.0f, 0.0f, 5.0f)];
 }
 
 + (void)insertView:(UIView *)view into:(UIView *)containerView positionedBelow:(UIView *)aboveView {
@@ -107,6 +128,16 @@
     };
     [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
     [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:0.0f forBarMetrics:UIBarMetricsDefault];
+    
+    UIImage *selectionImage = [WKCustomization resizableBackButtonImageNamedForItemClass:[WKRadical class]];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:selectionImage
+                                                      forState:UIControlStateNormal
+                                                    barMetrics:UIBarMetricsDefault];
+    textAttributes = @{
+        UITextAttributeTextShadowOffset: [NSValue valueWithCGSize:CGSizeMake(0.0f, 1.0f)]
+    };
+    [[UIBarButtonItem appearance] setTitleTextAttributes:textAttributes
+                                                forState:UIControlStateNormal];
 }
 
 + (void)prepareUIProgressViewCustomization {

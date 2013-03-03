@@ -106,6 +106,15 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    UIImage *selectionImage     = [WKCustomization resizableBackButtonImageNamedForItemClass:[_item class]];
+    UIBarButtonItem *backItem   = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
+                                                                   style:UIBarButtonItemStylePlain
+                                                                  target:nil action:nil];
+    [backItem setBackButtonBackgroundImage:selectionImage
+                                  forState:UIControlStateNormal
+                                barMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar.backItem setBackBarButtonItem:backItem];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
