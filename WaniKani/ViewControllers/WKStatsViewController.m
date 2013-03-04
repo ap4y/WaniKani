@@ -143,7 +143,7 @@ static const CGFloat kCriticalLevelPercentage       = 75.0f;
         
     } else {
         
-        [cell setDetailsText:[_dateFormatter stringFromDate:[item.stats nextReviewDate]]];
+        [cell setDetailsText:[_dateFormatter stringFromDate:[item.stats unlockDate]]];
     }
     
     return cell;
