@@ -85,4 +85,25 @@
     STAssertEqualObjects([NSDate dateWithTimeIntervalSince1970:1360734768], [WKRadical nextReviewDate], nil);
 }
 
+- (void)testGroupRadicalsByLevel {
+
+    WKRadical *levelTwoRadical, *levelThreeRadical;
+    levelTwoRadical         = [NSEntityDescription insertNewObjectForEntityForName:@"WKRadical"
+                                                            inManagedObjectContext:mainThreadContext()];
+    levelThreeRadical       = [NSEntityDescription insertNewObjectForEntityForName:@"WKRadical"
+                                                            inManagedObjectContext:mainThreadContext()];
+    
+    levelTwoRadical.level   = @(2);
+    levelThreeRadical.level = @(3);
+    NSDictionary *expected  = @{ @(2): @[ levelTwoRadical ], @(3): @[ levelThreeRadical ] };
+    NSDictionary *byLevel   = [WKRadical itemsByLevel:@[ levelTwoRadical, levelThreeRadical ]];
+    
+    STAssertEqualObjects(expected, byLevel, nil);    
+}
+
+- (void)testRadicalsForLevel {
+    
+    STAssertEquals(27U, [[WKRadical itemsForLevel:@(1)] count], nil);
+}
+
 @end
