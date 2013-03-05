@@ -31,9 +31,9 @@ static const NSUInteger kMaxFinishedBlocksCount = 3;
     return sharedManger;
 }
 
-- (void)fetchItems {
+- (BOOL)fetchItems {
 
-    if (_isSyncing) return;
+    if (_isSyncing) return NO;
     
     _isSyncing              = YES;
     _finishedBlocksCount    = 0;
@@ -60,6 +60,8 @@ static const NSUInteger kMaxFinishedBlocksCount = 3;
     [WKRadical fetchRadicalsWithSuccess:successBlock failure:failureBlock];
     [WKKanji fetchKanjiWithSuccess:successBlock failure:failureBlock];
     [WKVocab fetchVocabWithSuccess:successBlock failure:failureBlock];
+    
+    return YES;
 }
 
 #pragma mark - private

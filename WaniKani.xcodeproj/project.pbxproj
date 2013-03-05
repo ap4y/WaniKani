@@ -16,6 +16,7 @@
 		9500825416E5CC2600F02369 /* WKItemDetailsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9500825316E5CC2600F02369 /* WKItemDetailsViewControllerTests.m */; };
 		9500825816E5D4F800F02369 /* WKItemsHeaderViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9500825716E5D4F800F02369 /* WKItemsHeaderViewTests.m */; };
 		9500825F16E68C7C00F02369 /* WKHTTPClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9500825E16E68C7C00F02369 /* WKHTTPClientTests.m */; };
+		9500826216E68CEA00F02369 /* WKSyncManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9500826116E68CEA00F02369 /* WKSyncManagerTests.m */; };
 		9514E7EC16CADF1B00DCF51D /* critical-items_95.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E416CADF1B00DCF51D /* critical-items_95.json */; };
 		9514E7ED16CADF1B00DCF51D /* kanji.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E516CADF1B00DCF51D /* kanji.json */; };
 		9514E7EE16CADF1B00DCF51D /* level_progression.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E616CADF1B00DCF51D /* level_progression.json */; };
@@ -158,6 +159,8 @@
 		9500825716E5D4F800F02369 /* WKItemsHeaderViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKItemsHeaderViewTests.m; path = Views/WKItemsHeaderViewTests.m; sourceTree = "<group>"; };
 		9500825D16E68C7C00F02369 /* WKHTTPClientTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKHTTPClientTests.h; path = Common/WKHTTPClientTests.h; sourceTree = "<group>"; };
 		9500825E16E68C7C00F02369 /* WKHTTPClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKHTTPClientTests.m; path = Common/WKHTTPClientTests.m; sourceTree = "<group>"; };
+		9500826016E68CEA00F02369 /* WKSyncManagerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKSyncManagerTests.h; path = Common/WKSyncManagerTests.h; sourceTree = "<group>"; };
+		9500826116E68CEA00F02369 /* WKSyncManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKSyncManagerTests.m; path = Common/WKSyncManagerTests.m; sourceTree = "<group>"; };
 		9514E7E416CADF1B00DCF51D /* critical-items_95.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "critical-items_95.json"; sourceTree = "<group>"; };
 		9514E7E516CADF1B00DCF51D /* kanji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kanji.json; sourceTree = "<group>"; };
 		9514E7E616CADF1B00DCF51D /* level_progression.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_progression.json; sourceTree = "<group>"; };
@@ -354,6 +357,8 @@
 			children = (
 				9500825D16E68C7C00F02369 /* WKHTTPClientTests.h */,
 				9500825E16E68C7C00F02369 /* WKHTTPClientTests.m */,
+				9500826016E68CEA00F02369 /* WKSyncManagerTests.h */,
+				9500826116E68CEA00F02369 /* WKSyncManagerTests.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";

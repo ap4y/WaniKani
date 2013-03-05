@@ -15,6 +15,6 @@ static NSString * const WKSyncMangerFailErrorKey        = @"WKSyncMangerFailErro
 @interface WKSyncManager : NSObject
 
 + (WKSyncManager *)sharedManager;
-- (void)fetchItems;
+- (BOOL)fetchItems;
 
 @end
