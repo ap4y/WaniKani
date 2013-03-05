@@ -8,8 +8,10 @@ guard :ocunit,
   watch(%r{^WaniKaniTests/Models/.+Tests\.m})
   watch(%r{^WaniKaniTests/Common/.+Tests\.m})
   watch(%r{^WaniKaniTests/ViewControllers/.+Tests\.m})
+  watch(%r{^WaniKaniTests/Views/.+Tests\.m})
 
   watch(%r{^WaniKani/Models/(.+)\.[m,h]$})           { |m| "WaniKaniTests/Models/#{m[1]}Tests.m" }
   watch(%r{^WaniKani/Common/(.+)\.[m,h]$})           { |m| "WaniKaniTests/Common/#{m[1]}Tests.m" }
   watch(%r{^WaniKani/ViewControllers/(.+)\.[m,h]$})  { |m| "WaniKaniTests/ViewControllers/#{m[1]}Tests.m" }
+  watch(%r{^WaniKani/Views/(.+)\.[m,h]$})            { |m| "WaniKaniTests/Views/#{m[1]}Tests.m" }
 end
