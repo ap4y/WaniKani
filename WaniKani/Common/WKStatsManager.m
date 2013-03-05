@@ -69,7 +69,8 @@
     
     NSSortDescriptor *descDateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"stats.unlockedDate"
                                                                          ascending:NO];
-    return [[result orderByDescriptors:descDateDescriptor, nil] subarrayWithRange:NSMakeRange(0, 10)];
+    NSRange maxResultItemsRange = NSMakeRange(0, MIN([result count], 10));
+    return [[result orderByDescriptors:descDateDescriptor, nil] subarrayWithRange:maxResultItemsRange];
 }
 
 @end

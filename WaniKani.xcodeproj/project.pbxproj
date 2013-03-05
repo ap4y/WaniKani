@@ -12,6 +12,7 @@
 		9500821516E4517C00F02369 /* WKStatsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9500821416E4517C00F02369 /* WKStatsManager.m */; };
 		9500821816E4531F00F02369 /* WKItemStatsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9500821716E4531F00F02369 /* WKItemStatsTests.m */; };
 		9500824E16E59C0F00F02369 /* WKItemViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9500824D16E59C0F00F02369 /* WKItemViewControllerTests.m */; };
+		9500825116E5BF7E00F02369 /* WKStatsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9500825016E5BF7D00F02369 /* WKStatsViewControllerTests.m */; };
 		9514E7EC16CADF1B00DCF51D /* critical-items_95.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E416CADF1B00DCF51D /* critical-items_95.json */; };
 		9514E7ED16CADF1B00DCF51D /* kanji.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E516CADF1B00DCF51D /* kanji.json */; };
 		9514E7EE16CADF1B00DCF51D /* level_progression.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E616CADF1B00DCF51D /* level_progression.json */; };
@@ -146,6 +147,8 @@
 		9500821716E4531F00F02369 /* WKItemStatsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKItemStatsTests.m; path = Models/WKItemStatsTests.m; sourceTree = "<group>"; };
 		9500824C16E59C0F00F02369 /* WKItemViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKItemViewControllerTests.h; path = ViewControllers/WKItemViewControllerTests.h; sourceTree = "<group>"; };
 		9500824D16E59C0F00F02369 /* WKItemViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKItemViewControllerTests.m; path = ViewControllers/WKItemViewControllerTests.m; sourceTree = "<group>"; };
+		9500824F16E5BF7D00F02369 /* WKStatsViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKStatsViewControllerTests.h; path = ViewControllers/WKStatsViewControllerTests.h; sourceTree = "<group>"; };
+		9500825016E5BF7D00F02369 /* WKStatsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKStatsViewControllerTests.m; path = ViewControllers/WKStatsViewControllerTests.m; sourceTree = "<group>"; };
 		9514E7E416CADF1B00DCF51D /* critical-items_95.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "critical-items_95.json"; sourceTree = "<group>"; };
 		9514E7E516CADF1B00DCF51D /* kanji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kanji.json; sourceTree = "<group>"; };
 		9514E7E616CADF1B00DCF51D /* level_progression.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_progression.json; sourceTree = "<group>"; };
@@ -436,6 +439,8 @@
 				9514E85216CC7F6000DCF51D /* WKVocabViewControllerTests.m */,
 				9500824C16E59C0F00F02369 /* WKItemViewControllerTests.h */,
 				9500824D16E59C0F00F02369 /* WKItemViewControllerTests.m */,
+				9500824F16E5BF7D00F02369 /* WKStatsViewControllerTests.h */,
+				9500825016E5BF7D00F02369 /* WKStatsViewControllerTests.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -857,6 +862,7 @@
 				9514E85316CC7F6000DCF51D /* WKVocabViewControllerTests.m in Sources */,
 				9500821816E4531F00F02369 /* WKItemStatsTests.m in Sources */,
 				9500824E16E59C0F00F02369 /* WKItemViewControllerTests.m in Sources */,
+				9500825116E5BF7E00F02369 /* WKStatsViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
