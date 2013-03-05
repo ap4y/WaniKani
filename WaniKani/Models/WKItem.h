@@ -49,9 +49,4 @@ static NSString * const WKItemSRSTypeStrings[] = {
 + (NSDictionary *)itemsByLevel:(NSArray *)radicals;
 + (NSArray *)itemsForLevel:(NSNumber *)level;
 
-+ (NSString *)nextReviewDateString;
-+ (NSArray *)combinedItemsWithSRSType:(WKItemSRSType)srsType;
-+ (NSArray *)combinedCriticalItemsWithPercentage:(CGFloat)percentage;
-+ (NSArray *)combinedUnlockedItems;
-
 @end

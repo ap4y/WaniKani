@@ -17,6 +17,7 @@
 #import "WKGravatarImage.h"
 #import "WKCustomization.h"
 #import "WKSyncManager.h"
+#import "WKStatsManager.h"
 
 @interface WKStatsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
@@ -212,20 +213,20 @@ static const CGFloat kCriticalLevelPercentage       = 75.0f;
 
 - (void)updateViewValues {
     
-    _nextReviewLabel.text   = [WKItem nextReviewDateString];
+    _nextReviewLabel.text   = [WKStatsManager nextReviewDateString];
     
-    NSArray *burnedItems    = [WKItem combinedItemsWithSRSType:WKItemSRSBurned];
-    NSArray *criticalItems  = [WKItem combinedCriticalItemsWithPercentage:kCriticalLevelPercentage];
-    NSArray *unlockedItems  = [WKItem combinedUnlockedItems];
+    NSArray *burnedItems    = [WKStatsManager combinedItemsWithSRSType:WKItemSRSBurned];
+    NSArray *criticalItems  = [WKStatsManager combinedCriticalItemsWithPercentage:kCriticalLevelPercentage];
+    NSArray *unlockedItems  = [WKStatsManager combinedUnlockedItems];
     
 #define count_as_string(array) [NSString stringWithFormat:@"%i", [array count]]
-    [_apprenticeButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSApprentice])
+    [_apprenticeButton setTitle:count_as_string([WKStatsManager combinedItemsWithSRSType:WKItemSRSApprentice])
                        forState:UIControlStateNormal];
-    [_guruButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSGuru])
+    [_guruButton setTitle:count_as_string([WKStatsManager combinedItemsWithSRSType:WKItemSRSGuru])
                  forState:UIControlStateNormal];
-    [_masterButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSMaster])
+    [_masterButton setTitle:count_as_string([WKStatsManager combinedItemsWithSRSType:WKItemSRSMaster])
                    forState:UIControlStateNormal];
-    [_enlightenButton setTitle:count_as_string([WKItem combinedItemsWithSRSType:WKItemSRSEnlighten])
+    [_enlightenButton setTitle:count_as_string([WKStatsManager combinedItemsWithSRSType:WKItemSRSEnlighten])
                       forState:UIControlStateNormal];
     [_burnedButton setTitle:count_as_string(burnedItems)
                    forState:UIControlStateNormal];

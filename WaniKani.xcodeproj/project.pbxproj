@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		14A800BB9533455A80D95681 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F9859464DB4E18A76EFB6E /* libPods.a */; };
 		71ED921377D540EAA73A7659 /* libPods-WaniKaniTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C66C383D4C4418A956E88D /* libPods-WaniKaniTests.a */; };
+		9500821516E4517C00F02369 /* WKStatsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9500821416E4517C00F02369 /* WKStatsManager.m */; };
 		9500821816E4531F00F02369 /* WKItemStatsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9500821716E4531F00F02369 /* WKItemStatsTests.m */; };
 		9514E7EC16CADF1B00DCF51D /* critical-items_95.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E416CADF1B00DCF51D /* critical-items_95.json */; };
 		9514E7ED16CADF1B00DCF51D /* kanji.json in Resources */ = {isa = PBXBuildFile; fileRef = 9514E7E516CADF1B00DCF51D /* kanji.json */; };
@@ -138,6 +139,8 @@
 /* Begin PBXFileReference section */
 		1A0FC0DE456F40D58C5F1149 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		273B254815EB4786BD603497 /* Pods-WaniKaniTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaniKaniTests.xcconfig"; path = "Pods/Pods-WaniKaniTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		9500821316E4517C00F02369 /* WKStatsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKStatsManager.h; path = Common/WKStatsManager.h; sourceTree = "<group>"; };
+		9500821416E4517C00F02369 /* WKStatsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKStatsManager.m; path = Common/WKStatsManager.m; sourceTree = "<group>"; };
 		9500821616E4531F00F02369 /* WKItemStatsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKItemStatsTests.h; path = Models/WKItemStatsTests.h; sourceTree = "<group>"; };
 		9500821716E4531F00F02369 /* WKItemStatsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKItemStatsTests.m; path = Models/WKItemStatsTests.m; sourceTree = "<group>"; };
 		9514E7E416CADF1B00DCF51D /* critical-items_95.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "critical-items_95.json"; sourceTree = "<group>"; };
@@ -390,6 +393,8 @@
 				951D40D316D0BEC600703A05 /* WKGravatarImage.m */,
 				958DC8B316E1829100F948F4 /* WKSyncManager.h */,
 				958DC8B416E1829100F948F4 /* WKSyncManager.m */,
+				9500821316E4517C00F02369 /* WKStatsManager.h */,
+				9500821416E4517C00F02369 /* WKStatsManager.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -829,6 +834,7 @@
 				958DC8B216E17CD300F948F4 /* WKItemViewController.m in Sources */,
 				958DC8B516E1829100F948F4 /* WKSyncManager.m in Sources */,
 				958DC8C016E1BC4800F948F4 /* WKItemCollectionCell.m in Sources */,
+				9500821516E4517C00F02369 /* WKStatsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
