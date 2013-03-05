@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *characterImageView;
 @property (weak, nonatomic) IBOutlet UILabel *meaningLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *lockedImageView;
-
 @end
 
 @implementation WKRadicalViewCell
