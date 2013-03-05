@@ -68,10 +68,9 @@
     [_subject loadView];
     
     self.stats              = [NSEntityDescription insertNewObjectForEntityForName:@"WKItemStats"
-                                                            inManagedObjectContext:mainThreadContext()];
-    NSDate *testDate        = [NSDate date];    
-    _stats.availableDate    = @([testDate timeIntervalSince1970]);
-    _stats.unlockedDate     = @([testDate timeIntervalSince1970]);
+                                                            inManagedObjectContext:mainThreadContext()]; 
+    _stats.availableDate    = @(1360463301);
+    _stats.unlockedDate     = @(1360463301);
     _stats.srs              = @"guru";
     
     _stats.readingCorrect     = @(1);
@@ -105,8 +104,8 @@
     STAssertEqualObjects(@"1/2",            _subject.namingPercentLabel.text,       nil);
     STAssertEquals(0.5f,                    _subject.namingProgressView.progress,   nil);
     
-    STAssertEqualObjects(@"Mar 5, 2013",    _subject.nextReviewDateLabel.text,      nil);
-    STAssertEqualObjects(@"Mar 5, 2013",    _subject.unlockedDateLabel.text,        nil);
+    STAssertEqualObjects(@"Feb 10, 2013",    _subject.nextReviewDateLabel.text,      nil);
+    STAssertEqualObjects(@"Feb 10, 2013",    _subject.unlockedDateLabel.text,        nil);
     STAssertEqualObjects(@"Guru",           _subject.srsLevelLabel.text,            nil);
 
     STAssertEqualObjects(@"Meaning",        _subject.meaningsLabel.text,            nil);        
@@ -139,8 +138,8 @@
     STAssertEqualObjects(@"50%",            _subject.combinedPercentLabel.text,     nil);
     STAssertEquals(0.5f,                    _subject.combinedProgressView.progress, nil);
     
-    STAssertEqualObjects(@"Mar 5, 2013",    _subject.nextReviewDateLabel.text,      nil);
-    STAssertEqualObjects(@"Mar 5, 2013",    _subject.unlockedDateLabel.text,        nil);
+    STAssertEqualObjects(@"Feb 10, 2013",    _subject.nextReviewDateLabel.text,      nil);
+    STAssertEqualObjects(@"Feb 10, 2013",    _subject.unlockedDateLabel.text,        nil);
     STAssertEqualObjects(@"Guru",           _subject.srsLevelLabel.text,            nil);
     
     STAssertEqualObjects(@"Meaning",        _subject.meaningsLabel.text,            nil);
@@ -175,8 +174,8 @@
     STAssertEqualObjects(@"50%",            _subject.combinedPercentLabel.text,     nil);
     STAssertEquals(0.5f,                    _subject.combinedProgressView.progress, nil);
     
-    STAssertEqualObjects(@"Mar 5, 2013",    _subject.nextReviewDateLabel.text,      nil);
-    STAssertEqualObjects(@"Mar 5, 2013",    _subject.unlockedDateLabel.text,        nil);
+    STAssertEqualObjects(@"Feb 10, 2013",    _subject.nextReviewDateLabel.text,      nil);
+    STAssertEqualObjects(@"Feb 10, 2013",    _subject.unlockedDateLabel.text,        nil);
     STAssertEqualObjects(@"Guru",           _subject.srsLevelLabel.text,            nil);
     
     STAssertEqualObjects(@"Meaning",        _subject.meaningsLabel.text,            nil);
