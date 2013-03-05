@@ -75,7 +75,7 @@
     NSArray *items          = [itemClass requestResult:[itemClass all] managedObjectContext:mainThreadContext()];
     self.itemsByLevel       = [WKItem itemsByLevel:items];
     
-    __block NSUInteger uncollapsetCount = 0;
+    __block NSUInteger uncollapsedCount = 0;
     [[_itemsByLevel allKeys] enumerateObjectsUsingBlock:^(id levelKey, NSUInteger idx, BOOL *stop) {
         
         if (withCollapsedRefresh) {
@@ -83,7 +83,7 @@
             if ([_collapsedItemsByLevel objectForKey:levelKey]) {
                 
                 [_collapsedItemsByLevel setObject:[_itemsByLevel objectForKey:levelKey] forKey:levelKey];
-                uncollapsetCount++;
+                uncollapsedCount++;
             }
             
         } else {
@@ -92,23 +92,13 @@
         }
     }];
     
-    if (uncollapsetCount == 0 && [_itemsByLevel count] > 0) {
+    if (uncollapsedCount == 0 && [_itemsByLevel count] > 0) {
         
         id levelKey = [[_itemsByLevel allKeys] objectAtIndex:0];
         [_collapsedItemsByLevel setObject:[_itemsByLevel objectForKey:levelKey] forKey:levelKey];
     }
     
     if (withCollapsedRefresh) [_itemsCollectionView reloadData];
-}
-
-- (void)configureCollectionItemCell:(WKItemCollectionCell *)cell forItem:(WKItem *)item {
-    
-    __weak WKItemCollectionCell *weakCell = cell;
-    [cell setItem:item];
-    [cell setCellViewTouched:^{
-        
-        [self performSegueWithIdentifier:[self detailsSegueIdentifier] sender:weakCell];
-    }];
 }
 
 #pragma mark - controller setting
@@ -188,7 +178,13 @@
     NSString *cellIdentifier    = [self collectionItemCellViewIdentifier];
     WKItemCollectionCell *cell  = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier
                                                                             forIndexPath:indexPath];
-    [self configureCollectionItemCell:cell forItem:item];
+    [cell setItem:item];
+    
+    __weak WKItemCollectionCell *weakCell = cell;
+    [cell setCellViewTouched:^{
+        
+        [self performSegueWithIdentifier:[self detailsSegueIdentifier] sender:weakCell];
+    }];
     
     return cell;
 }

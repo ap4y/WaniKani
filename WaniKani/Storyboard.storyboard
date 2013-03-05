@@ -7,7 +7,7 @@
         <!--Vocab View Controller - Vocab-->
         <scene sceneID="70p-Xa-UDO">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="SJe-dP-Yis" customClass="WKVocabViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="WKVocabViewController" autoresizesArchivedViewToFullSize="NO" id="SJe-dP-Yis" customClass="WKVocabViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="nd5-gs-TMy">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
         <!--Stats View Controller - Stats-->
         <scene sceneID="ELm-We-N93">
             <objects>
-                <viewController id="Ale-6b-SAL" customClass="WKStatsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WKStatsViewController" id="Ale-6b-SAL" customClass="WKStatsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KT6-f3-uKD">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -299,7 +299,7 @@
         <!--Radicals View Controller - Radicals-->
         <scene sceneID="4F2-aT-HTN">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="24v-uq-MBv" customClass="WKRadicalsViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="WKRadicalsViewController" autoresizesArchivedViewToFullSize="NO" id="24v-uq-MBv" customClass="WKRadicalsViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="rUP-Gv-8A3">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -391,7 +391,7 @@
         <!--Item Details View Controller-->
         <scene sceneID="Cpd-mD-tz5">
             <objects>
-                <viewController id="YT0-3n-m4d" customClass="WKItemDetailsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WKItemDetailsViewController" id="YT0-3n-m4d" customClass="WKItemDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Kq-A6-mnV">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -415,7 +415,7 @@
         <!--Kanji View Controller - Kanji-->
         <scene sceneID="yUk-33-4aO">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="Btb-eA-aIv" customClass="WKKanjiViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="WKKanjiViewController" autoresizesArchivedViewToFullSize="NO" id="Btb-eA-aIv" customClass="WKKanjiViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Nnq-jq-tZm">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -626,22 +626,16 @@
         <image name="master.png" width="22" height="26"/>
     </resources>
     <classes>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        <class className="PSTCollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PSTCollectionViewController.h"/>
         </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        <class className="PSUICollectionViewController_" superclassName="PSTCollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PSUICollectionViewController_.h"/>
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-        <class className="WKItemCollectionCell" superclassName="UICollectionViewCell">
+        <class className="WKItemCollectionCell" superclassName="PSUICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemCollectionCell.h"/>
         </class>
         <class className="WKItemDetailsViewController" superclassName="UIViewController">
@@ -688,16 +682,16 @@
                 <relationship kind="outlet" name="detailsTextLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="WKItemViewController" superclassName="UICollectionViewController">
+        <class className="WKItemViewController" superclassName="PSUICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="itemsCollectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="itemsCollectionView" candidateClass="PSUICollectionView"/>
             </relationships>
         </class>
-        <class className="WKItemsHeaderView" superclassName="UICollectionReusableView">
+        <class className="WKItemsHeaderView" superclassName="PSUICollectionReusableView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WKItemsHeaderView.h"/>
             <relationships>
-                <relationship kind="outlet" name="headerView" candidateClass="UICollectionReusableView"/>
+                <relationship kind="outlet" name="headerView" candidateClass="PSUICollectionReusableView"/>
                 <relationship kind="outlet" name="levelTitleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="percentageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="percentageProgressBar" candidateClass="UIProgressView"/>
