@@ -39,6 +39,7 @@
 - (void)tearDown {
     [_partial verify];
     [OHHTTPStubs removeAllRequestHandlers];
+    [WKHTTPClient sharedClient].userKey = nil;
     
     [super tearDown];
 }
@@ -54,10 +55,11 @@
     [AETestHelpers runAsyncTest:^(BOOL *endCondition) {
         
         [_subject login:nil];
-        STAssertEqualObjects(@"1234",                               [WKHTTPClient sharedClient].userKey, nil);
-        STAssertEqualObjects(@"f9e852694ab8a659d1edbf438c2bb4ea",   [WKHTTPClient sharedClient].gravatarId, nil);
+        STAssertEqualObjects(@"1234", [WKHTTPClient sharedClient].userKey, nil);
         
-    } interval:0.1];    
+    } interval:0.1];
+    
+    STAssertEqualObjects(@"f9e852694ab8a659d1edbf438c2bb4ea", [WKHTTPClient sharedClient].gravatarId, nil);
 }
 
 - (void)testPassLoginWithUserKey {
