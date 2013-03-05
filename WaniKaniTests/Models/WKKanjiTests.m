@@ -47,7 +47,7 @@
             STFail(nil);
         }];
         
-    } interval:0.1];
+    } interval:0.5];
     
     STAssertTrue(isFinished, nil);
 }
