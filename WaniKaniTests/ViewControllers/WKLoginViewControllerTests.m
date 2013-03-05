@@ -54,7 +54,8 @@
     [AETestHelpers runAsyncTest:^(BOOL *endCondition) {
         
         [_subject login:nil];
-        STAssertEqualObjects(@"1234", [WKHTTPClient sharedClient].userKey, nil);
+        STAssertEqualObjects(@"1234",                               [WKHTTPClient sharedClient].userKey, nil);
+        STAssertEqualObjects(@"f9e852694ab8a659d1edbf438c2bb4ea",   [WKHTTPClient sharedClient].gravatarId, nil);
         
     } interval:0.1];    
 }
