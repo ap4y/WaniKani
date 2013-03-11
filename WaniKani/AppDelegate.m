@@ -22,6 +22,11 @@
     [NSURLCache setSharedURLCache:urlCache];
     
     [WKCustomization prepare];
+
+#if OCUNIT
+    self.window         = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
+#endif
     
     return YES;
 }
