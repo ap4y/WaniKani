@@ -18,6 +18,7 @@
 #import "WKCustomization.h"
 #import "WKSyncManager.h"
 #import "WKStatsManager.h"
+#import "UIScrollView+SVPullToRefresh.h"
 
 @interface WKStatsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
@@ -65,8 +66,15 @@ static const CGFloat kCriticalLevelPercentage       = 75.0f;
                                                       [self updateViewValues];
                                                       [_statsTableView reloadData];
                                                       [self adjustContentHeight];
-                                                  }];
-    
+                                                      [_contentScrollView.pullToRefreshView stopAnimating];
+                                                  }];    
+    [[NSNotificationCenter defaultCenter] addObserverForName:WKSyncMangerDidFailNotification
+                                                      object:[WKSyncManager sharedManager]
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      
+                                                      [_contentScrollView.pullToRefreshView stopAnimating];
+                                                  }];    
     return self;
 }
 
@@ -80,6 +88,11 @@ static const CGFloat kCriticalLevelPercentage       = 75.0f;
     
     [self setButtonsGradients];
     [self updateViewValues];
+    
+    [_contentScrollView addPullToRefreshWithActionHandler:^{
+        
+        [[WKSyncManager sharedManager] fetchItems];
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
