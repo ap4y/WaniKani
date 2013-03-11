@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "WKCustomization.h"
+#import "WKSyncManager.h"
 
 @implementation AppDelegate
 
@@ -23,6 +24,11 @@
     [WKCustomization prepare];
     
     return YES;
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    
+    [[WKSyncManager sharedManager] fetchItems];
 }
 
 @end
