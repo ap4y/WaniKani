@@ -15,6 +15,7 @@
 #import "WKCustomization.h"
 #import "UIScrollView+SVPullToRefresh.h"
 #import "PSTCollectionView.h"
+#import "NSArray+orderBy.h"
 
 @interface WKItemViewController ()
 @property (strong, nonatomic) NSDictionary *itemsByLevel;
@@ -76,7 +77,7 @@
     self.itemsByLevel       = [WKItem itemsByLevel:items];
     
     __block NSUInteger uncollapsedCount = 0;
-    [[_itemsByLevel allKeys] enumerateObjectsUsingBlock:^(id levelKey, NSUInteger idx, BOOL *stop) {
+    [[self itemsSortedKeys] enumerateObjectsUsingBlock:^(id levelKey, NSUInteger idx, BOOL *stop) {
         
         if (withCollapsedRefresh) {
             
@@ -94,11 +95,17 @@
     
     if (uncollapsedCount == 0 && [_itemsByLevel count] > 0) {
         
-        id levelKey = [[_itemsByLevel allKeys] objectAtIndex:0];
+        id levelKey = [[self itemsSortedKeys] objectAtIndex:0];
         [_collapsedItemsByLevel setObject:[_itemsByLevel objectForKey:levelKey] forKey:levelKey];
     }
     
     if (withCollapsedRefresh) [_itemsCollectionView reloadData];
+}
+
+- (NSArray *)itemsSortedKeys {
+    
+    NSSortDescriptor *levelDesc = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO];
+    return [[_itemsByLevel allKeys] orderByDescriptors:levelDesc, nil];
 }
 
 #pragma mark - controller setting
@@ -133,7 +140,7 @@
 
 - (NSInteger)collectionView:(PSUICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    NSNumber *levelKey          = [[_itemsByLevel allKeys] objectAtIndex:section];
+    NSNumber *levelKey          = [[self itemsSortedKeys] objectAtIndex:section];
     NSArray *itemsForLevel      = [_collapsedItemsByLevel objectForKey:levelKey];
     
     return [itemsForLevel count];
@@ -147,7 +154,7 @@
     WKItemsHeaderView *suppView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                                      withReuseIdentifier:suppIdentifier
                                                                             forIndexPath:indexPath];
-    NSNumber *levelKey          = [[_itemsByLevel allKeys] objectAtIndex:indexPath.section];
+    NSNumber *levelKey          = [[self itemsSortedKeys] objectAtIndex:indexPath.section];
     [suppView setItems:[[self itemClass] itemsForLevel:levelKey] level:levelKey];
     [suppView setHeaderViewTouched:^{
         
@@ -171,7 +178,7 @@
 - (PSUICollectionViewCell *)collectionView:(PSUICollectionView *)collectionView
                     cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSNumber *levelKey          = [[_itemsByLevel allKeys] objectAtIndex:indexPath.section];
+    NSNumber *levelKey          = [[self itemsSortedKeys] objectAtIndex:indexPath.section];
     NSArray *itemsForLevel      = [_itemsByLevel objectForKey:levelKey];
     WKItem *item                = [itemsForLevel objectAtIndex:indexPath.row];
     
