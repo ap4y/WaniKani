@@ -59,7 +59,7 @@
 - (void)testShouldPrepareInitialValue {
     
     NSDictionary *items     = @{ @(2): @[_first], @(3): @[_second] };
-    NSDictionary *collapsed = @{ @(2): @[_first] };
+    NSDictionary *collapsed = @{ @(3): @[_second] };
     STAssertEqualObjects(items,     _subject.itemsByLevel,          nil);
     STAssertEqualObjects(collapsed, _subject.collapsedItemsByLevel, nil);
 }
@@ -93,7 +93,7 @@
     [_subject updateItemCollectionsWithCollapsedRefresh:YES];
     STAssertEqualObjects(collapsed, _subject.collapsedItemsByLevel, nil);
     
-    collapsed                       = @{ @(2): @[_first] };
+    collapsed                       = @{ @(3): @[_second] };
     [_subject updateItemCollectionsWithCollapsedRefresh:NO];
     STAssertEqualObjects(collapsed, _subject.collapsedItemsByLevel, nil);
 }
