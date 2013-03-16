@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>WaniKani / Reviews</title>
+  <link href="http://s3.wanikani.com/assets/review/v1/application-0214ac8671c15d9d44011bae3dcc4c52.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="http://s3.wanikani.com/assets/review/v1/application-8cb0cb94e0a39587da659a79b686e8b8.js" type="text/javascript"></script>
+  <meta name="application-name" content="WaniKani">
+  <meta name="author" content="Viet Hoang, viet@tofugu.com">
+  <meta name="description" content="WaniKani is a Japanese radicals, kanji, and vocabulary learning web app that uses mnemonics and SRS to make kanji learning simple.">
+  <meta name="keywords" content="japanese kanji, japanese language, japanese learning, kanji, radicals, kanji radicals, japanese vocabulary, vocabulary, srs, spaced repetition, mnemonics, memory tricks, web app">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="google" value="notranslate">
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="1g6n4kSL0WYcHb5OuP/1IFkIcmHTsRIVDyyLcVkhcgY=" name="csrf-token" />
+  <link href="http://s3.wanikani.com/assets/favicon-e6675c01938bcd67a93c837527051830.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link href="http://s3.wanikani.com/assets/wanikani-icon-ed8c3dc72dc6e34a5c104be447c97adb.png" rel="apple-touch-icon" type="image/png" />
+  <link href="http://s3.wanikani.com/assets/wanikani-icon-ed8c3dc72dc6e34a5c104be447c97adb.png" rel="apple-touch-icon-precomposed" type="image/png" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+  <noscript>WaniKani requires JavaScript to function properly</noscript>
+
+  <div id="reviews">
+  <div id="progress-bar">
+    <div id="bar"></div>
+  </div>
+  <div id="item-box">
+    <div id="stats">
+      <i class="icon-thumbs-up"></i><span id="correct-rate"></span> <i class="icon-ok"></i><span id="completed-count"></span> <i class="icon-inbox"></i><span id="available-count"></span>
+    </div>
+    <h1 lang="ja" id="character"></h1>
+    <div id="srs-level"><span></span></div>
+  </div>
+  <h2 id="question"></h2>
+
+  <form accept-charset="UTF-8" action="/review/session/answer" data-remote="true" id="question-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="" /></div>
+    <fieldset>
+
+      <input id="item_name" name="item_name" type="hidden" />
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" id="user_response" name="user_response" placeholder="Your Response" type="text" />
+      <button type="submit">Submit</button>
+        <div id="loading"><span></span></div>
+</fieldset>    <nav>
+      <ul>
+        <li id="option-end-session">
+          <a href="/review/session/end">
+            <i class="icon-arrow-left"></i>
+</a>        </li><li id="option-kana-chart">
+          <i class="icon-hkana-list"></i>
+        </li><li id="option-item-info">
+          <i class="icon-eye-open"></i>
+        </li><li id="option-audio">
+          <i class="icon-volume-down"></i>
+        </li><li id="option-submit">
+          <i class="icon-heart"></i>
+        </li>
+      </ul>
+    </nav>
+</form>
+  <form action="/review/session/question" class="button_to" data-remote="true" method="get"><div><input id="next-question" type="submit" value="Next Question" /></div></form>
+
+  <div id="information">
+    <div id="kana-chart">
+  <ol>
+    <li id="a-chart-option" class="active">
+      <span lang="ja">あ</span>
+    </li><li id="k-chart-option">
+      <span lang="ja">か</span>
+    </li><li id="s-chart-option">
+      <span lang="ja">さ</span>
+    </li><li id="t-chart-option">
+      <span lang="ja">た</span>
+    </li><li id="h-chart-option">
+      <span lang="ja">は</span>
+    </li><li id="n-chart-option">
+      <span lang="ja">な</span>
+    </li><li id="m-chart-option">
+      <span lang="ja">ま</span>
+    </li><li id="r-chart-option">
+      <span lang="ja">ら</span>
+    </li><li id="x-chart-option">
+      <span>MISC</span>
+    </li><li class="backspace">
+      <span><i class="icon-chevron-left"></i></span>
+    </li>
+  </ol>
+  <ul id="chart-a">
+    <li>
+      <span lang="ja">あ</span>a
+    </li><li>
+      <span lang="ja">い</span>i
+    </li><li>
+      <span lang="ja">う</span>u
+    </li><li>
+      <span lang="ja">え</span>e
+    </li><li>
+      <span lang="ja">お</span>o
+    </li><li class="empty">
+      <span lang="ja">&nbsp;</span>&nbsp;
+    </li><li class="empty">
+      <span lang="ja">&nbsp;</span>&nbsp;
+    </li><li class="empty">
+      <span lang="ja">&nbsp;</span>&nbsp;
+    </li>
+  </ul>
+  <ul id="chart-k">
+    <li>
+      <span lang="ja">か</span>ka
+    </li><li>
+      <span lang="ja">き</span>ki
+    </li><li>
+      <span lang="ja">く</span>ku
+    </li><li>
+      <span lang="ja">け</span>ke
+    </li><li>
+      <span lang="ja">こ</span>ko
+    </li><li>
+      <span lang="ja">きゃ</span>kya
+    </li><li>
+      <span lang="ja">きゅ</span>kyu
+    </li><li>
+      <span lang="ja">きょ</span>kyo
+    </li><li>
+      <span lang="ja">が</span>ga
+    </li><li>
+      <span lang="ja">ぎ</span>gi
+    </li><li>
+      <span lang="ja">ぐ</span>gu
+    </li><li>
+      <span lang="ja">げ</span>ge
+    </li><li>
+      <span lang="ja">ご</span>go
+    </li><li>
+      <span lang="ja">ぎゃ</span>gya
+    </li><li>
+      <span lang="ja">ぎゅ</span>gyu
+    </li><li>
+      <span lang="ja">ぎょ</span>gyo
+    </li>
+  </ul>
+  <ul id="chart-s">
+    <li>
+      <span lang="ja">さ</span>sa
+    </li><li>
+      <span lang="ja">し</span>shi
+    </li><li>
+       <span lang="ja">す</span>su
+    </li><li>
+       <span lang="ja">せ</span>se
+    </li><li>
+       <span lang="ja">そ</span>so
+    </li><li>
+      <span lang="ja">しゃ</span>sha
+    </li><li>
+      <span lang="ja">しゅ</span>shu
+    </li><li>
+      <span lang="ja">しょ</span>sho
+    </li><li>
+      <span lang="ja">ざ</span>za
+    </li><li>
+      <span lang="ja">じ</span>ji
+    </li><li>
+      <span lang="ja">ず</span>zu
+    </li><li>
+      <span lang="ja">ぜ</span>ze
+    </li><li>
+      <span lang="ja">ぞ</span>zo
+    </li><li>
+      <span lang="ja">じゃ</span>jya
+    </li><li>
+      <span lang="ja">じゅ</span>jyu
+    </li><li>
+      <span lang="ja">じょ</span>jyo
+    </li>
+  </ul>
+  <ul id="chart-t">
+    <li>
+       <span lang="ja">た</span>ta
+    </li><li>
+      <span lang="ja">ち</span>chi
+    </li><li>
+      <span lang="ja">つ</span>tsu
+    </li><li>
+      <span lang="ja">て</span>te
+    </li><li>
+      <span lang="ja">と</span>to
+    </li><li>
+      <span lang="ja">ちゃ</span>cha
+    </li><li>
+      <span lang="ja">ちゅ</span>chu
+    </li><li>
+      <span lang="ja">ちょ</span>cho
+    </li><li>
+      <span lang="ja">だ</span>da
+    </li><li>
+      <span lang="ja">ぢ</span>di
+    </li><li>
+      <span lang="ja">づ</span>du
+    </li><li>
+      <span lang="ja">で</span>de
+    </li><li>
+      <span lang="ja">ど</span>do
+    </li><li>
+      <span lang="ja">ぢゃ</span>dya
+    </li><li>
+      <span lang="ja">ぢゅ</span>dyu
+    </li><li>
+      <span lang="ja">ぢょ</span>dyo
+    </li>
+  </ul>
+  <ul id="chart-h">
+    <li>
+      <span lang="ja">は</span>ha
+    </li><li>
+      <span lang="ja">ひ</span>hi
+    </li><li>
+      <span lang="ja">ふ</span>hu
+    </li><li>
+      <span lang="ja">へ</span>he
+    </li><li>
+      <span lang="ja">ほ</span>ho
+    </li><li>
+      <span lang="ja">ひゃ</span>hya
+    </li><li>
+      <span lang="ja">ひゅ</span>hyu
+    </li><li>
+      <span lang="ja">ひょ</span>hyo
+    </li><li>
+      <span lang="ja">ば</span>ba
+    </li><li>
+      <span lang="ja">び</span>bi
+    </li><li>
+      <span lang="ja">ぶ</span>bu
+    </li><li>
+      <span lang="ja">べ</span>be
+    </li><li>
+      <span lang="ja">ぼ</span>bo
+    </li><li>
+      <span lang="ja">びゃ</span>bya
+    </li><li>
+      <span lang="ja">びゅ</span>byu
+    </li><li>
+      <span lang="ja">びょ</span>byo
+    </li><li>
+      <span lang="ja">ぱ</span>pa
+    </li><li>
+      <span lang="ja">ぴ</span>pi
+    </li><li>
+      <span lang="ja">ぷ</span>pu
+    </li><li>
+      <span lang="ja">ぺ</span>pe
+    </li><li>
+      <span lang="ja">ぽ</span>po
+    </li><li>
+      <span lang="ja">ぴゃ</span>pya
+    </li><li>
+      <span lang="ja">ぴゅ</span>pyu
+    </li><li>
+      <span lang="ja">ぴょ</span>pyo
+    </li>
+  </ul>
+  <ul id="chart-n">
+    <li>
+      <span lang="ja">な</span>na
+    </li><li>
+      <span lang="ja">に</span>ni
+    </li><li>
+      <span lang="ja">ぬ</span>nu
+    </li><li>
+      <span lang="ja">ね</span>ne
+    </li><li>
+      <span lang="ja">の</span>no
+    </li><li>
+      <span lang="ja">にゃ</span>nya
+    </li><li>
+      <span lang="ja">にゅ</span>nyu
+    </li><li>
+      <span lang="ja">にょ</span>nyo
+    </li>
+  </ul>
+  <ul id="chart-m">
+    <li>
+      <span lang="ja">ま</span>ma
+    </li><li>
+      <span lang="ja">み</span>mi
+    </li><li>
+      <span lang="ja">む</span>mu
+    </li><li>
+      <span lang="ja">め</span>me
+    </li><li>
+      <span lang="ja">も</span>mo
+    </li><li>
+      <span lang="ja">みゃ</span>mya
+    </li><li>
+      <span lang="ja">みゅ</span>myu
+    </li><li>
+      <span lang="ja">みょ</span>myo
+    </li>
+  </ul>
+  <ul id="chart-r">
+    <li>
+      <span lang="ja">ら</span>ra
+    </li><li>
+      <span lang="ja">り</span>ri
+    </li><li>
+      <span lang="ja">る</span>ru
+    </li><li>
+      <span lang="ja">れ</span>re
+    </li><li>
+      <span lang="ja">ろ</span>ro
+    </li><li>
+      <span lang="ja">りゃ</span>rya
+    </li><li>
+      <span lang="ja">りゅ</span>ryu
+    </li><li>
+      <span lang="ja">りょ</span>ryo
+    </li>
+  </ul>
+  <ul id="chart-x">
+    <li>
+      <span lang="ja">や</span>ya
+    </li><li>
+      <span lang="ja">ゆ</span>yu
+    </li><li>
+      <span lang="ja">よ</span>yo
+    </li><li>
+      <span lang="ja">わ</span>wa
+    </li><li>
+      <span lang="ja">を</span>wo
+    </li><li>
+      <span lang="ja">ん</span>nn
+    </li><li>
+      <span lang="ja">ー</span>-
+    </li><li>
+      <span lang="ja">っ</span>ltsu
+    </li>
+  </ul>
+</div>
+
+    <div id="item-info">
+      <div id="item-info-sub"></div><div id="item-info-main"></div>
+      <div id="item-show-all"><span><i class="icon-chevron-down"></i> Show All Information</span></div>
+    </div>
+  </div>
+
+  <div id="hotkeys">
+    Shortcuts available when option <strong>active</strong>
+    <ul>
+      <li>
+        <span>f</span>Item Help
+      </li><li>
+        <span>j</span>Audio Pronounciation (except Firefox)
+      </li><li>
+        <span>/</span>Hiragana IME Chart
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-push"></div>
+</div>
+
+<footer>
+  <ul>
+    <li>
+      <a href="mailto:hello@wanikani.com">
+        <i class="icon-pencil"></i> Report Errors
+</a>    </li>
+  </ul>
+</footer>
+
+<script type="text/javascript">
+  Question.pageLoad({"item":"r:85","q":"m","info":{"character":"\u30e9","image":"","name":"Ra","name_mnemonic":"This radical looks just like the katakana character \"ra\" (\u30e9). The sound \"ra\" sounds just like the famous Egyptian God \"Ra\" as well, so we're going to say this radical represents Egypt's God <span class=\"radical-highlight\">Ra</span>.","related_items":[]}}, 100, 0, 0);
+</script>
+
+  <script type="text/javascript">
+    // Google Analytics
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1960021-27']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+  </script>
+
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";
+e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
+  "d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","beacon-1.newrelic.com","3448ab299a","534651","IV1XQkZZVF1VQU0WEBdWQBlCBxdDVUULABMRHUhDUUVMWF9d",15,42,new Date().getTime(),"","","","",""]);</script></body>
+</html>

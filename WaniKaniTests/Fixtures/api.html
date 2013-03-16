@@ -1,0 +1,23 @@
+<div>
+  <h3>Making Requests</h3>
+  <p>
+    Requests are done by URL. Below is the general format of the URL:
+    <pre>http://www.wanikani.com/api/user/{USER_API_KEY}/{RESOURCE}/{OPTIONAL_ARGUMENT}</pre>
+  </p>
+  <p>
+    The <code>{USER_API_KEY}</code> is a 32 character key that is the user's identifier. <code>{USER_API_KEY}</code> can be generated, regenerated, and viewed in the <a href="/account">user&#x27;s settings</a>. Your API key is <code>12345</code>. Examples throughout the page will be displayed utilizing your information.
+  </p>
+  <p>
+    <code>{RESOURCE}</code> is the type of resource you wish to request. The resources available can be found further down in the document. Alternatively, a list of links of each resource can be found at the top of the page.
+  </p>
+  <p>
+    Some <code>{RESOURCE}</code> accept an optional argument or <code>{OPTIONAL_ARGUMENT}</code>.
+  </p>
+  <p>
+    Requests are arbitrary throttled to 100 per hour. If the throttle limit is exceeded, the following response will be sent:
+    <pre>403 Forbidden (Rate Limit Exceeded)</pre>
+  </p>
+  <p>
+    Although the throttle limit is generous, it may be a good idea to cache the request for a reasonable amount of time. Many of the resources you can request do not get updated frequently.
+  </p>
+</div>

@@ -100,6 +100,12 @@
 		951D40E216D0D31D00703A05 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40E016D0D31D00703A05 /* background@2x.png */; };
 		951D40E916D0DDBF00703A05 /* btn_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40E716D0DDBF00703A05 /* btn_logo.png */; };
 		951D40EA16D0DDBF00703A05 /* btn_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40E816D0DDBF00703A05 /* btn_logo@2x.png */; };
+		9532F05916F3B21300618950 /* WKHijackHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9532F05816F3B21300618950 /* WKHijackHTTPClient.m */; };
+		9532F05F16F4333A00618950 /* WKHijackHTTPClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9532F05E16F4333A00618950 /* WKHijackHTTPClientTests.m */; };
+		9532F06316F4389900618950 /* answer.html in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06016F4389900618950 /* answer.html */; };
+		9532F06416F4389900618950 /* question.html in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06116F4389900618950 /* question.html */; };
+		9532F06516F4389900618950 /* session.html in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06216F4389900618950 /* session.html */; };
+		9532F06716F43FA900618950 /* api.html in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06616F43FA900618950 /* api.html */; };
 		9546854616DC8EF0006AE86F /* WKItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9546854516DC8EF0006AE86F /* WKItemDetailsViewController.m */; };
 		9546858916DDE669006AE86F /* WKItemDetailViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9546858816DDE669006AE86F /* WKItemDetailViews.xib */; };
 		9549A29616D9BEDE00D8EA33 /* clock_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9549A29416D9BEDE00D8EA33 /* clock_icon.png */; };
@@ -272,6 +278,14 @@
 		951D40E016D0D31D00703A05 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		951D40E716D0DDBF00703A05 /* btn_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_logo.png; sourceTree = "<group>"; };
 		951D40E816D0DDBF00703A05 /* btn_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_logo@2x.png"; sourceTree = "<group>"; };
+		9532F05716F3B21300618950 /* WKHijackHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKHijackHTTPClient.h; path = Common/WKHijackHTTPClient.h; sourceTree = "<group>"; };
+		9532F05816F3B21300618950 /* WKHijackHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKHijackHTTPClient.m; path = Common/WKHijackHTTPClient.m; sourceTree = "<group>"; };
+		9532F05D16F4333A00618950 /* WKHijackHTTPClientTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKHijackHTTPClientTests.h; path = Common/WKHijackHTTPClientTests.h; sourceTree = "<group>"; };
+		9532F05E16F4333A00618950 /* WKHijackHTTPClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKHijackHTTPClientTests.m; path = Common/WKHijackHTTPClientTests.m; sourceTree = "<group>"; };
+		9532F06016F4389900618950 /* answer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = answer.html; sourceTree = "<group>"; };
+		9532F06116F4389900618950 /* question.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = question.html; sourceTree = "<group>"; };
+		9532F06216F4389900618950 /* session.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = session.html; sourceTree = "<group>"; };
+		9532F06616F43FA900618950 /* api.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = api.html; sourceTree = "<group>"; };
 		9546854416DC8EF0006AE86F /* WKItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKItemDetailsViewController.h; path = ViewControllers/WKItemDetailsViewController.h; sourceTree = "<group>"; };
 		9546854516DC8EF0006AE86F /* WKItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKItemDetailsViewController.m; path = ViewControllers/WKItemDetailsViewController.m; sourceTree = "<group>"; };
 		9546858816DDE669006AE86F /* WKItemDetailViews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WKItemDetailViews.xib; path = Views/WKItemDetailViews.xib; sourceTree = "<group>"; };
@@ -359,6 +373,8 @@
 				9500825E16E68C7C00F02369 /* WKHTTPClientTests.m */,
 				9500826016E68CEA00F02369 /* WKSyncManagerTests.h */,
 				9500826116E68CEA00F02369 /* WKSyncManagerTests.m */,
+				9532F05D16F4333A00618950 /* WKHijackHTTPClientTests.h */,
+				9532F05E16F4333A00618950 /* WKHijackHTTPClientTests.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -366,6 +382,10 @@
 		9514E7E316CADF1B00DCF51D /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				9532F06016F4389900618950 /* answer.html */,
+				9532F06116F4389900618950 /* question.html */,
+				9532F06216F4389900618950 /* session.html */,
+				9532F06616F43FA900618950 /* api.html */,
 				9514E7E416CADF1B00DCF51D /* critical-items_95.json */,
 				9514E7E516CADF1B00DCF51D /* kanji.json */,
 				9514E7E616CADF1B00DCF51D /* level_progression.json */,
@@ -433,6 +453,8 @@
 				958DC8B416E1829100F948F4 /* WKSyncManager.m */,
 				9500821316E4517C00F02369 /* WKStatsManager.h */,
 				9500821416E4517C00F02369 /* WKStatsManager.m */,
+				9532F05716F3B21300618950 /* WKHijackHTTPClient.h */,
+				9532F05816F3B21300618950 /* WKHijackHTTPClient.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -800,6 +822,10 @@
 				9514E7F216CADF1B00DCF51D /* study_queue.json in Resources */,
 				9514E7F316CADF1B00DCF51D /* vocabulary.json in Resources */,
 				9514E84916CC74BE00DCF51D /* user_information.json in Resources */,
+				9532F06316F4389900618950 /* answer.html in Resources */,
+				9532F06416F4389900618950 /* question.html in Resources */,
+				9532F06516F4389900618950 /* session.html in Resources */,
+				9532F06716F43FA900618950 /* api.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -881,6 +907,7 @@
 				958DC8B516E1829100F948F4 /* WKSyncManager.m in Sources */,
 				958DC8C016E1BC4800F948F4 /* WKItemCollectionCell.m in Sources */,
 				9500821516E4517C00F02369 /* WKStatsManager.m in Sources */,
+				9532F05916F3B21300618950 /* WKHijackHTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +930,7 @@
 				9500825816E5D4F800F02369 /* WKItemsHeaderViewTests.m in Sources */,
 				9500825F16E68C7C00F02369 /* WKHTTPClientTests.m in Sources */,
 				9500826216E68CEA00F02369 /* WKSyncManagerTests.m in Sources */,
+				9532F05F16F4333A00618950 /* WKHijackHTTPClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
