@@ -27,14 +27,14 @@
     [OHHTTPStubs shouldStubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return ([[request.URL absoluteString] rangeOfString:@"radicals"].location != NSNotFound);
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithFile:nil
+        return [OHHTTPStubsResponse responseWithFile:@"radicals.json"
                                          contentType:@"application/json"
                                         responseTime:0.0];
     }];
     [OHHTTPStubs shouldStubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return ([[request.URL absoluteString] rangeOfString:@"kanji"].location != NSNotFound);
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithFile:nil
+        return [OHHTTPStubsResponse responseWithFile:@"kanji.json"
                                          contentType:@"application/json"
                                         responseTime:0.0];
     }];

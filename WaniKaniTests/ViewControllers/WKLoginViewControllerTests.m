@@ -13,9 +13,11 @@
 #import "WKHTTPClient.h"
 
 @interface WKLoginViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *userKeyTextField;
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 - (IBAction)login:(id)sender;
+- (void)checkApiKey:(NSString *)apiKey;
 @end
 
 @interface WKLoginViewControllerTests ()
@@ -44,26 +46,33 @@
     [super tearDown];
 }
 
-- (void)testLogin {
+- (void)testCheckApiKey {
     [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
         return [OHHTTPStubsResponse responseWithFile:@"user_information.json"
                                          contentType:@"application/json"
                                         responseTime:0.0];
     }];
-    _subject.userKeyTextField.text = @"1234";
-    
+
     [AETestHelpers runAsyncTest:^(BOOL *endCondition) {
         
-        [_subject login:nil];
+        [_subject checkApiKey:@"1234"];
         STAssertEqualObjects(@"1234", [WKHTTPClient sharedClient].userKey, nil);
         
     } interval:0.1];
     
-    STAssertEqualObjects(@"f9e852694ab8a659d1edbf438c2bb4ea", [WKHTTPClient sharedClient].gravatarId, nil);
+    STAssertEqualObjects(@"f9e852694ab8a659d1edbf438c2bb4ea", [WKHTTPClient sharedClient].gravatarId, nil);    
 }
 
 - (void)testPassLoginWithUserKey {
-    [WKHTTPClient sharedClient].userKey = @"1234";        
+    NSDictionary *properties = @{
+        NSHTTPCookieOriginURL: [NSURL URLWithString:@"http://test.com"],
+        NSHTTPCookieName: @"testCookies",
+        NSHTTPCookieValue: @"1",
+        NSHTTPCookiePath: @"/path"
+    };
+    NSHTTPCookie *loginCookie = [NSHTTPCookie cookieWithProperties:properties];
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:loginCookie];
+    [WKHTTPClient sharedClient].userKey = @"1234";
     [_subject viewDidLoad];
 }
 
