@@ -100,6 +100,7 @@
 		951D40E216D0D31D00703A05 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40E016D0D31D00703A05 /* background@2x.png */; };
 		951D40E916D0DDBF00703A05 /* btn_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40E716D0DDBF00703A05 /* btn_logo.png */; };
 		951D40EA16D0DDBF00703A05 /* btn_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951D40E816D0DDBF00703A05 /* btn_logo@2x.png */; };
+		9523ECAD16F511130073ED9E /* WKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9523ECAC16F511130073ED9E /* WKTabBarController.m */; };
 		9532F05916F3B21300618950 /* WKHijackHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9532F05816F3B21300618950 /* WKHijackHTTPClient.m */; };
 		9532F05F16F4333A00618950 /* WKHijackHTTPClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9532F05E16F4333A00618950 /* WKHijackHTTPClientTests.m */; };
 		9532F06316F4389900618950 /* answer.html in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06016F4389900618950 /* answer.html */; };
@@ -282,6 +283,8 @@
 		951D40E016D0D31D00703A05 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		951D40E716D0DDBF00703A05 /* btn_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_logo.png; sourceTree = "<group>"; };
 		951D40E816D0DDBF00703A05 /* btn_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_logo@2x.png"; sourceTree = "<group>"; };
+		9523ECAB16F511130073ED9E /* WKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKTabBarController.h; path = ViewControllers/WKTabBarController.h; sourceTree = "<group>"; };
+		9523ECAC16F511130073ED9E /* WKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKTabBarController.m; path = ViewControllers/WKTabBarController.m; sourceTree = "<group>"; };
 		9532F05716F3B21300618950 /* WKHijackHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKHijackHTTPClient.h; path = Common/WKHijackHTTPClient.h; sourceTree = "<group>"; };
 		9532F05816F3B21300618950 /* WKHijackHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKHijackHTTPClient.m; path = Common/WKHijackHTTPClient.m; sourceTree = "<group>"; };
 		9532F05D16F4333A00618950 /* WKHijackHTTPClientTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKHijackHTTPClientTests.h; path = Common/WKHijackHTTPClientTests.h; sourceTree = "<group>"; };
@@ -485,6 +488,8 @@
 				9546854516DC8EF0006AE86F /* WKItemDetailsViewController.m */,
 				958DC8B016E17CD300F948F4 /* WKItemViewController.h */,
 				958DC8B116E17CD300F948F4 /* WKItemViewController.m */,
+				9523ECAB16F511130073ED9E /* WKTabBarController.h */,
+				9523ECAC16F511130073ED9E /* WKTabBarController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -925,6 +930,7 @@
 				958DC8C016E1BC4800F948F4 /* WKItemCollectionCell.m in Sources */,
 				9500821516E4517C00F02369 /* WKStatsManager.m in Sources */,
 				9532F05916F3B21300618950 /* WKHijackHTTPClient.m in Sources */,
+				9523ECAD16F511130073ED9E /* WKTabBarController.m in Sources */,
 				95B5D38016F552DF00696FE4 /* WKCorrectAnswerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
