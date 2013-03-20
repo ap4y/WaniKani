@@ -24,6 +24,6 @@
                                failure:(void (^)(NSError *error))failure;
 - (void)putReviewAnswerForItem:(NSString *)item
                         answer:(NSString *)answer
-                       success:(void (^)(NSDictionary *answer))success
+                       success:(void (^)(NSDictionary *results))success
                        failure:(void (^)(NSError *error))failure;
 @end
