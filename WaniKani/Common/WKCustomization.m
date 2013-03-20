@@ -99,12 +99,7 @@
 
 + (void)prepareUITabBarCustomization {    
     
-    NSArray *colors         = @[ RGBA(242.0, 242.0, 242.0, 1.0), RGBA(255.0, 255.0, 255.0, 1.0) ];
-    UIImage *outputImage    = [self gradientImageWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 49.0f)
-                                                    colors:colors
-                                             startPoint:CGPointMake(0.5f, 0.0f)
-                                               endPoint:CGPointMake(0.5f, 1.0f)];
-    [[UITabBar appearance] setBackgroundImage:outputImage];
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tab_bar_back"]];
     
     NSDictionary *textAttributes = @{
         UITextAttributeFont: [UIFont fontWithName:@"HelveticaNeue" size:12.0f]
