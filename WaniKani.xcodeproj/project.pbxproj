@@ -106,6 +106,7 @@
 		9532F06416F4389900618950 /* question.html in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06116F4389900618950 /* question.html */; };
 		9532F06516F4389900618950 /* session.html in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06216F4389900618950 /* session.html */; };
 		9532F06716F43FA900618950 /* api.html in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06616F43FA900618950 /* api.html */; };
+		9532F06C16F4502500618950 /* fontawesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06B16F4502500618950 /* fontawesome.ttf */; };
 		9546854616DC8EF0006AE86F /* WKItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9546854516DC8EF0006AE86F /* WKItemDetailsViewController.m */; };
 		9546858916DDE669006AE86F /* WKItemDetailViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9546858816DDE669006AE86F /* WKItemDetailViews.xib */; };
 		9549A29616D9BEDE00D8EA33 /* clock_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9549A29416D9BEDE00D8EA33 /* clock_icon.png */; };
@@ -286,6 +287,7 @@
 		9532F06116F4389900618950 /* question.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = question.html; sourceTree = "<group>"; };
 		9532F06216F4389900618950 /* session.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = session.html; sourceTree = "<group>"; };
 		9532F06616F43FA900618950 /* api.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = api.html; sourceTree = "<group>"; };
+		9532F06B16F4502500618950 /* fontawesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontawesome.ttf; sourceTree = "<group>"; };
 		9546854416DC8EF0006AE86F /* WKItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKItemDetailsViewController.h; path = ViewControllers/WKItemDetailsViewController.h; sourceTree = "<group>"; };
 		9546854516DC8EF0006AE86F /* WKItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKItemDetailsViewController.m; path = ViewControllers/WKItemDetailsViewController.m; sourceTree = "<group>"; };
 		9546858816DDE669006AE86F /* WKItemDetailViews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WKItemDetailViews.xib; path = Views/WKItemDetailViews.xib; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 				95168B4616C88BF7003BE60A /* Default-568h@2x.png */,
 				958DC8B616E1B0CC00F948F4 /* Icon.png */,
 				958DC8B716E1B0CC00F948F4 /* Icon@2x.png */,
+				9532F06B16F4502500618950 /* fontawesome.ttf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -805,6 +808,7 @@
 				958DC8D216E2E9A300F948F4 /* vocab_back_button@2x.png in Resources */,
 				958DC8D316E2E9A300F948F4 /* kanji_back_button.png in Resources */,
 				958DC8D416E2E9A300F948F4 /* kanji_back_button@2x.png in Resources */,
+				9532F06C16F4502500618950 /* fontawesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
