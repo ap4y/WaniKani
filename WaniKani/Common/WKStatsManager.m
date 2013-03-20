@@ -73,4 +73,18 @@
     return [[result orderByDescriptors:descDateDescriptor, nil] subarrayWithRange:maxResultItemsRange];
 }
 
++ (NSArray *)combinedAvailableReviews {
+    
+    NSArray *radicals   = [WKRadical availableReviews];
+    NSArray *kanji      = [WKKanji availableReviews];
+    NSArray *vocab      = [WKVocab availableReviews];
+    
+    NSMutableArray *result = [NSMutableArray array];
+    [result addObjectsFromArray:radicals];
+    [result addObjectsFromArray:kanji];
+    [result addObjectsFromArray:vocab];
+    
+    return result;
+}
+
 @end

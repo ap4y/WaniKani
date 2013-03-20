@@ -15,5 +15,6 @@
 + (NSArray *)combinedItemsWithSRSType:(WKItemSRSType)srsType;
 + (NSArray *)combinedCriticalItemsWithPercentage:(CGFloat)percentage;
 + (NSArray *)combinedUnlockedItems;
++ (NSArray *)combinedAvailableReviews;
 
 @end
