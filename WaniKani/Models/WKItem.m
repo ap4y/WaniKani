@@ -58,7 +58,7 @@
     NSPredicate *predicate      = [NSPredicate predicateWithFormat:predicateString];
     NSArray *criticalItems      = [self requestResult:[self where:predicate] managedObjectContext:mainThreadContext()];
 
-    NSPredicate *percentagePredicate = [NSPredicate predicateWithFormat:@"stats.combinedCorrectPercentage <= %f",
+    NSPredicate *percentagePredicate = [NSPredicate predicateWithFormat:@"stats.combinedCorrectPercentage < %f",
                                         percentage/100.0f];
     
     return [criticalItems filteredArrayUsingPredicate:percentagePredicate];
