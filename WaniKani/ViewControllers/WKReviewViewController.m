@@ -284,6 +284,10 @@ static const NSTimeInterval kAnimationDuration = 0.2;
         
         if ( _availableCount == 0 ) {
             
+            /**
+             We are sending question request, to stop current preview session
+             */
+            [[WKHijackHTTPClient sharedClient] fetchReviewQuestionWithSuccess:nil failure:nil];
             [[WKSyncManager sharedManager] fetchItems];
             [self stopReview:nil];
             return NO;
