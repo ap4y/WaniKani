@@ -31,10 +31,10 @@
 + (NSPredicate *)completedItemsPredicate {
     
     NSArray *completedSRSTypes = @[
-                                   WKItemSRSTypeStrings[WKItemSRSGuru],
-                                   WKItemSRSTypeStrings[WKItemSRSMaster],
-                                   WKItemSRSTypeStrings[WKItemSRSEnlighten]
-                                   ];
+       WKItemSRSTypeStrings[WKItemSRSGuru],
+       WKItemSRSTypeStrings[WKItemSRSMaster],
+       WKItemSRSTypeStrings[WKItemSRSEnlighten]
+    ];
     return [NSPredicate predicateWithFormat:@"stats.srs IN %@", completedSRSTypes];
 }
 
@@ -52,10 +52,11 @@
 
 + (NSArray *)criticalItemsWithPercentage:(CGFloat)percentage {
 
-    NSString *predicateString   = @"stats.meaningIncorrect > 0 OR stats.readingIncorrect > 0";
+    NSString *predicateString;
+    predicateString = @"stats.srs == 'apprentice' && ( stats.meaningIncorrect > 0 || stats.readingIncorrect > 0 )";
+        
     NSPredicate *predicate      = [NSPredicate predicateWithFormat:predicateString];
-    NSArray *criticalItems      = [self requestResult:[self where:predicate]
-                                 managedObjectContext:mainThreadContext()];
+    NSArray *criticalItems      = [self requestResult:[self where:predicate] managedObjectContext:mainThreadContext()];
 
     NSPredicate *percentagePredicate = [NSPredicate predicateWithFormat:@"stats.combinedCorrectPercentage <= %f",
                                         percentage/100.0f];
