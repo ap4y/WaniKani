@@ -11,6 +11,7 @@
 
 #import "WKTestHelpers.h"
 #import "WKRadical.h"
+#import "WKItemStats.h"
 #import "WKSyncManager.h"
 
 @interface WKStatsViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -54,6 +55,9 @@
     self.second             = (WKRadical *)[WKRadical createOrUpdateFromJsonObject:[radicalDumps objectAtIndex:1]
                                                             inManagedObjectContext:mainThreadContext()];
     _second.level           = @(3);
+
+    _first.stats.availableDate  = @([[NSDate date] timeIntervalSince1970]);
+    _second.stats.availableDate = @([[NSDate date] timeIntervalSince1970]);
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:[NSBundle mainBundle]];
     self.subject = [storyboard instantiateViewControllerWithIdentifier:@"WKStatsViewController"];
@@ -74,7 +78,7 @@
     STAssertEqualObjects(@"1",              _subject.masterButton.titleLabel.text,      nil);
     STAssertEqualObjects(@"0",              _subject.enlightenButton.titleLabel.text,   nil);
     STAssertEqualObjects(@"0",              _subject.burnedButton.titleLabel.text,      nil);
-    STAssertEqualObjects(@"Thursday 12:00", _subject.nextReviewLabel.text,              nil);
+    STAssertEqualObjects(@"just now",      _subject.nextReviewLabel.text,              nil);
     
     STAssertEquals(2U, [_subject.statsTableItems count], nil);
 }

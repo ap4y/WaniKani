@@ -13,19 +13,21 @@
 #import "WKVocab.h"
 
 #import "NSArray+orderBy.h"
+#import "TTTTimeIntervalFormatter.h"
 
 @implementation WKStatsManager
 
-
 + (NSString *)nextReviewDateString {
     
-    NSDateFormatter *localDateFormatter;
-    NSArray *reviewDates    = @[ [WKRadical nextReviewDate], [WKKanji nextReviewDate], [WKVocab nextReviewDate] ];
-    NSDate *closestDate     = [[reviewDates orderBy:@"self", nil] objectAtIndex:0];
-    localDateFormatter      = [[NSDateFormatter alloc] init];
-    [localDateFormatter setDateFormat:@"cccc HH:mm"];
+    TTTTimeIntervalFormatter *timeIntervalFormatter;
+    NSDate *closestDate     = [WKItem nextReviewDate];
     
-    return [localDateFormatter stringFromDate:closestDate];
+    if ( !closestDate ) return @"";
+    
+    timeIntervalFormatter   = [[TTTTimeIntervalFormatter alloc] init];
+    NSTimeInterval timeDiff = [closestDate timeIntervalSinceNow];
+    
+    return [timeIntervalFormatter stringForTimeInterval:timeDiff];
 }
 
 + (NSArray *)combinedItemsWithSRSType:(WKItemSRSType)srsType {
