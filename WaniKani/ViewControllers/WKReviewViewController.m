@@ -255,6 +255,12 @@ static const NSTimeInterval kAnimationDuration = 0.2;
     [_answerTextField becomeFirstResponder];
 }
 
+- (void)setKeyboardReturnType:(UIReturnKeyType)returnType {
+    
+    _answerTextField.returnKeyType = returnType;
+    [_answerTextField reloadInputViews];
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -265,7 +271,7 @@ static const NSTimeInterval kAnimationDuration = 0.2;
     if (!_questionAnswered) {
 
         _questionAnswered = YES;
-        [_answerTextField setReturnKeyType:UIReturnKeyNext];
+        [self setKeyboardReturnType:UIReturnKeyNext];
         
         [SVProgressHUD show];
         [client putReviewAnswerForItem:_currentItemId
@@ -304,7 +310,7 @@ static const NSTimeInterval kAnimationDuration = 0.2;
         
         [_answerTextField setPlaceholder:@""];
         [_answerTextField setBackgroundColor:[UIColor clearColor]];
-        [_answerTextField setReturnKeyType:UIReturnKeySend];
+        [self setKeyboardReturnType:UIReturnKeySend];
         
         [SVProgressHUD show];
         [client fetchReviewQuestionWithSuccess:^(NSDictionary *question) {
