@@ -73,11 +73,12 @@
 
 + (NSDate *)nextReviewDate {
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stats.availableDate != nil"];
+    NSPredicate *predicate      = [NSPredicate predicateWithFormat:@"stats.availableDate != nil"];
     WKItem *latestAvailableItem = [self requestFirstResult:[[self where:predicate] orderBy:@"stats.availableDate", nil]
                                       managedObjectContext:mainThreadContext()];
+    NSNumber *availableDate     = latestAvailableItem.stats.availableDate;
     
-    return [NSDate dateWithTimeIntervalSince1970:[latestAvailableItem.stats.availableDate doubleValue]];
+    return ( availableDate ? [NSDate dateWithTimeIntervalSince1970:[availableDate doubleValue]] : nil );
 }
 
 + (NSDictionary *)itemsByLevel:(NSArray *)radicals {
