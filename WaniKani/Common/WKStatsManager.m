@@ -32,61 +32,27 @@
 
 + (NSArray *)combinedItemsWithSRSType:(WKItemSRSType)srsType {
     
-    NSArray *radicals   = [WKRadical itemsWithSRSType:srsType];
-    NSArray *kanji      = [WKKanji itemsWithSRSType:srsType];
-    NSArray *vocab      = [WKVocab itemsWithSRSType:srsType];
-    
-    NSMutableArray *result = [NSMutableArray array];
-    [result addObjectsFromArray:radicals];
-    [result addObjectsFromArray:kanji];
-    [result addObjectsFromArray:vocab];
-    
-    return result;
+    return [WKItem itemsWithSRSType:srsType];
 }
 
 + (NSArray *)combinedCriticalItemsWithPercentage:(CGFloat)percentage {
     
-    NSArray *radicals   = [WKRadical criticalItemsWithPercentage:percentage];
-    NSArray *kanji      = [WKKanji criticalItemsWithPercentage:percentage];
-    NSArray *vocab      = [WKVocab criticalItemsWithPercentage:percentage];
-    
-    NSMutableArray *result = [NSMutableArray array];
-    [result addObjectsFromArray:radicals];
-    [result addObjectsFromArray:kanji];
-    [result addObjectsFromArray:vocab];
-    
-    return result;
+    return [WKItem criticalItemsWithPercentage:percentage];
 }
 
 + (NSArray *)combinedUnlockedItems {
-    
-    NSArray *radicals   = [WKRadical unlockedItems];
-    NSArray *kanji      = [WKKanji unlockedItems];
-    NSArray *vocab      = [WKVocab unlockedItems];
-    
-    NSMutableArray *result = [NSMutableArray array];
-    [result addObjectsFromArray:radicals];
-    [result addObjectsFromArray:kanji];
-    [result addObjectsFromArray:vocab];
+        
+    NSArray *items = [WKItem unlockedItems];
     
     NSSortDescriptor *descDateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"stats.unlockedDate"
                                                                          ascending:NO];
-    NSRange maxResultItemsRange = NSMakeRange(0, MIN([result count], 10));
-    return [[result orderByDescriptors:descDateDescriptor, nil] subarrayWithRange:maxResultItemsRange];
+    NSRange maxResultItemsRange = NSMakeRange(0, MIN([items count], 10));
+    return [[items orderByDescriptors:descDateDescriptor, nil] subarrayWithRange:maxResultItemsRange];
 }
 
 + (NSArray *)combinedAvailableReviews {
     
-    NSArray *radicals   = [WKRadical availableReviews];
-    NSArray *kanji      = [WKKanji availableReviews];
-    NSArray *vocab      = [WKVocab availableReviews];
-    
-    NSMutableArray *result = [NSMutableArray array];
-    [result addObjectsFromArray:radicals];
-    [result addObjectsFromArray:kanji];
-    [result addObjectsFromArray:vocab];
-    
-    return result;
+    return [WKItem availableReviews];
 }
 
 @end
