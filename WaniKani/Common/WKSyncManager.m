@@ -57,6 +57,8 @@ static const NSUInteger kMaxFinishedBlocksCount = 3;
         _isSyncing = NO;
     };
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:WKSyncMangerDidStartNotification object:self];
+    
     [WKRadical fetchRadicalsWithSuccess:successBlock failure:failureBlock];
     [WKKanji fetchKanjiWithSuccess:successBlock failure:failureBlock];
     [WKVocab fetchVocabWithSuccess:successBlock failure:failureBlock];

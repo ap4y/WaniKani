@@ -60,7 +60,26 @@
     STAssertFalse([_subject fetchItems], nil);
 }
 
-- (void)testShouldPostNotification {
+- (void)testShouldPostStartNotification {
+    
+    __block BOOL notificationReceived = NO;
+    [[NSNotificationCenter defaultCenter] addObserverForName:WKSyncMangerDidStartNotification
+                                                      object:_subject
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      
+                                                      notificationReceived = YES;
+                                                  }];
+    [AETestHelpers runAsyncTest:^(BOOL *endCondition) {
+        
+        [_subject fetchItems];
+        
+    } interval:0.5];
+    
+    STAssertTrue(notificationReceived, nil);
+}
+
+- (void)testShouldPostResultNotification {
     
     __block BOOL notificationReceived = NO;
     [[NSNotificationCenter defaultCenter] addObserverForName:WKSyncMangerDidSyncNotification
