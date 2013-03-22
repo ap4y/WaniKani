@@ -7,6 +7,6 @@ pod 'SVProgressHUD'
 pod 'FormatterKit/TimeIntervalFormatter'
 
 target 'WaniKaniTests', exclusive: true do
-  pod 'AETestHelpers', :git => 'https://github.com/ap4y/cocoa_helpers.git'
+  pod 'AEHelpers/Tests', :git => 'https://github.com/ap4y/cocoa_helpers.git'
   pod 'OCMock'
 end
