@@ -56,8 +56,11 @@
                                                             inManagedObjectContext:mainThreadContext()];
     _second.level           = @(3);
 
-    _first.stats.availableDate  = @([[NSDate date] timeIntervalSince1970]);
-    _second.stats.availableDate = @([[NSDate date] timeIntervalSince1970]);
+    _first.stats.availableDate      = @([[NSDate date] timeIntervalSince1970]);
+    _second.stats.availableDate     = @([[NSDate date] timeIntervalSince1970]);
+    
+    _first.stats.meaningCorrect     = @(0);
+    _first.stats.meaningIncorrect   = @(1);
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:[NSBundle mainBundle]];
     self.subject = [storyboard instantiateViewControllerWithIdentifier:@"WKStatsViewController"];
@@ -78,7 +81,7 @@
     STAssertEqualObjects(@"1",              _subject.masterButton.titleLabel.text,      nil);
     STAssertEqualObjects(@"0",              _subject.enlightenButton.titleLabel.text,   nil);
     STAssertEqualObjects(@"0",              _subject.burnedButton.titleLabel.text,      nil);
-    STAssertEqualObjects(@"just now",      _subject.nextReviewLabel.text,              nil);
+    STAssertEqualObjects(@"just now",       _subject.nextReviewLabel.text,              nil);
     
     STAssertEquals(2U, [_subject.statsTableItems count], nil);
 }
