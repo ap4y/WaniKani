@@ -107,6 +107,7 @@
 		9532F06416F4389900618950 /* question.html in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06116F4389900618950 /* question.html */; };
 		9532F06516F4389900618950 /* session.html in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06216F4389900618950 /* session.html */; };
 		9532F06716F43FA900618950 /* api.html in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06616F43FA900618950 /* api.html */; };
+		9532F06A16F445F400618950 /* WKReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9532F06916F445F400618950 /* WKReviewViewController.m */; };
 		9532F06C16F4502500618950 /* fontawesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9532F06B16F4502500618950 /* fontawesome.ttf */; };
 		9546854616DC8EF0006AE86F /* WKItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9546854516DC8EF0006AE86F /* WKItemDetailsViewController.m */; };
 		9546858916DDE669006AE86F /* WKItemDetailViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9546858816DDE669006AE86F /* WKItemDetailViews.xib */; };
@@ -295,6 +296,8 @@
 		9532F06116F4389900618950 /* question.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = question.html; sourceTree = "<group>"; };
 		9532F06216F4389900618950 /* session.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = session.html; sourceTree = "<group>"; };
 		9532F06616F43FA900618950 /* api.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = api.html; sourceTree = "<group>"; };
+		9532F06816F445F400618950 /* WKReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKReviewViewController.h; path = ViewControllers/WKReviewViewController.h; sourceTree = "<group>"; };
+		9532F06916F445F400618950 /* WKReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKReviewViewController.m; path = ViewControllers/WKReviewViewController.m; sourceTree = "<group>"; };
 		9532F06B16F4502500618950 /* fontawesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontawesome.ttf; sourceTree = "<group>"; };
 		9546854416DC8EF0006AE86F /* WKItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKItemDetailsViewController.h; path = ViewControllers/WKItemDetailsViewController.h; sourceTree = "<group>"; };
 		9546854516DC8EF0006AE86F /* WKItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKItemDetailsViewController.m; path = ViewControllers/WKItemDetailsViewController.m; sourceTree = "<group>"; };
@@ -492,6 +495,8 @@
 				9546854516DC8EF0006AE86F /* WKItemDetailsViewController.m */,
 				958DC8B016E17CD300F948F4 /* WKItemViewController.h */,
 				958DC8B116E17CD300F948F4 /* WKItemViewController.m */,
+				9532F06816F445F400618950 /* WKReviewViewController.h */,
+				9532F06916F445F400618950 /* WKReviewViewController.m */,
 				9523ECAB16F511130073ED9E /* WKTabBarController.h */,
 				9523ECAC16F511130073ED9E /* WKTabBarController.m */,
 			);
@@ -938,6 +943,7 @@
 				958DC8C016E1BC4800F948F4 /* WKItemCollectionCell.m in Sources */,
 				9500821516E4517C00F02369 /* WKStatsManager.m in Sources */,
 				9532F05916F3B21300618950 /* WKHijackHTTPClient.m in Sources */,
+				9532F06A16F445F400618950 /* WKReviewViewController.m in Sources */,
 				9523ECAD16F511130073ED9E /* WKTabBarController.m in Sources */,
 				95B5D38016F552DF00696FE4 /* WKCorrectAnswerView.m in Sources */,
 			);
