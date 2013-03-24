@@ -71,7 +71,7 @@ static const NSTimeInterval kAnimationDuration  = 0.2;
        
         CGRect progressViewFrame    = _progressView.frame;
         CGFloat gapHeight           = ( hidden ? 0.0f : progressViewFrame.size.height );
-        progressViewFrame.origin.y  = self.view.bounds.size.height - 49.0f - gapHeight;
+        progressViewFrame.origin.y  = self.view.frame.size.height - 49.0f - gapHeight;
         _progressView.frame         = progressViewFrame;
     }];
 }
@@ -103,8 +103,4 @@ static const NSTimeInterval kAnimationDuration  = 0.2;
     return YES;
 }
 
-- (void)viewDidUnload {
-    [self setProgressView:nil];
-    [super viewDidUnload];
-}
 @end
