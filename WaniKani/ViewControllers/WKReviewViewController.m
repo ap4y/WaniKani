@@ -33,6 +33,7 @@
 @property (strong, nonatomic) NSString *currentItemId;
 @property (nonatomic) BOOL questionAnswered;
 @property (nonatomic) NSUInteger availableCount;
+@property (nonatomic) BOOL isFetching;
 @end
 
 @implementation WKReviewViewController
@@ -261,11 +262,35 @@ static const NSTimeInterval kAnimationDuration = 0.2;
     [_answerTextField reloadInputViews];
 }
 
+- (void)prepareForNextQuestion {
+    
+    [UIView animateWithDuration:kAnimationDuration animations:^{
+        
+        _correctAnswerView.alpha = 0.0f;
+    }];
+    
+    _answerTextField.text   = @"";
+    _characterLabel.text    = @"";
+    
+    [_answerTextField setPlaceholder:@""];
+    [_answerTextField setBackgroundColor:[UIColor clearColor]];
+}
+
+- (void)finalizeReview {
+    
+    /**
+     We are sending question request, to stop current preview session
+     */
+    [[WKHijackHTTPClient sharedClient] fetchReviewQuestionWithSuccess:nil failure:nil];
+    [[WKSyncManager sharedManager] fetchItems];
+    [self stopReview:nil];
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    if ([SVProgressHUD isVisible]) return NO;
+    if ( _isFetching ) return NO;
     
     WKHijackHTTPClient *client = [WKHijackHTTPClient sharedClient];
     if (!_questionAnswered) {
@@ -274,15 +299,18 @@ static const NSTimeInterval kAnimationDuration = 0.2;
         [self setKeyboardReturnType:UIReturnKeyNext];
         
         [SVProgressHUD show];
+        _isFetching = YES;
         [client putReviewAnswerForItem:_currentItemId
                                 answer:_answerTextField.text
                                success:^(NSDictionary *answer) {
                                    
+                                   _isFetching = NO;
                                    [self showAnswerResults:[answer valueForKey:@"result"]];
                                    
                                } failure:^(NSError *error) {
 
                                    NSLog(@"%@", error);
+                                   _isFetching = NO;
                                    [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Connection Error", nil)];
                                }];
         
@@ -290,37 +318,26 @@ static const NSTimeInterval kAnimationDuration = 0.2;
         
         if ( _availableCount == 0 ) {
             
-            /**
-             We are sending question request, to stop current preview session
-             */
-            [[WKHijackHTTPClient sharedClient] fetchReviewQuestionWithSuccess:nil failure:nil];
-            [[WKSyncManager sharedManager] fetchItems];
-            [self stopReview:nil];
+            [self finalizeReview];
             return NO;
         }
         
-        [UIView animateWithDuration:kAnimationDuration animations:^{
-            
-            _correctAnswerView.alpha = 0.0f;
-        }];
-        
-        _questionAnswered       = NO;
-        _answerTextField.text   = @"";
-        _characterLabel.text    = @"";
-        
-        [_answerTextField setPlaceholder:@""];
-        [_answerTextField setBackgroundColor:[UIColor clearColor]];
+        _questionAnswered = NO;
         [self setKeyboardReturnType:UIReturnKeySend];
+        [self prepareForNextQuestion];
         
         [SVProgressHUD show];
+        _isFetching = YES;
         [client fetchReviewQuestionWithSuccess:^(NSDictionary *question) {
             
+            _isFetching = NO;
             [SVProgressHUD dismiss];
             [self setupViewsForQuestion:question];
             
         } failure:^(NSError *error) {
 
             NSLog(@"%@", error);
+            _isFetching = NO;
             [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Connection Error", nil)];
         }];
     }
